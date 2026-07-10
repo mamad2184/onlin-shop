@@ -1,6 +1,11 @@
 from django.db import models
 
 
+
+
+from utils.products.models import product_image_path
+
+
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=120, unique=True)
@@ -32,7 +37,7 @@ class Product(models.Model):
     product_type = models.CharField(max_length=20, choices=PRODUCT_TYPE_CHOICES)
     brand = models.CharField(max_length=100, choices=BRAND_CHOICES, blank=True)
     description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    price = models.PositiveIntegerField(default=0)
     quantity = models.PositiveIntegerField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -42,6 +47,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class ProductImage(models.Model):
+    image=models.ImageField(upload_to=product_image_path, blank=True, null=True)
+    product=models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_images")
 
 
 class ProductVariant(models.Model):
