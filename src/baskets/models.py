@@ -9,9 +9,10 @@ CustomUser= settings.AUTH_USER_MODEL
 class Basket(models.Model):
     user = models.ForeignKey(CustomUser, related_name='baskets', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, related_name='baskets', on_delete=models.CASCADE)
+    quantity= models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    name = models.CharField(max_length=150, blank=True, help_text='Optional name for a saved basket')
+    # name = models.CharField(max_length=150, blank=True, help_text='Optional name for a saved basket')
 
     class Meta:
         ordering = ['-updated_at']
@@ -19,7 +20,7 @@ class Basket(models.Model):
         verbose_name_plural = 'Baskets'
 
     def __str__(self):
-        return f'{self.user.username} Basket #{self.pk}'
+        return f'product{self.product.product_type} for {self.user.username}'
 
     def item_count(self):
         return self.items.aggregate(total=models.Sum('quantity'))['total'] or 0

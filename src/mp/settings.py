@@ -137,10 +137,15 @@ AUTH_USER_MODEL="accounts.CustomUser"
 
 
 
-REST_FREAMEWORK= {
-    "DEFAULT_ATHENTICATION_CLASSES" : (
-        "rest_framework_simplejwt.authentication.JWTAuthentecation",
+REST_FRAMEWORK= {
+    "DEFAULT_AUTHENTICATION_CLASSES" : (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
     )
 }
 
 
+from datetime import timedelta
+SIMPLE_JWT= {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1000),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1000)
+}

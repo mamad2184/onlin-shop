@@ -46,7 +46,7 @@ class Product(models.Model):
         ordering = ['-created_at']
 
     def __str__(self):
-        return self.name
+        return f"{self.name}--> {self.product_type} of {self.brand}"
     
 
 class ProductImage(models.Model):

@@ -4,7 +4,7 @@ from .models import Basket
 
 @admin.register(Basket)
 class BasketAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user','created_at', 'updated_at')
+    list_display = ('id', 'user',"quantity", "product", 'created_at', 'updated_at')
     list_filter = ('created_at',)
     search_fields = ('user__username',)
 
