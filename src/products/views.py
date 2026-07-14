@@ -17,7 +17,7 @@ from .serializers import ProductListSerializer, ProductDetailsSerializer
 class ProductListView(APIView):
     def get(self, request):
         products=Product.objects.all()
-        serializer=ProductListSerializer(products, many=True)
+        serializer=ProductListSerializer(products, many=True, context={"request":request})
         return Response(serializer.data, status=status.HTTP_200_OK)
     
 

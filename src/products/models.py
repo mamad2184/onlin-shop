@@ -1,10 +1,12 @@
 from django.db import models
-
+from django.contrib.auth import get_user_model
 
 
 
 from utils.products.models import product_image_path
 
+
+CustomUser=get_user_model()
 
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
@@ -30,8 +32,9 @@ class Product(models.Model):
     ('nike', 'Nike'),
     ('perfect', 'Perfect'),
     ]
-
+    author=models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200)
+    image= models.ImageField(upload_to=product_image_path, blank=True, null=True)
     slug = models.SlugField(max_length=220, unique=True)
     category = models.ManyToManyField(Category, related_name='products', blank=True)
     product_type = models.CharField(max_length=20, choices=PRODUCT_TYPE_CHOICES)
