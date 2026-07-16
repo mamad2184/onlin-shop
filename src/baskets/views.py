@@ -24,26 +24,26 @@ CustomUser= get_user_model()
 
 
 class AddToBasketView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
+
     def post(self, request, product_id):
-        product= get_object_or_404(Product, id= product_id)
-        user= request.user
+        product = get_object_or_404(Product, id=product_id)
+        user = request.user
 
-        print(request.user)
-        if request.user.is_authenticated:
-            
-            try:
-                old_basket= Basket.objects.get(product=product, user=user)
-                old_basket.quantity += 1
-                old_basket.save()
-                return Response({"message": f"product {product.name} is in your basket once agane. -->now{old_basket.quantity}"}, status=status.HTTP_200_OK)
-            except Basket.DoesNotExist:
-                new_basket= Basket.objects.create(product=product, user=user, quantity= 1)
-    
-                return Response({"message": f"{product.name} added to your basket. --> now{new_basket.quantity}"}, status=status.HTTP_200_OK)
-
-    
-        return Response({"message":"you are not authenticated"})
+        try:
+            old_basket = Basket.objects.get(product=product, user=user)
+            old_basket.quantity += 1
+            old_basket.save()
+            return Response(
+                {"message": f"{product.name} quantity updated in your basket. Now {old_basket.quantity}."},
+                status=status.HTTP_200_OK,
+            )
+        except Basket.DoesNotExist:
+            new_basket = Basket.objects.create(product=product, user=user, quantity=1)
+            return Response(
+                {"message": f"{product.name} added to your basket. Now {new_basket.quantity}."},
+                status=status.HTTP_200_OK,
+            )
 
         
 

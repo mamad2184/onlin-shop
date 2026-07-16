@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'orders',
     'products',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -137,15 +139,19 @@ AUTH_USER_MODEL="accounts.CustomUser"
 
 
 
-REST_FRAMEWORK= {
-    "DEFAULT_AUTHENTICATION_CLASSES" : (
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
+    ),
 }
 
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5173",
+    "http://localhost:5173",
+]
 
 from datetime import timedelta
-SIMPLE_JWT= {
+SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1000),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1000)
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1000),
 }

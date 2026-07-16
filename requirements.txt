@@ -2,13 +2,8 @@ asgiref==3.11.1
 Django==5.2
 djangorestframework==3.17.1
 djangorestframework_simplejwt==5.5.1
+django-cors-headers==4.0.0
 pillow==12.3.0
 PyJWT==2.13.0
 sqlparse==0.5.5
 tzdata==2026.2
-
-
-
-
-"refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTg3MDE5NDU1MywiaWF0IjoxNzgzNzk0NTUzLCJqdGkiOiJhYmM5NmRiY2FlODc0N2Y2YWY4YWYzM2M5M2M4ZDM3MyIsInVzZXJfaWQiOiIxIn0.JhYwjQOWUpwlMWu6f31zCLr9NOlkseZF2UsxlbOYBLk",
-    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxODcwMTk0NTUzLCJpYXQiOjE3ODM3OTQ1NTMsImp0aSI6ImE3MDE3YjljMjdhNTQyYWM5MzNiYWUxZjdhMzg0YzY0IiwidXNlcl9pZCI6IjEifQ.mPHZEyYQDuVPUTDvzVDptUq26Us-tSiekVT8hx9A1F4"
