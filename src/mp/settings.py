@@ -10,10 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 
-from . import private_variables
+
+from . import local_settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r0kaicr*=$s^z-=_0d_ixxkes5)0mo(9=vd!!1u6-e$#=t2ala'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,19 +86,25 @@ WSGI_APPLICATION = 'mp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-
-
+# Django will read database settings from the environment if available.
+# This is useful in Docker, where the container can provide DB_NAME, DB_USER, etc.
+# If the environment variable is missing, Django falls back to the default value.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "my_django_db",
-        'USER': "postgres",
-        'PASSWORD': private_variables.password,
-        "HOST": "localhost",
-        "PORT": "5432",
+        # 'NAME': "my_django_db",
+        # 'USER': "postgres",
+        # 'PASSWORD': local_settings.DB_PASSWORD,
+        # "HOST": "localhost",
+        # "PORT": "5432",
+        
+        'NAME': os.environ.get('DB_NAME', 'my_django_db'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', local_settings.DB_PASSWORD),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -164,3 +174,6 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1000),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1000),
 }
+
+
+load_dotenv(BASE_DIR / ".env")

@@ -1,0 +1,70 @@
+version: '3.9'
+
+# Define the services that make up the application.
+services:
+  # PostgreSQL database service
+  db:
+    image: postgres:16
+    # Restart the container automatically unless it is explicitly stopped.
+    restart: unless-stopped
+    environment:
+      # These variables configure the Postgres database user and database name.
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      # Persist database files in a named Docker volume so data survives container restarts.
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      # Expose Postgres on port 5432 for local access if needed.
+      - "5432:5432"
+
+  # Django backend service
+  backend:
+    build:
+      # Build the backend image from the repo root using the Django Dockerfile.
+      context: .
+      dockerfile: src/Dockerfile
+    # Run the Django development server inside the container.
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      # Mount the local src directory into the container so code changes reflect immediately.
+      - ./src:/app
+    ports:
+      # Map container port 8000 to local port 8000.
+      - "8000:8000"
+    depends_on:
+      # Ensure the database starts before the backend.
+      - db
+    environment:
+      # These environment variables are read by Django via os.environ.
+      DB_NAME: ${POSTGRES_DB}
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+      DB_HOST: db
+      DB_PORT: "5432"
+      SECRET_KEY: ${SECRET_KEY}
+
+  # Frontend service for Vite / React app
+  frontend:
+    build:
+      # Build the frontend image from the frontend directory.
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      # Mount the local frontend source into the container for live reload.
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      # Map Vite's default port to the host.
+      - "5173:5173"
+    environment:
+      # Enable file polling inside Docker for Vite to detect source changes.
+      CHOKIDAR_USEPOLLING: "true"
+    depends_on:
+      # Start the backend before the frontend.
+      - backend
+
+# Define named volumes used by services.
+volumes:
+  postgres_data:
