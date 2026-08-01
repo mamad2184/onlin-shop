@@ -6,5 +6,13 @@ djangorestframework_simplejwt==5.5.1
 pillow==12.3.0
 psycopg2-binary==2.9.12
 PyJWT==2.13.0
+python-dotenv==1.2.2
 sqlparse==0.5.5
 tzdata==2026.2
+
+
+
+
+
+  "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTg3MTkxNDI5NiwiaWF0IjoxNzg1NTE0Mjk2LCJqdGkiOiIwNTIyODkxYzUxODg0ODkzYTBlOWU1ZGQ1NGYzMDE5MiIsInVzZXJfaWQiOiIxIn0.RU6IpJy7aL3CWpL3yZUFmPtnBxyF8UFiwxTrYhuAT9I",
+    "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxODcxOTE0Mjk2LCJpYXQiOjE3ODU1MTQyOTYsImp0aSI6IjI0MWE5MWI4YzNhZjRlMjU4YzYwZWQ3OTMzZjhlYmU5IiwidXNlcl9pZCI6IjEifQ.ZkjC6_UuUVu28PT-FeoKNqtOGWN158MEEG8wAai7MYo"
