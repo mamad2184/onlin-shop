@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
-
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.exceptions import ValidationError
 
 from utils.products.models import product_image_path
 
@@ -50,6 +50,38 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name}--> {self.product_type} of {self.brand}"
+
+
+
+from django.conf import settings
+from django.db import models
+
+
+class ProductComment(models.Model):
+    product = models.ForeignKey("products.Product", on_delete=models.CASCADE, related_name="product_comments")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="user_comments")
+    comment = models.TextField(max_length=512)
+    # rating = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    is_approved = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+     
+
+
+    class Meta:
+        ordering = ["-created_at"]
+        # unique_together = ("product", "user")
+
+    
+    def clean(self):
+        product_comments = ProductComment.objects.filter(product=self.product, user=self.user)
+        if product_comments.count() >= 5:
+            raise ValidationError("You have already submitted the maximum number of comments for this product.")
+
+        
+    def __str__(self):
+        return f"{self.product} - {self.comment}"
+
     
 
 class ProductImage(models.Model):

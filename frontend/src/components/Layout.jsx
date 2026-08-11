@@ -9,7 +9,7 @@ function Layout({ children }) {
       <header className="bg-white border-b border-slate-200 shadow-sm">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
           <Link to="/" className="text-xl font-semibold text-slate-900">
-            Django REST Shop
+            cloth&shoe shop
           </Link>
           <nav className="flex items-center gap-3 text-sm text-slate-700">
             <Link to="/" className="hover:text-slate-900">Home</Link>

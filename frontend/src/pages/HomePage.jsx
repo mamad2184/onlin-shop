@@ -2,17 +2,28 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchProducts, addToBasket } from '../lib/api'
 
+const categoryLabels = {
+  all: 'All',
+  shoe: 'Shoe',
+  cloth: 'Cloth',
+}
+
 function HomePage() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
+  const [category, setCategory] = useState('all')
   const token = localStorage.getItem('access_token')
 
-  const loadProducts = (search = '') => {
+  const loadProducts = (search = '', selectedCategory = 'all') => {
     setLoading(true)
-    fetchProducts(search)
+    fetchProducts(search, selectedCategory)
       .then((data) => setProducts(data))
+      .catch((error) => {
+        setMessage(error.response?.data?.detail || error.message || 'Unable to load products.')
+        setProducts([])
+      })
       .finally(() => setLoading(false))
   }
 
@@ -50,10 +61,29 @@ function HomePage() {
           View Basket
         </Link>
       </div>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        {Object.entries(categoryLabels).map(([key, label]) => (
+          <button
+            key={key}
+            type="button"
+            onClick={() => {
+              setCategory(key)
+              loadProducts(searchQuery, key)
+            }}
+            className={`rounded-2xl px-4 py-2 text-sm font-semibold transition ${
+              category === key
+                ? 'bg-slate-900 text-white hover:bg-slate-800'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
       <form
         onSubmit={(event) => {
           event.preventDefault()
-          loadProducts(searchQuery)
+          loadProducts(searchQuery, category)
         }}
         className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"
       >
@@ -75,6 +105,7 @@ function HomePage() {
       {message ? (
         <div className="mt-6 rounded-xl bg-emerald-100 px-4 py-3 text-sm text-emerald-900">{message}</div>
       ) : null}
+      <div className="mt-2 text-sm text-slate-500">Showing: {categoryLabels[category]} products</div>
 
       {loading ? (
         <div className="mt-8 text-slate-500">Loading products...</div>
