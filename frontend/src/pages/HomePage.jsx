@@ -111,38 +111,42 @@ function HomePage() {
         <div className="mt-8 text-slate-500">Loading products...</div>
       ) : (
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => (
-            <div key={product.id} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="mb-4 h-48 overflow-hidden rounded-3xl bg-slate-100">
-                {product.image ? (
-                  <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
-                ) : (
-                  <div className="flex h-full items-center justify-center text-slate-400">No image</div>
-                )}
-              </div>
-              <div className="space-y-3">
-                <div>
-                  <h2 className="text-xl font-semibold text-slate-900">{product.name}</h2>
-                  <p className="text-sm text-slate-500">{product.product_type}</p>
+          {products.map((product) => {
+            const firstImage = (product.product_images || []).find((imageUrl) => imageUrl)
+
+            return (
+              <div key={product.id} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+                <div className="mb-4 h-48 overflow-hidden rounded-3xl bg-slate-100">
+                  {firstImage ? (
+                    <img src={firstImage} alt={product.name} className="h-full w-full object-cover" />
+                  ) : (
+                    <div className="flex h-full items-center justify-center text-slate-400">No image</div>
+                  )}
                 </div>
-                <div className="flex items-center justify-between gap-4">
-                  <span className="text-lg font-semibold text-slate-900">${product.price}</span>
-                  <Link
-                    to={`/product/${product.id}`}
-                    className="text-sm font-medium text-slate-700 hover:text-slate-900"
+                <div className="space-y-3">
+                  <div>
+                    <h2 className="text-xl font-semibold text-slate-900">{product.name}</h2>
+                    <p className="text-sm text-slate-500">{product.product_type}</p>
+                  </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-lg font-semibold text-slate-900">${product.price}</span>
+                    <Link
+                      to={`/product/${product.id}`}
+                      className="text-sm font-medium text-slate-700 hover:text-slate-900"
+                    >
+                      Details
+                    </Link>
+                  </div>
+                  <button
+                    onClick={() => handleAdd(product.id)}
+                    className="w-full rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700"
                   >
-                    Details
-                  </Link>
+                    Add to Basket
+                  </button>
                 </div>
-                <button
-                  onClick={() => handleAdd(product.id)}
-                  className="w-full rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700"
-                >
-                  Add to Basket
-                </button>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       )}
     </div>

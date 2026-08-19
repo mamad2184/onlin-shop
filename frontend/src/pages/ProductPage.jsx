@@ -10,6 +10,7 @@ function ProductPage() {
   const [message, setMessage] = useState('')
   const [newComment, setNewComment] = useState('')
   const [posting, setPosting] = useState(false)
+  const [imageIndex, setImageIndex] = useState(0)
 
   useEffect(() => {
     fetchProduct(id)
@@ -55,12 +56,41 @@ function ProductPage() {
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
         <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div className="rounded-[2rem] bg-slate-100 p-4">
-            <div className="overflow-hidden rounded-[1.75rem] bg-slate-200">
-              {product.image ? (
-                <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
-              ) : (
-                <div className="flex h-72 items-center justify-center text-slate-400">No image available</div>
-              )}
+            <div className="relative h-72 overflow-hidden rounded-[1.75rem] bg-slate-200 sm:h-[30rem]">
+              {(() => {
+                const images = (product.product_images || []).filter((imageUrl) => imageUrl)
+                if (images.length === 0) {
+                  return <div className="flex h-full items-center justify-center text-slate-400">No image</div>
+                }
+                const current = images[imageIndex % images.length]
+                return (
+                  <>
+                    <img src={current} alt={product.name} className="h-full w-full object-cover" />
+                    <button
+                      onClick={() => setImageIndex((i) => (i - 1 + images.length) % images.length)}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      onClick={() => setImageIndex((i) => (i + 1) % images.length)}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow"
+                    >
+                      ›
+                    </button>
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                      {images.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setImageIndex(idx)}
+                          className={`h-2 w-6 rounded-full ${idx === imageIndex ? 'bg-white' : 'bg-white/50'}`}
+                          aria-label={`Go to image ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )
+              })()}
             </div>
           </div>
           <div className="space-y-4">

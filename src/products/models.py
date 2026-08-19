@@ -34,7 +34,7 @@ class Product(models.Model):
     ]
     author=models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200)
-    image= models.ImageField(upload_to=product_image_path, blank=True, null=True)
+    # image= models.ImageField(upload_to=product_image_path, blank=True, null=True)
     slug = models.SlugField(max_length=220, unique=True)
     category = models.ManyToManyField(Category, related_name='products', blank=True)
     product_type = models.CharField(max_length=20, choices=PRODUCT_TYPE_CHOICES)
@@ -85,8 +85,16 @@ class ProductComment(models.Model):
     
 
 class ProductImage(models.Model):
-    image=models.ImageField(upload_to=product_image_path, blank=True, null=True)
-    product=models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_images")
+    image = models.ImageField(upload_to=product_image_path, blank=True, null=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_images")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["created_at", "id"]
+
+    def __str__(self):
+        return f"{self.product.name} image"
 
 
 class ProductVariant(models.Model):

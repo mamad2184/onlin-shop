@@ -19,17 +19,18 @@ from .serializers import ProductListSerializer, ProductDetailsSerializer, Produc
 class ProductListView(APIView):
     def get(self, request, product_type=None):
         search= request.query_params.get("search")
+        products = Product.objects.all()
+
         if product_type:
             if product_type in ["cloth", "shoe"]:
-                products=Product.objects.filter(product_type=product_type)
+                products=products.filter(product_type=product_type)
                 if search:
-                    products=Product.objects.filter(Q(product_type__icontains=product_type) & (Q(name__icontains=search) | Q(description__icontains=search) | Q(brand__icontains=search) | Q(category__name__icontains=search))).distinct()
+                    products=products.filter(Q(product_type__icontains=product_type) & (Q(name__icontains=search) | Q(description__icontains=search) | Q(brand__icontains=search) | Q(category__name__icontains=search))).distinct()
                 serializer=ProductListSerializer(products, many=True, context={"request": request})
                 return Response(serializer.data, status=status.HTTP_200_OK)
             return Response(status=status.HTTP_400_BAD_REQUEST)
-        products=Product.objects.all()
         if search:
-            products=Product.objects.filter(Q(name__icontains=search) | Q(description__icontains=search) | Q(brand__icontains=search) | Q(category__name__icontains=search)).distinct()
+            products=products.filter(Q(name__icontains=search) | Q(description__icontains=search) | Q(brand__icontains=search) | Q(category__name__icontains=search)).distinct()
         
         serializer=ProductListSerializer(products, many=True, context={"request":request})
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -41,7 +42,6 @@ class ProductDetailsView(APIView):
     def get(self, request, product_id):
         product_obj= get_object_or_404(Product, id= product_id)
         product_comments= product_obj.product_comments.filter(is_approved=True)
-        print(product_comments)
 
         serializer= ProductDetailsSerializer(product_obj, context={"request":request, "product_comments": product_comments})
         

@@ -10,6 +10,8 @@ export default defineConfig({
       '/get-token': 'http://127.0.0.1:8000',
       '/register': 'http://127.0.0.1:8000',
       '/mybasket-list': 'http://127.0.0.1:8000',
+      '/media': 'http://127.0.0.1:8000',
+      '/static': 'http://127.0.0.1:8000',
     },
   },
 })
