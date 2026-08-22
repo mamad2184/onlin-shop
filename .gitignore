@@ -2,7 +2,7 @@
 private_variables.*
 
 lx_env
-src/static
+ 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *cache*
