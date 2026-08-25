@@ -1,1 +1,1 @@
-web: gunicorn mp.wsgi
+web: gunicorn mp.wsgi --chdir src
