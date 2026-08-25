@@ -16,7 +16,7 @@ import os
 from dotenv import load_dotenv
 
 
-from . import local_settings
+# from . import local_settings
 
 
 
