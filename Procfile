@@ -1,1 +1,1 @@
-web: gunicorn mp.wsgi --chdir src
+web: cd src && python manage.py migrate && gunicorn mp.wsgi
