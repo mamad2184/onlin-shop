@@ -8,19 +8,64 @@ function ProductPage() {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
+  const [loadError, setLoadError] = useState('')
   const [newComment, setNewComment] = useState('')
   const [posting, setPosting] = useState(false)
   const [imageIndex, setImageIndex] = useState(0)
+  const [selectedColor, setSelectedColor] = useState('')
+  const [selectedSize, setSelectedSize] = useState('')
+  const [quantity, setQuantity] = useState(1)
+
+  const variants = Array.isArray(product?.variants) ? product.variants : []
+  const availableSizes = Array.isArray(product?.sizes) ? product.sizes : []
+  const availableColors = variants
+    .filter((variant) => variant.size === selectedSize && variant.is_available)
+    .map((variant) => variant.color)
+    .filter((color, index, colors) => colors.indexOf(color) === index)
+
+  const selectedVariant = variants.find(
+    (variant) =>
+      variant.color === selectedColor &&
+      variant.size === selectedSize &&
+      variant.is_available,
+  )
 
   useEffect(() => {
     fetchProduct(id)
-      .then((data) => setProduct(data))
+      .then((data) => {
+        if (!data || typeof data !== 'object') {
+          throw new Error('Invalid product response.')
+        }
+        setProduct(data)
+        const firstVariant = data?.variants?.[0]
+        if (firstVariant) {
+          setSelectedSize(firstVariant.size)
+          setSelectedColor('')
+        }
+      })
+      .catch((error) => {
+        setLoadError(error.response?.data?.detail || error.message || 'Unable to load this product.')
+      })
       .finally(() => setLoading(false))
   }, [id])
 
   const handleAdd = async () => {
-    const result = await addToBasket(id)
-    setMessage(result.message)
+    if (!selectedColor || !selectedSize) {
+      setMessage('Please choose both a color and a size before adding to basket.')
+      setTimeout(() => setMessage(''), 3000)
+      return
+    }
+
+    try {
+      const result = await addToBasket(id, {
+        color: selectedColor,
+        size: selectedSize,
+        quantity,
+      })
+      setMessage(result.message)
+    } catch (error) {
+      setMessage(error.response?.data?.message || error.response?.data?.detail || 'Unable to add this item to your basket.')
+    }
     setTimeout(() => setMessage(''), 3000)
   }
 
@@ -48,7 +93,7 @@ function ProductPage() {
   }
 
   if (!product) {
-    return <div className="text-slate-500">Product not found.</div>
+    return <div className="rounded-2xl bg-rose-50 p-4 text-rose-800">{loadError || 'Product not found.'}</div>
   }
 
   return (
@@ -58,7 +103,7 @@ function ProductPage() {
           <div className="rounded-[2rem] bg-slate-100 p-4">
             <div className="relative h-72 overflow-hidden rounded-[1.75rem] bg-slate-200 sm:h-[30rem]">
               {(() => {
-                const images = (product.product_images || []).filter((imageUrl) => imageUrl)
+                const images = (Array.isArray(product.product_images) ? product.product_images : []).filter((imageUrl) => imageUrl)
                 if (images.length === 0) {
                   return <div className="flex h-full items-center justify-center text-slate-400">No image</div>
                 }
@@ -99,14 +144,78 @@ function ProductPage() {
               <p className="mt-2 text-slate-600">{product.brand || 'Brand not specified'}</p>
             </div>
             <p className="text-slate-700">{product.description || 'No description provided.'}</p>
-            <div className="flex items-center justify-between gap-3">
+            <div className="space-y-4 rounded-3xl bg-slate-50 p-5">
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Price</p>
-                <p className="text-4xl font-semibold text-slate-900">${product.price}</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Size</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {availableSizes.map((size) => (
+                    <button
+                      key={size}
+                      type="button"
+                      onClick={() => {
+                        setSelectedSize(size)
+                        setSelectedColor('')
+                      }}
+                      className={`rounded-full border px-3 py-2 text-sm font-medium ${selectedSize === size ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-700'}`}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
               </div>
+
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  Color{selectedSize ? ` for size ${selectedSize}` : ''}
+                </p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {selectedSize ? (
+                    availableColors.length > 0 ? (
+                      availableColors.map((color) => (
+                        <button
+                          key={color}
+                          type="button"
+                          onClick={() => setSelectedColor(color)}
+                          className={`rounded-full border px-3 py-2 text-sm font-medium ${selectedColor === color ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-700'}`}
+                        >
+                          {color}
+                        </button>
+                      ))
+                    ) : (
+                      <p className="text-sm text-slate-500">No colors are available for this size.</p>
+                    )
+                  ) : (
+                    <p className="text-sm text-slate-500">Choose a size first.</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Price</p>
+                  <p className="text-4xl font-semibold text-slate-900">
+                    {selectedVariant
+                      ? `$${selectedVariant.price}`
+                      : selectedSize
+                        ? 'Please Select a Color'
+                        : 'Please Select a Size'}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <label className="text-sm font-medium text-slate-700">Qty</label>
+                  <input
+                    type="number"
+                    min="1"
+                    value={quantity}
+                    onChange={(e) => setQuantity(Math.max(1, Number(e.target.value) || 1))}
+                    className="w-20 rounded-lg border border-slate-200 p-2 text-center text-slate-900"
+                  />
+                </div>
+              </div>
+
               <button
                 onClick={handleAdd}
-                className="rounded-2xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-700"
+                className="w-full rounded-2xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-700"
               >
                 Add to Basket
               </button>
@@ -130,7 +239,7 @@ function ProductPage() {
       <div className="space-y-6">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-slate-900">Comments</h3>
-          {product?.comments && product.comments.length > 0 ? (
+          {Array.isArray(product?.comments) && product.comments.length > 0 ? (
             <ul className="mt-4 space-y-4">
               {product.comments.map((c) => (
                 <li key={c.id} className="rounded-lg border border-slate-100 p-4">

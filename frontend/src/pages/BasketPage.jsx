@@ -1,21 +1,20 @@
 import { useEffect, useState } from 'react'
-import { fetchBasket, deleteFromBasket, fetchProducts } from '../lib/api'
+import { fetchBasket, deleteFromBasket } from '../lib/api'
 
 function BasketPage() {
   const [items, setItems] = useState([])
-  const [productsById, setProductsById] = useState({})
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
 
   useEffect(() => {
-    Promise.all([fetchBasket(), fetchProducts()])
-      .then(([basketData, productData]) => {
-        setItems(basketData)
-        setProductsById(Object.fromEntries(productData.map((item) => [item.id, item])))
+    fetchBasket()
+      .then((basketData) => {
+        setItems(Array.isArray(basketData) ? basketData : [])
       })
       .catch((error) => {
-        setMessage(error.response?.data?.message || 'Unable to load basket. Log in to continue.')
-        setItems([])
+        const status = error.response?.status
+        const message = error.response?.data?.message || error.response?.data?.detail
+        setMessage(status === 401 ? 'Your login session has expired. Please log in again.' : message || 'Unable to load your basket.')
       })
       .finally(() => setLoading(false))
   }, [])
@@ -24,10 +23,7 @@ function BasketPage() {
     if (item.product && typeof item.product === 'object') {
       return item.product
     }
-    if (item.product) {
-      return productsById[item.product] || { id: item.product, name: `Product ${item.product}` }
-    }
-    return { id: item.id, name: 'Basket item', price: 'Unknown' }
+    return { id: item.product, name: `Product ${item.product}` }
   }
 
   const formatPrice = (value) => {
@@ -38,8 +34,7 @@ function BasketPage() {
   }
 
   const getItemTotal = (item) => {
-    const product = getProduct(item)
-    return typeof product.price === 'number' ? item.quantity * product.price : null
+    return typeof item.price === 'number' ? item.quantity * item.price : null
   }
 
   const basketTotal = items.reduce((total, item) => {
@@ -48,7 +43,7 @@ function BasketPage() {
   }, 0)
 
   const handleRemove = async (item) => {
-    const productId = item.product && typeof item.product === 'object' ? item.product.id : item.product
+    const productId = item.product?.id || item.product
     if (!productId) {
       setMessage('Unable to remove this item because product data is not available.')
       setTimeout(() => setMessage(''), 3000)
@@ -56,7 +51,10 @@ function BasketPage() {
     }
 
     try {
-      const result = await deleteFromBasket(productId)
+      const result = await deleteFromBasket(productId, {
+        color: item.color,
+        size: item.size,
+      })
       setMessage(result.message)
       setItems((prev) =>
         prev
@@ -111,7 +109,8 @@ function BasketPage() {
                     <div>
                       <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Product</p>
                       <p className="text-lg font-semibold text-slate-900">{product.name || `Product ${product.id}`}</p>
-                      <p className="mt-2 text-sm text-slate-600">Unit price: {formatPrice(product.price)}</p>
+                      <p className="mt-2 text-sm text-slate-600">Variant: {item.color || 'No color'} / {item.size || 'No size'}</p>
+                      <p className="text-sm text-slate-600">Unit price: {formatPrice(item.price)}</p>
                       <p className="text-sm text-slate-600">Line total: {itemTotal !== null ? formatPrice(itemTotal) : 'Unknown'}</p>
                     </div>
                     <div className="flex flex-col items-start gap-3 text-sm text-slate-600 sm:items-end">

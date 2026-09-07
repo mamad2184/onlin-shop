@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { fetchProducts, addToBasket } from '../lib/api'
+import { fetchProducts } from '../lib/api'
 
 const categoryLabels = {
   all: 'All',
@@ -14,12 +14,26 @@ function HomePage() {
   const [message, setMessage] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
   const [category, setCategory] = useState('all')
-  const token = localStorage.getItem('access_token')
+  const [page, setPage] = useState(1)
+  const [pagination, setPagination] = useState({ count: 0, next: null, previous: null })
 
-  const loadProducts = (search = '', selectedCategory = 'all') => {
+  const loadProducts = (search = '', selectedCategory = 'all', selectedPage = 1) => {
     setLoading(true)
-    fetchProducts(search, selectedCategory)
-      .then((data) => setProducts(data))
+    fetchProducts(search, selectedCategory, selectedPage)
+      .then((data) => {
+        const nextProducts = Array.isArray(data) ? data : data?.results
+        if (!Array.isArray(nextProducts)) {
+          throw new Error('Invalid product list response.')
+        }
+        setProducts(nextProducts)
+        setPage(selectedPage)
+        setPagination({
+          count: Array.isArray(data) ? nextProducts.length : data.count || 0,
+          next: Array.isArray(data) ? null : data.next,
+          previous: Array.isArray(data) ? null : data.previous,
+        })
+        setMessage('')
+      })
       .catch((error) => {
         setMessage(error.response?.data?.detail || error.message || 'Unable to load products.')
         setProducts([])
@@ -30,22 +44,6 @@ function HomePage() {
   useEffect(() => {
     loadProducts()
   }, [])
-
-  const handleAdd = async (productId) => {
-    if (!token) {
-      setMessage('Log in first to add products to your basket.')
-      setTimeout(() => setMessage(''), 3000)
-      return
-    }
-
-    try {
-      const result = await addToBasket(productId)
-      setMessage(result.message)
-    } catch (error) {
-      setMessage(error.response?.data?.message || 'Unable to add item to basket.')
-    }
-    setTimeout(() => setMessage(''), 3000)
-  }
 
   return (
     <div>
@@ -68,7 +66,7 @@ function HomePage() {
             type="button"
             onClick={() => {
               setCategory(key)
-              loadProducts(searchQuery, key)
+              loadProducts(searchQuery, key, 1)
             }}
             className={`rounded-2xl px-4 py-2 text-sm font-semibold transition ${
               category === key
@@ -83,7 +81,7 @@ function HomePage() {
       <form
         onSubmit={(event) => {
           event.preventDefault()
-          loadProducts(searchQuery, category)
+          loadProducts(searchQuery, category, 1)
         }}
         className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center"
       >
@@ -110,9 +108,16 @@ function HomePage() {
       {loading ? (
         <div className="mt-8 text-slate-500">Loading products...</div>
       ) : (
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => {
-            const firstImage = (product.product_images || []).find((imageUrl) => imageUrl)
+        <>
+          {products.length === 0 ? (
+            <div className="mt-8 rounded-3xl border border-dashed border-slate-300 bg-white p-8 text-slate-600">
+              No products found.
+            </div>
+          ) : (
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {products.map((product) => {
+            const firstImage = (Array.isArray(product.product_images) ? product.product_images : [])
+              .find((imageUrl) => imageUrl)
 
             return (
               <div key={product.id} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -129,7 +134,9 @@ function HomePage() {
                     <p className="text-sm text-slate-500">{product.product_type}</p>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-lg font-semibold text-slate-900">${product.price}</span>
+                    <span className="text-lg font-semibold text-slate-900">
+                      {product.price !== null && product.price !== undefined ? `$${product.price}` : 'No price'}
+                    </span>
                     <Link
                       to={`/product/${product.id}`}
                       className="text-sm font-medium text-slate-700 hover:text-slate-900"
@@ -137,17 +144,40 @@ function HomePage() {
                       Details
                     </Link>
                   </div>
-                  <button
-                    onClick={() => handleAdd(product.id)}
-                    className="w-full rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700"
+                  <Link
+                    to={`/product/${product.id}`}
+                    className="block w-full rounded-2xl bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-slate-700"
                   >
-                    Add to Basket
-                  </button>
+                    Choose options
+                  </Link>
                 </div>
               </div>
             )
-          })}
-        </div>
+              })}
+            </div>
+          )}
+          {(pagination.previous || pagination.next) ? (
+            <div className="mt-8 flex items-center justify-between gap-4">
+              <button
+                type="button"
+                disabled={!pagination.previous || loading}
+                onClick={() => loadProducts(searchQuery, category, page - 1)}
+                className="rounded-2xl bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Previous
+              </button>
+              <span className="text-sm text-slate-500">Page {page} · {pagination.count} products</span>
+              <button
+                type="button"
+                disabled={!pagination.next || loading}
+                onClick={() => loadProducts(searchQuery, category, page + 1)}
+                className="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Next
+              </button>
+            </div>
+          ) : null}
+        </>
       )}
     </div>
   )

@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-const API_BASE = import.meta.env.VITE_API_BASE || '/'
+const API_BASE = import.meta.env.VITE_API_BASE || (
+  import.meta.env.DEV ? '/' : 'https://onlin-shop-production.up.railway.app/'
+)
 const token = localStorage.getItem('access_token')
 
 const api = axios.create({
@@ -28,7 +30,7 @@ api.interceptors.response.use(
   },
 )
 
-export async function fetchProducts(search = '', category = 'all') {
+export async function fetchProducts(search = '', category = 'all', page = 1) {
   let url = '/products/'
   const params = {}
 
@@ -37,6 +39,9 @@ export async function fetchProducts(search = '', category = 'all') {
   }
   if (search) {
     params.search = search
+  }
+  if (page > 1) {
+    params.page = page
   }
 
   const response = await api.get(url, { params })
@@ -68,13 +73,13 @@ export async function fetchBasket() {
   return response.data
 }
 
-export async function addToBasket(productId) {
-  const response = await api.post(`/products/${productId}/add-basket/`)
+export async function addToBasket(productId, payload = {}) {
+  const response = await api.post(`/products/${productId}/add-basket/`, payload)
   return response.data
 }
 
-export async function deleteFromBasket(productId) {
-  const response = await api.post(`/products/${productId}/delete-basket/`)
+export async function deleteFromBasket(productId, payload = {}) {
+  const response = await api.post(`/products/${productId}/delete-basket/`, payload)
   return response.data
 }
 
