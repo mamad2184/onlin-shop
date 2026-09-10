@@ -1,1 +1,1 @@
-web: cd src && python manage.py migrate && python manage.py loaddata ../data.json && gunicorn mp.wsgi
+web: cd src && python manage.py migrate && python manage.py loaddata ../data_clean.json && gunicorn mp.wsgi
