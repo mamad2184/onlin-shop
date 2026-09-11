@@ -4,6 +4,7 @@ private_variables.*
 lx_env
 nots.txt
 *.json
+local_backup*
  
 # Byte-compiled / optimized / DLL files
 __pycache__/
