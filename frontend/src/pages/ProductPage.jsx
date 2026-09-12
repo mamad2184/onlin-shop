@@ -37,11 +37,6 @@ function ProductPage() {
           throw new Error('Invalid product response.')
         }
         setProduct(data)
-        const firstVariant = data?.variants?.[0]
-        if (firstVariant) {
-          setSelectedSize(firstVariant.size)
-          setSelectedColor('')
-        }
       })
       .catch((error) => {
         setLoadError(error.response?.data?.detail || error.message || 'Unable to load this product.')
@@ -52,6 +47,18 @@ function ProductPage() {
   const handleAdd = async () => {
     if (!selectedColor || !selectedSize) {
       setMessage('Please choose both a color and a size before adding to basket.')
+      setTimeout(() => setMessage(''), 3000)
+      return
+    }
+
+    if (!selectedVariant || selectedVariant.quantity <= 0) {
+      setMessage('This variant is out of stock.')
+      setTimeout(() => setMessage(''), 3000)
+      return
+    }
+
+    if (quantity > selectedVariant.quantity) {
+      setMessage(`Only ${selectedVariant.quantity} item${selectedVariant.quantity === 1 ? '' : 's'} available.`)
       setTimeout(() => setMessage(''), 3000)
       return
     }
@@ -200,6 +207,14 @@ function ProductPage() {
                         ? 'Please Select a Color'
                         : 'Please Select a Size'}
                   </p>
+                  <p className="mt-2 text-sm text-slate-600">
+                    Stock:{' '}
+                    {selectedVariant
+                      ? selectedVariant.quantity > 0
+                        ? selectedVariant.quantity
+                        : 'Out of stock'
+                      : 'Select a color'}
+                  </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <label className="text-sm font-medium text-slate-700">Qty</label>
@@ -226,8 +241,14 @@ function ProductPage() {
                 <p>{product.product_type}</p>
               </div>
               <div>
-                <p className="font-semibold text-slate-900">Quantity</p>
-                <p>{product.quantity}</p>
+                <p className="font-semibold text-slate-900">Variant stock</p>
+                <p>
+                  {selectedVariant
+                    ? selectedVariant.quantity > 0
+                      ? `${selectedVariant.quantity} available`
+                      : 'Out of stock'
+                    : 'Select size and color'}
+                </p>
               </div>
             </div>
           </div>
@@ -237,22 +258,6 @@ function ProductPage() {
         <div className="rounded-xl bg-emerald-100 px-4 py-3 text-sm text-emerald-900">{message}</div>
       ) : null}
       <div className="space-y-6">
-        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 className="text-lg font-semibold text-slate-900">Comments</h3>
-          {Array.isArray(product?.comments) && product.comments.length > 0 ? (
-            <ul className="mt-4 space-y-4">
-              {product.comments.map((c) => (
-                <li key={c.id} className="rounded-lg border border-slate-100 p-4">
-                  <p className="text-sm text-slate-700">{c.comment}</p>
-                  <div className="mt-2 text-xs text-slate-500">By {c.user?.username || 'User'} • {new Date(c.created_at).toLocaleString()}</div>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="mt-4 text-sm text-slate-600">No comments yet.</p>
-          )}
-        </div>
-
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-slate-900">Add a comment</h3>
           <form onSubmit={handleCommentSubmit} className="mt-4">
@@ -273,6 +278,22 @@ function ProductPage() {
               </button>
             </div>
           </form>
+        </div>
+
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 className="text-lg font-semibold text-slate-900">Comments</h3>
+          {Array.isArray(product?.comments) && product.comments.length > 0 ? (
+            <ul className="mt-4 space-y-4">
+              {product.comments.map((c) => (
+                <li key={c.id} className="rounded-lg border border-slate-100 p-4">
+                  <p className="text-sm text-slate-700">{c.comment}</p>
+                  <div className="mt-2 text-xs text-slate-500">By {c.user?.username || 'User'} • {new Date(c.created_at).toLocaleString()}</div>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="mt-4 text-sm text-slate-600">No comments yet.</p>
+          )}
         </div>
       </div>
     </div>

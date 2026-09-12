@@ -115,6 +115,16 @@ class ProductDetailsView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+
+
+class ProductCommentListView(APIView):
+    def get(self, request, product_id):
+        pass
+
+
+
+
+
 class AddCommentView(APIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
 

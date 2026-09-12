@@ -52,7 +52,7 @@ class ProductDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ["id", "name", "slug", "category", "product_type", "brand", \
-            "description", "quantity", "created_at", "updated_at", "product_images", \
+            "description", "created_at", "updated_at", "product_images", \
             "comments", "colors", "sizes", "variants"]
 
     def get_product_images(self, obj):
