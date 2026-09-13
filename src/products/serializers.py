@@ -43,7 +43,6 @@ class ProductListSerializer(serializers.ModelSerializer):
 
 
 class ProductDetailsSerializer(serializers.ModelSerializer):
-    comments = serializers.SerializerMethodField()
     product_images = serializers.SerializerMethodField()
     colors = serializers.SerializerMethodField()
     sizes = serializers.SerializerMethodField()
@@ -53,7 +52,7 @@ class ProductDetailsSerializer(serializers.ModelSerializer):
         model = Product
         fields = ["id", "name", "slug", "category", "product_type", "brand", \
             "description", "created_at", "updated_at", "product_images", \
-            "comments", "colors", "sizes", "variants"]
+            "colors", "sizes", "variants"]
 
     def get_product_images(self, obj):
         product_images = list(
@@ -77,11 +76,6 @@ class ProductDetailsSerializer(serializers.ModelSerializer):
 
     def get_variants(self, obj):
         return self.context.get("variants", [])
-
-    def get_comments(self, obj):
-        product_comments=self.context.get("product_comments")
-        serializer=ProductCommentSerializer(product_comments, many=True)
-        return serializer.data
  
 
 

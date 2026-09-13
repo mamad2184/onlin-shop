@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { fetchProduct, addToBasket } from '../lib/api'
-import { addComment } from '../lib/api'
+import { addComment, addToBasket, fetchProduct, fetchProductComments } from '../lib/api'
 
 function ProductPage() {
   const { id } = useParams()
   const [product, setProduct] = useState(null)
+  const [comments, setComments] = useState([])
+  const [commentsPage, setCommentsPage] = useState(1)
+  const [commentsPagination, setCommentsPagination] = useState({ count: 0, next: null, previous: null })
   const [loading, setLoading] = useState(true)
+  const [commentsLoading, setCommentsLoading] = useState(true)
   const [message, setMessage] = useState('')
   const [loadError, setLoadError] = useState('')
+  const [commentsError, setCommentsError] = useState('')
   const [newComment, setNewComment] = useState('')
   const [posting, setPosting] = useState(false)
   const [imageIndex, setImageIndex] = useState(0)
@@ -42,7 +46,33 @@ function ProductPage() {
         setLoadError(error.response?.data?.detail || error.message || 'Unable to load this product.')
       })
       .finally(() => setLoading(false))
+
+    loadComments(1)
   }, [id])
+
+  const loadComments = (page = 1) => {
+    setCommentsLoading(true)
+    fetchProductComments(id, page)
+      .then((data) => {
+        const nextComments = Array.isArray(data) ? data : data?.results
+        if (!Array.isArray(nextComments)) {
+          throw new Error('Invalid comments response.')
+        }
+        setComments(nextComments)
+        setCommentsPage(page)
+        setCommentsPagination({
+          count: Array.isArray(data) ? nextComments.length : data.count || 0,
+          next: Array.isArray(data) ? null : data.next,
+          previous: Array.isArray(data) ? null : data.previous,
+        })
+        setCommentsError('')
+      })
+      .catch((error) => {
+        setCommentsError(error.response?.data?.detail || error.message || 'Unable to load comments.')
+        setComments([])
+      })
+      .finally(() => setCommentsLoading(false))
+  }
 
   const handleAdd = async () => {
     if (!selectedColor || !selectedSize) {
@@ -84,9 +114,7 @@ function ProductPage() {
       const res = await addComment(id, newComment.trim())
       setMessage(res.message || 'Comment added')
       setNewComment('')
-      // refresh product to get latest comments
-      const refreshed = await fetchProduct(id)
-      setProduct(refreshed)
+      loadComments(1)
     } catch (err) {
       setMessage(err.response?.data?.message || 'Unable to add comment.')
     } finally {
@@ -282,9 +310,13 @@ function ProductPage() {
 
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-slate-900">Comments</h3>
-          {Array.isArray(product?.comments) && product.comments.length > 0 ? (
+          {commentsLoading ? (
+            <p className="mt-4 text-sm text-slate-500">Loading comments...</p>
+          ) : commentsError ? (
+            <p className="mt-4 text-sm text-rose-700">{commentsError}</p>
+          ) : comments.length > 0 ? (
             <ul className="mt-4 space-y-4">
-              {product.comments.map((c) => (
+              {comments.map((c) => (
                 <li key={c.id} className="rounded-lg border border-slate-100 p-4">
                   <p className="text-sm text-slate-700">{c.comment}</p>
                   <div className="mt-2 text-xs text-slate-500">By {c.user?.username || 'User'} • {new Date(c.created_at).toLocaleString()}</div>
@@ -294,6 +326,27 @@ function ProductPage() {
           ) : (
             <p className="mt-4 text-sm text-slate-600">No comments yet.</p>
           )}
+          {(commentsPagination.previous || commentsPagination.next) ? (
+            <div className="mt-6 flex items-center justify-between gap-4">
+              <button
+                type="button"
+                disabled={!commentsPagination.previous || commentsLoading}
+                onClick={() => loadComments(commentsPage - 1)}
+                className="rounded-2xl bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Previous
+              </button>
+              <span className="text-sm text-slate-500">Page {commentsPage} · {commentsPagination.count} comments</span>
+              <button
+                type="button"
+                disabled={!commentsPagination.next || commentsLoading}
+                onClick={() => loadComments(commentsPage + 1)}
+                className="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Next
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

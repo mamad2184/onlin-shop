@@ -16,12 +16,7 @@ from .serializers import ProductListSerializer, ProductDetailsSerializer, Produc
 
 
 
-
-class ProductPagination(PageNumberPagination):
-    page_size = 10
-    page_size_query_param = "page_size"
-    max_page_size = 50
-
+ 
 
 class ProductListView(APIView):
     def get(self, request, product_type=None):
@@ -53,7 +48,7 @@ class ProductListView(APIView):
                 Q(category__name__icontains=search)
             ).distinct()
 
-        paginator = ProductPagination()
+        paginator = PageNumberPagination()
         page = paginator.paginate_queryset(products, request)
 
         serializer = ProductListSerializer(
@@ -71,7 +66,6 @@ class ProductDetailsView(APIView):
     def get(self, request, product_id):
         product_obj = get_object_or_404(Product, id=product_id)
 
-        product_comments = product_obj.product_comments.filter(is_approved=True)
 
         product_colors_available = []
         product_sizes_available = []
@@ -105,7 +99,6 @@ class ProductDetailsView(APIView):
             product_obj,
             context={
                 "request": request,
-                "product_comments": product_comments,
                 "colors": product_colors_available,
                 "sizes": product_sizes_available,
                 "variants": product_variants_available,
@@ -116,10 +109,30 @@ class ProductDetailsView(APIView):
 
 
 
-
 class ProductCommentListView(APIView):
+
     def get(self, request, product_id):
-        pass
+        product = get_object_or_404(Product, id=product_id)
+
+        comments = product.product_comments.filter(
+            is_approved=True
+        )
+
+        paginator = PageNumberPagination()
+
+        paginated_comments = paginator.paginate_queryset(
+            comments,
+            request
+        )
+
+        serializer = ProductCommentSerializer(
+            paginated_comments,
+            many=True
+        )
+
+        return paginator.get_paginated_response(
+            serializer.data
+        )
 
 
 

@@ -53,6 +53,13 @@ export async function fetchProduct(id) {
   return response.data
 }
 
+export async function fetchProductComments(productId, page = 1) {
+  const response = await api.get(`/products/${productId}/comments/`, {
+    params: { page },
+  })
+  return response.data
+}
+
 export async function addComment(productId, comment) {
   const response = await api.post(`/products/${productId}/add-comment/`, { comment })
   return response.data
