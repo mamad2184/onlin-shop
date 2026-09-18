@@ -51,9 +51,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'orders',
-    'products',
+    # 'products',
     'accounts',
     'baskets',
+    'products.apps.ProductsConfig',
 ]
 
 MIDDLEWARE = [

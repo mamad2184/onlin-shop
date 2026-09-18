@@ -75,6 +75,11 @@ export async function addCommentReply(commentId, text, parent = null) {
   return response.data
 }
 
+export async function rateProduct(productId, rating) {
+  const response = await api.post(`/products/${productId}/rate/`, { rating })
+  return response.data
+}
+
 export async function loginUser(username, password) {
   const response = await api.post('/get-token/', { username, password })
   return response.data

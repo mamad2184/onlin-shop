@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from django.db import IntegrityError
 
 
 from rest_framework.views import APIView
@@ -11,9 +12,9 @@ from rest_framework.pagination import PageNumberPagination
 
 
 
-from .models import Product, ProductComment, CommentReply
-from .serializers import ProductListSerializer, ProductDetailsSerializer, ProductCommentSerializer, CommentReplySerializer
-
+from .models import Product, ProductComment, CommentReply, ProductRating
+from .serializers import ProductListSerializer, ProductDetailsSerializer, ProductCommentSerializer, CommentReplySerializer,\
+ProductRatingSerializer
 
  
 
@@ -223,4 +224,102 @@ class DeleteCommentView(APIView):
         return Response(
             {"message": "Comment deleted successfully."},
             status=status.HTTP_204_NO_CONTENT
+        )
+ 
+
+class RateProductView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, product_id):
+        product = get_object_or_404(Product, id=product_id)
+
+        rating = ProductRating.objects.filter(
+            product=product,
+            user=request.user
+        ).first()
+
+        if rating:
+            serializer = ProductRatingSerializer(
+                rating,
+                data=request.data
+            )
+        else:
+            serializer = ProductRatingSerializer(
+                data=request.data
+            )
+
+        serializer.is_valid(raise_exception=True)
+
+        try:
+            if rating:
+                serializer.save()
+                message = "Rating updated successfully."
+            else:
+                serializer.save(
+                    product=product,
+                    user=request.user
+                )
+                message = "Rating submitted successfully."
+
+        except IntegrityError:
+            return Response(
+                {"detail": "Unable to save rating."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        product.refresh_from_db(
+            fields=[
+                "average_rating",
+                "ratings_count",
+                "rating_breakdown",
+            ]
+        )
+
+        return Response(
+            {
+                "detail": message,
+                "rating": serializer.data,
+                "average_rating": product.average_rating,
+                "ratings_count": product.ratings_count,
+                "rating_breakdown": product.rating_breakdown,
+            },
+            status=status.HTTP_200_OK,
+        )
+
+
+class DeleteProductRatingView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, product_id):
+        product = get_object_or_404(Product, id=product_id)
+
+        rating = ProductRating.objects.filter(
+            product=product,
+            user=request.user
+        ).first()
+
+        if not rating:
+            return Response(
+                {"detail": "You have not rated this product."},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+
+        rating.delete()
+
+        product.refresh_from_db(
+            fields=[
+                "average_rating",
+                "ratings_count",
+                "rating_breakdown",
+            ]
+        )
+
+        return Response(
+            {
+                "detail": "Rating deleted successfully.",
+                "average_rating": product.average_rating,
+                "ratings_count": product.ratings_count,
+                "rating_breakdown": product.rating_breakdown,
+            },
+            status=status.HTTP_200_OK,
         )

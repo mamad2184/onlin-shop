@@ -6,7 +6,7 @@ from rest_framework import serializers
 
 
 from accounts.serializers import CustomUserSerializer
-from .models import Product,ProductComment, CommentReply
+from .models import Product,ProductComment, CommentReply, ProductRating
 
 
 
@@ -14,11 +14,14 @@ class ProductListSerializer(serializers.ModelSerializer):
     product_images = serializers.SerializerMethodField()
     price = serializers.SerializerMethodField()
     is_available = serializers.SerializerMethodField()
+    average_rating = serializers.FloatField(read_only=True)
+    ratings_count = serializers.IntegerField(read_only=True)
 
     class Meta:
         model = Product
         fields = ["id", "name", "slug", "category", "product_type", \
-            "updated_at", "product_images", "price", "is_available"]
+            "updated_at", "product_images", "price", "is_available", \
+            "average_rating", "ratings_count"]
 
     def get_price(self, obj):
         variants = obj.productclothvariant if obj.product_type == "cloth" else obj.productshoesvariant
@@ -61,13 +64,27 @@ class ProductDetailsSerializer(serializers.ModelSerializer):
     variants = serializers.SerializerMethodField()
     is_discount_active = serializers.SerializerMethodField()
 
+    average_rating = serializers.FloatField(read_only=True)
+    ratings_count = serializers.IntegerField(read_only=True)
+    rating_breakdown = serializers.JSONField(read_only=True)
+    user_rating = serializers.SerializerMethodField()
+
+    def get_user_rating(self, obj):
+        request = self.context.get("request")
+
+        if not request or not request.user.is_authenticated:
+            return None
+
+        rating = obj.ratings.filter(user=request.user).first()
+        return rating.rating if rating else None
 
     class Meta:
         model = Product
         fields = ["id", "name", "slug", "category", "product_type", "brand", \
             "description", "created_at", "updated_at", "product_images", \
             "colors", "sizes", "variants", "discount_percentage", \
-            "discount_start", "discount_end", "is_discount_active"]
+            "discount_start", "discount_end", "is_discount_active",\
+            "average_rating", "ratings_count", "rating_breakdown","user_rating",]
 
     def get_product_images(self, obj):
         product_images = list(
@@ -135,7 +152,19 @@ class CommentReplySerializer(serializers.ModelSerializer):
         return attrs
 
 
+class ProductRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductRating
+        fields = ["id", "rating", "created_at"]
+        read_only_fields = ["id", "created_at"]
 
+    def validate_rating(self, value):
+        if value < 1 or value > 5:
+            raise serializers.ValidationError(
+                "Rating must be between 1 and 5."
+            )
+        return value
+    
 # class ProductVariantSerializer(serializers.ModelSerializer):
 
 #     class Meta:

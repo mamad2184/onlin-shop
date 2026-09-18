@@ -8,6 +8,7 @@ from .models import (
     Color,
     Category,
     ProductComment,
+    ProductRating,
 )
 
 
@@ -53,7 +54,13 @@ class ColorAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("name", "product_type", "brand")
+    list_display = (
+        "name",
+        "product_type",
+        "brand",
+        "average_rating",
+        "ratings_count",
+    )
     search_fields = ("name", "slug", "brand")
     list_filter = ("product_type", "brand")
     inlines = [
@@ -89,6 +96,24 @@ class ProductShoeVariantAdmin(admin.ModelAdmin):
     )
     list_filter = ("size", "color", "is_available")
     search_fields = ("sku", "product__name", "color__name")
+
+
+@admin.register(ProductRating)
+class ProductRatingAdmin(admin.ModelAdmin):
+    list_display = (
+        "product",
+        "user",
+        "rating",
+        "created_at",
+    )
+    list_filter = ("rating",)
+    search_fields = (
+        "product__name",
+        "product__slug",
+        "user__username",
+    )
+    readonly_fields = ("created_at",)
+    ordering = ("-created_at",)
 
 
 admin.site.register(Category)

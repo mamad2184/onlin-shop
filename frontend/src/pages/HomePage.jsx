@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchProducts } from '../lib/api'
+import RatingStars from '../components/RatingStars'
 
 const categoryLabels = {
   all: 'All',
@@ -141,6 +142,7 @@ function HomePage() {
                       ) : null}
                     </div>
                     <p className="text-sm text-slate-500">{product.product_type}</p>
+                    <RatingStars value={product.average_rating} count={product.ratings_count} />
                   </div>
                   <div className="flex items-center justify-between gap-4">
                     {product.price && typeof product.price === 'object' ? (

@@ -3,9 +3,10 @@ import re
 
 from django.db import models, transaction
 from django.contrib.auth import get_user_model
+from django.contrib.postgres.fields import JSONField
 from django.core.exceptions import ValidationError
 from django.utils import timezone
-from django.core.validators import MaxValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 from utils.products.models import product_image_path
 
@@ -79,6 +80,10 @@ class Product(models.Model):
         blank=True,
     )
     description = models.TextField(blank=True)
+    
+    average_rating = models.FloatField(default=0)
+    ratings_count = models.PositiveIntegerField(default=0)
+    rating_breakdown = models.JSONField(default=dict)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -515,3 +520,32 @@ class ProductShoeVariant(models.Model):
     def __str__(self):
         return f"{self.product.name} - {self.size} - {self.color.name}"
 
+
+
+class ProductRating(models.Model):
+    user = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        related_name="product_ratings",
+    )
+    product = models.ForeignKey(
+        "products.Product",
+        on_delete=models.CASCADE,
+        related_name="ratings",
+    )
+    rating = models.PositiveSmallIntegerField(
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(5),
+        ]
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "product"],
+                name="unique_user_product_rating",
+            )
+        ]
+        ordering = ["-created_at"]

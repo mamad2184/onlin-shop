@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { addComment, addCommentReply, addToBasket, fetchCommentReplies, fetchProduct, fetchProductComments } from '../lib/api'
+import { addComment, addCommentReply, addToBasket, fetchCommentReplies, fetchProduct, fetchProductComments, rateProduct } from '../lib/api'
+import RatingStars from '../components/RatingStars'
 
 function ProductPage() {
   const { id } = useParams()
@@ -19,6 +20,7 @@ function ProductPage() {
   const [replyTarget, setReplyTarget] = useState(null)
   const [replyText, setReplyText] = useState('')
   const [replyPosting, setReplyPosting] = useState(false)
+  const [ratingPosting, setRatingPosting] = useState(false)
   const [imageIndex, setImageIndex] = useState(0)
   const [selectedColor, setSelectedColor] = useState('')
   const [selectedSize, setSelectedSize] = useState('')
@@ -175,6 +177,26 @@ function ProductPage() {
     setTimeout(() => setMessage(''), 3000)
   }
 
+  const handleRatingChange = async (rating) => {
+    setRatingPosting(true)
+    try {
+      const result = await rateProduct(id, rating)
+      setProduct((current) => ({
+        ...current,
+        average_rating: result.average_rating,
+        ratings_count: result.ratings_count,
+        rating_breakdown: result.rating_breakdown,
+        user_rating: rating,
+      }))
+      setMessage('Rating saved')
+    } catch (error) {
+      setMessage(error.response?.data?.detail || 'Please log in to rate this product.')
+    } finally {
+      setRatingPosting(false)
+      setTimeout(() => setMessage(''), 3000)
+    }
+  }
+
   const handleCommentSubmit = async (e) => {
     e.preventDefault()
     if (!newComment.trim()) return
@@ -254,6 +276,15 @@ function ProductPage() {
               <p className="mt-2 text-slate-600">{product.brand || 'Brand not specified'}</p>
             </div>
             <p className="text-slate-700">{product.description || 'No description provided.'}</p>
+            <div className="flex flex-wrap items-center gap-4">
+              <RatingStars value={product.average_rating} count={product.ratings_count} />
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Your rating</p>
+                <div className={ratingPosting ? 'pointer-events-none opacity-50' : ''}>
+                  <RatingStars value={product.user_rating} interactive onChange={handleRatingChange} />
+                </div>
+              </div>
+            </div>
             <div className="space-y-4 rounded-3xl bg-slate-50 p-5">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Size</p>
