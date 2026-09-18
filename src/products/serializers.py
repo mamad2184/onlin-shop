@@ -6,22 +6,34 @@ from rest_framework import serializers
 
 
 from accounts.serializers import CustomUserSerializer
-from .models import Product,ProductComment
+from .models import Product,ProductComment, CommentReply
 
 
 
 class ProductListSerializer(serializers.ModelSerializer):
     product_images = serializers.SerializerMethodField()
     price = serializers.SerializerMethodField()
+    is_available = serializers.SerializerMethodField()
 
     class Meta:
         model = Product
         fields = ["id", "name", "slug", "category", "product_type", \
-            "updated_at", "product_images", "price"]
+            "updated_at", "product_images", "price", "is_available"]
 
     def get_price(self, obj):
         variants = obj.productclothvariant if obj.product_type == "cloth" else obj.productshoesvariant
-        return variants.filter(is_available=True).values_list("price", flat=True).order_by("price").first()
+        variant = variants.filter(is_available=True).order_by("price").first()
+        if not variant:
+            return None
+        return {
+            "original_price": variant.price,
+            "final_price": variant.final_price,
+            "discount_percentage": obj.discount_percentage if obj.is_discount_active else 0,
+        }
+
+    def get_is_available(self, obj):
+        variants = obj.productclothvariant if obj.product_type == "cloth" else obj.productshoesvariant
+        return variants.filter(is_available=True, quantity__gt=0).exists()
 
     def get_product_images(self, obj):
         product_images = list(
@@ -36,9 +48,9 @@ class ProductListSerializer(serializers.ModelSerializer):
                 if url:
                     image_urls.append(url)
         return image_urls
-        
 
-        
+
+
 
 
 
@@ -47,12 +59,15 @@ class ProductDetailsSerializer(serializers.ModelSerializer):
     colors = serializers.SerializerMethodField()
     sizes = serializers.SerializerMethodField()
     variants = serializers.SerializerMethodField()
+    is_discount_active = serializers.SerializerMethodField()
+
 
     class Meta:
         model = Product
         fields = ["id", "name", "slug", "category", "product_type", "brand", \
             "description", "created_at", "updated_at", "product_images", \
-            "colors", "sizes", "variants"]
+            "colors", "sizes", "variants", "discount_percentage", \
+            "discount_start", "discount_end", "is_discount_active"]
 
     def get_product_images(self, obj):
         product_images = list(
@@ -76,7 +91,10 @@ class ProductDetailsSerializer(serializers.ModelSerializer):
 
     def get_variants(self, obj):
         return self.context.get("variants", [])
- 
+
+    def get_is_discount_active(self, obj):
+        return obj.is_discount_active
+
 
 
 
@@ -92,6 +110,30 @@ class ProductCommentSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
         )
+
+
+class CommentReplySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CommentReply
+        fields = ["id", "comment", "parent", "user", "text", "created_at"]
+        read_only_fields = ["id", "user", "created_at", "comment"]
+
+    def validate(self, attrs):
+        parent = attrs.get("parent")
+        comment = self.context.get("comment")
+
+        if parent:
+            # Parent reply must belong to the same comment
+            if parent.comment_id != comment.id:
+                raise serializers.ValidationError(
+                    "Parent reply does not belong to this comment."
+                )
+
+        if not attrs.get("text"):
+            raise serializers.ValidationError("Reply text is required.")
+
+        return attrs
+
 
 
 # class ProductVariantSerializer(serializers.ModelSerializer):

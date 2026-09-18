@@ -4,6 +4,8 @@ import re
 from django.db import models, transaction
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
+from django.utils import timezone
+from django.core.validators import MaxValueValidator
 
 from utils.products.models import product_image_path
 
@@ -24,6 +26,8 @@ class Category(models.Model):
         return self.name
 
 
+def default_discount_end():
+    return timezone.now() + timezone.timedelta(days=7)
 class Product(models.Model):
     PRODUCT_TYPE_CHOICES = [
         ("cloth", "Clothe"),
@@ -57,6 +61,18 @@ class Product(models.Model):
         max_length=20,
         choices=PRODUCT_TYPE_CHOICES,
     )
+
+    discount_percentage = models.PositiveSmallIntegerField(
+        default=0,
+        validators=[MaxValueValidator(100)],
+    )
+
+    discount_start = models.DateTimeField(default=timezone.now, blank=True)
+    discount_end = models.DateTimeField(default=default_discount_end, blank=True)
+
+
+    
+    
     brand = models.CharField(
         max_length=100,
         choices=BRAND_CHOICES,
@@ -69,6 +85,20 @@ class Product(models.Model):
 
     class Meta:
         ordering = ["-created_at"]
+
+
+
+    @property
+    def is_discount_active(self):
+        if not self.discount_percentage:
+            return False
+        now = timezone.now()
+        if self.discount_start and now < self.discount_start:
+            return False
+        if self.discount_end and now > self.discount_end:
+            return False
+        return True
+        
 
     def __str__(self):
         return f"{self.name}--> {self.product_type} of {self.brand}"
@@ -114,6 +144,35 @@ class ProductComment(models.Model):
 
     def __str__(self):
         return f"{self.product} - {self.comment}"
+    
+ 
+class CommentReply(models.Model):
+    comment = models.ForeignKey(
+        ProductComment,
+        on_delete=models.CASCADE,
+        related_name="replies"
+    )
+    parent = models.ForeignKey(
+        "self",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="children"
+    )
+    user = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        related_name="comment_replies"
+    )
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created_at"]
+
+    def __str__(self):
+        return f"Reply by {self.user} on comment {self.comment_id}"
+
 
 
 class ProductImage(models.Model):
@@ -191,12 +250,13 @@ class ProductClothVariant(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        constraints = [
-            models.UniqueConstraint(
-                fields=["product", "size", "color"],
-                name="unique_cloth_variant_combo",
-            )
-        ]
+        # constraints = [
+        #     models.UniqueConstraint(
+        #         fields=["product", "size", "color"],
+        #         name="unique_cloth_variant_combo",
+        #     )
+        # ]
+        pass
 
     def generate_sku(self):
         if not self.product_id or not self.size or not self.color_id:
@@ -226,6 +286,12 @@ class ProductClothVariant(models.Model):
             candidate = f"{base}-{suffix}"
 
         return candidate
+
+    @property
+    def final_price(self):
+        if self.product.is_discount_active:
+            return round(self.price * (100 - self.product.discount_percentage) / 100)
+        return self.price
 
     def clean(self):
         if not self.product_id:
@@ -338,12 +404,13 @@ class ProductShoeVariant(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        constraints = [
-            models.UniqueConstraint(
-                fields=["product", "size", "color"],
-                name="unique_shoe_variant_combo",
-            )
-        ]
+        # constraints = [
+        #     models.UniqueConstraint(
+        #         fields=["product", "size", "color"],
+        #         name="unique_shoe_variant_combo",
+        #     )
+        # ]
+        pass
 
     def generate_sku(self):
         if not self.product_id or not self.size or not self.color_id:
@@ -373,6 +440,12 @@ class ProductShoeVariant(models.Model):
             candidate = f"{base}-{suffix}"
 
         return candidate
+
+    @property
+    def final_price(self):
+        if self.product.is_discount_active:
+            return round(self.price * (100 - self.product.discount_percentage) / 100)
+        return self.price
 
     def clean(self):
         if not self.product_id:

@@ -11,9 +11,8 @@ from rest_framework.pagination import PageNumberPagination
 
 
 
-from .models import Product, ProductComment
-from .serializers import ProductListSerializer, ProductDetailsSerializer, ProductCommentSerializer
-
+from .models import Product, ProductComment, CommentReply
+from .serializers import ProductListSerializer, ProductDetailsSerializer, ProductCommentSerializer, CommentReplySerializer
 
 
  
@@ -92,6 +91,7 @@ class ProductDetailsView(APIView):
                 "quantity": variant_obj.quantity,
                 "is_available": variant_obj.is_available,
                 "price": variant_obj.price,
+                "final_price": variant_obj.final_price,
                 "sku": variant_obj.sku,
             })
 
@@ -134,7 +134,51 @@ class ProductCommentListView(APIView):
             serializer.data
         )
 
+class CommentReplyView(APIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
 
+    def get(self, request, comment_id):
+        comment = get_object_or_404(ProductComment, pk=comment_id)
+        replies = comment.replies.select_related("user").all()
+        serializer = CommentReplySerializer(replies, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, comment_id):
+        try:
+            comment = ProductComment.objects.get(pk=comment_id)
+        except ProductComment.DoesNotExist:
+            return Response(
+                {"detail": "Comment not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        product = comment.product  # get the product of this comment
+
+        # Limit: max 5 replies per user per product
+        user_reply_count = CommentReply.objects.filter(
+            comment__product=product,
+            user=request.user
+        ).count()
+
+        if user_reply_count >= 5:
+            return Response(
+                {"detail": "You have reached the maximum of 5 replies for this product."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        serializer = CommentReplySerializer(
+            data=request.data,
+            context={"comment": comment}
+        )
+
+        if serializer.is_valid():
+            serializer.save(
+                user=request.user,
+                comment=comment
+            )
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 

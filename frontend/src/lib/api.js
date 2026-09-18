@@ -65,6 +65,16 @@ export async function addComment(productId, comment) {
   return response.data
 }
 
+export async function fetchCommentReplies(commentId) {
+  const response = await api.get(`/comments/${commentId}/replies/`)
+  return response.data
+}
+
+export async function addCommentReply(commentId, text, parent = null) {
+  const response = await api.post(`/comments/${commentId}/replies/`, { text, parent })
+  return response.data
+}
+
 export async function loginUser(username, password) {
   const response = await api.post('/get-token/', { username, password })
   return response.data

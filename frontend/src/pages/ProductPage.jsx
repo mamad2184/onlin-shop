@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { addComment, addToBasket, fetchProduct, fetchProductComments } from '../lib/api'
+import { addComment, addCommentReply, addToBasket, fetchCommentReplies, fetchProduct, fetchProductComments } from '../lib/api'
 
 function ProductPage() {
   const { id } = useParams()
@@ -15,10 +15,15 @@ function ProductPage() {
   const [commentsError, setCommentsError] = useState('')
   const [newComment, setNewComment] = useState('')
   const [posting, setPosting] = useState(false)
+  const [replies, setReplies] = useState({})
+  const [replyTarget, setReplyTarget] = useState(null)
+  const [replyText, setReplyText] = useState('')
+  const [replyPosting, setReplyPosting] = useState(false)
   const [imageIndex, setImageIndex] = useState(0)
   const [selectedColor, setSelectedColor] = useState('')
   const [selectedSize, setSelectedSize] = useState('')
   const [quantity, setQuantity] = useState(1)
+  const [timeLeft, setTimeLeft] = useState('')
 
   const variants = Array.isArray(product?.variants) ? product.variants : []
   const availableSizes = Array.isArray(product?.sizes) ? product.sizes : []
@@ -33,6 +38,40 @@ function ProductPage() {
       variant.size === selectedSize &&
       variant.is_available,
   )
+
+  const formatPrice = (value) => (typeof value === 'number' ? `$${value.toFixed(2)}` : 'Price unavailable')
+
+  useEffect(() => {
+    if (!product?.is_discount_active || !product.discount_end) {
+      setTimeLeft('')
+      return undefined
+    }
+
+    const updateTimeLeft = () => {
+      const remaining = new Date(product.discount_end).getTime() - Date.now()
+      if (remaining <= 0) {
+        setTimeLeft('Discount ended')
+        return false
+      }
+
+      const totalSeconds = Math.floor(remaining / 1000)
+      const days = Math.floor(totalSeconds / 86400)
+      const hours = Math.floor((totalSeconds % 86400) / 3600)
+      const minutes = Math.floor((totalSeconds % 3600) / 60)
+      const seconds = totalSeconds % 60
+      setTimeLeft(`${days}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`)
+      return true
+    }
+
+    updateTimeLeft()
+    const timer = window.setInterval(() => {
+      if (!updateTimeLeft()) {
+        window.clearInterval(timer)
+      }
+    }, 1000)
+
+    return () => window.clearInterval(timer)
+  }, [product?.is_discount_active, product?.discount_end])
 
   useEffect(() => {
     fetchProduct(id)
@@ -65,6 +104,11 @@ function ProductPage() {
           next: Array.isArray(data) ? null : data.next,
           previous: Array.isArray(data) ? null : data.previous,
         })
+        Promise.all(nextComments.map((comment) => fetchCommentReplies(comment.id)))
+          .then((replyLists) => {
+            setReplies(Object.fromEntries(nextComments.map((comment, index) => [comment.id, replyLists[index]])))
+          })
+          .catch(() => setReplies({}))
         setCommentsError('')
       })
       .catch((error) => {
@@ -72,6 +116,31 @@ function ProductPage() {
         setComments([])
       })
       .finally(() => setCommentsLoading(false))
+  }
+
+  const handleReplySubmit = async (event, commentId, parentId = null) => {
+    event.preventDefault()
+    if (!replyText.trim()) return
+
+    if (!localStorage.getItem('access_token')) {
+      setMessage('Log in first to reply to comments.')
+      return
+    }
+
+    setReplyPosting(true)
+    try {
+      await addCommentReply(commentId, replyText.trim(), parentId)
+      const updatedReplies = await fetchCommentReplies(commentId)
+      setReplies((current) => ({ ...current, [commentId]: updatedReplies }))
+      setReplyText('')
+      setReplyTarget(null)
+      setMessage('Reply added')
+    } catch (error) {
+      setMessage(error.response?.data?.detail || error.response?.data?.message || 'Unable to add reply.')
+    } finally {
+      setReplyPosting(false)
+      setTimeout(() => setMessage(''), 3000)
+    }
   }
 
   const handleAdd = async () => {
@@ -109,6 +178,12 @@ function ProductPage() {
   const handleCommentSubmit = async (e) => {
     e.preventDefault()
     if (!newComment.trim()) return
+
+    if (!localStorage.getItem('access_token')) {
+      setMessage('Log in first to add a comment.')
+      return
+    }
+
     setPosting(true)
     try {
       const res = await addComment(id, newComment.trim())
@@ -116,7 +191,7 @@ function ProductPage() {
       setNewComment('')
       loadComments(1)
     } catch (err) {
-      setMessage(err.response?.data?.message || 'Unable to add comment.')
+      setMessage(err.response?.data?.detail || err.response?.data?.message || 'Unable to add comment.')
     } finally {
       setPosting(false)
       setTimeout(() => setMessage(''), 3000)
@@ -229,12 +304,27 @@ function ProductPage() {
                 <div>
                   <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Price</p>
                   <p className="text-4xl font-semibold text-slate-900">
-                    {selectedVariant
-                      ? `$${selectedVariant.price}`
-                      : selectedSize
-                        ? 'Please Select a Color'
-                        : 'Please Select a Size'}
+                    {selectedVariant ? (
+                      <span className="flex flex-wrap items-baseline gap-2">
+                        {product.is_discount_active && selectedVariant.final_price < selectedVariant.price ? (
+                          <span className="text-xl text-slate-400 line-through">
+                            {formatPrice(selectedVariant.price)}
+                          </span>
+                        ) : null}
+                        <span className={product.is_discount_active ? 'text-emerald-700' : ''}>
+                          {formatPrice(selectedVariant.final_price ?? selectedVariant.price)}
+                        </span>
+                      </span>
+                    ) : selectedSize ? 'Please Select a Color' : 'Please Select a Size'}
                   </p>
+                  {product.is_discount_active && product.discount_percentage > 0 ? (
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                      <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-bold text-rose-700">
+                        Save {product.discount_percentage}%
+                      </span>
+                      {timeLeft ? <span className="text-sm font-medium text-rose-700">Ends in {timeLeft}</span> : null}
+                    </div>
+                  ) : null}
                   <p className="mt-2 text-sm text-slate-600">
                     Stock:{' '}
                     {selectedVariant
@@ -320,6 +410,65 @@ function ProductPage() {
                 <li key={c.id} className="rounded-lg border border-slate-100 p-4">
                   <p className="text-sm text-slate-700">{c.comment}</p>
                   <div className="mt-2 text-xs text-slate-500">By {c.user?.username || 'User'} • {new Date(c.created_at).toLocaleString()}</div>
+                  <button
+                    type="button"
+                    onClick={() => setReplyTarget({ commentId: c.id, parentId: null, label: c.user?.username || 'this comment' })}
+                    className="mt-3 text-sm font-semibold text-slate-700 hover:text-slate-950"
+                  >
+                    Reply
+                  </button>
+
+                  {Array.isArray(replies[c.id]) && replies[c.id].length > 0 ? (
+                    <div className="mt-4 space-y-3 border-l-2 border-slate-100 pl-4">
+                      {replies[c.id].map((reply) => (
+                        <div key={reply.id} className="rounded-lg bg-slate-50 p-3">
+                          <p className="text-sm text-slate-700">{reply.text}</p>
+                          <div className="mt-2 text-xs text-slate-500">
+                            By {reply.user?.username || 'User'} • {new Date(reply.created_at).toLocaleString()}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={() => setReplyTarget({ commentId: c.id, parentId: reply.id, label: reply.user?.username || 'this reply' })}
+                            className="mt-2 text-xs font-semibold text-slate-600 hover:text-slate-950"
+                          >
+                            Reply
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+
+                  {replyTarget?.commentId === c.id ? (
+                    <form onSubmit={(event) => handleReplySubmit(event, c.id, replyTarget.parentId)} className="mt-4">
+                      <p className="mb-2 text-xs font-medium text-slate-500">Replying to {replyTarget.label}</p>
+                      <textarea
+                        value={replyText}
+                        onChange={(event) => setReplyText(event.target.value)}
+                        placeholder="Write your reply..."
+                        className="w-full rounded-lg border border-slate-200 p-3 text-sm text-slate-900"
+                        rows={3}
+                      />
+                      <div className="mt-2 flex gap-2">
+                        <button
+                          type="submit"
+                          disabled={replyPosting}
+                          className="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-700 disabled:opacity-50"
+                        >
+                          {replyPosting ? 'Posting...' : 'Post Reply'}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setReplyTarget(null)
+                            setReplyText('')
+                          }}
+                          className="rounded-2xl bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-200"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </form>
+                  ) : null}
                 </li>
               ))}
             </ul>

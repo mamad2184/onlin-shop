@@ -19,7 +19,6 @@ class BasketVariantSelectionTests(TestCase):
             slug='nike-runner',
             product_type='cloth',
             brand='nike',
-            quantity=10,
         )
         self.blue = Color.objects.create(name='Blue', slug='blue')
         ProductClothVariant.objects.create(
@@ -39,7 +38,7 @@ class BasketVariantSelectionTests(TestCase):
         )
 
         self.assertEqual(response.status_code, 200)
-        basket_item = Basket.objects.get(user=self.user, product=self.product, color='Blue', size='M')
+        variant = ProductClothVariant.objects.get(product=self.product, color=self.blue, size='M')
+        basket_item = Basket.objects.get(user=self.user, cloth_variant=variant)
         self.assertEqual(basket_item.quantity, 2)
-        self.assertEqual(basket_item.color, 'Blue')
-        self.assertEqual(basket_item.size, 'M')
+        self.assertEqual(basket_item.cloth_variant, variant)

@@ -1,15 +1,26 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { fetchBasket, deleteFromBasket } from '../lib/api'
 
 function BasketPage() {
   const [items, setItems] = useState([])
+  const [basketSummary, setBasketSummary] = useState({
+    basket_total: 0,
+    total_products: 0,
+    total_items: 0,
+  })
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
 
   useEffect(() => {
     fetchBasket()
       .then((basketData) => {
-        setItems(Array.isArray(basketData) ? basketData : [])
+        setItems(Array.isArray(basketData?.items) ? basketData.items : [])
+        setBasketSummary({
+          basket_total: basketData?.basket_total || 0,
+          total_products: basketData?.total_products || 0,
+          total_items: basketData?.total_items || 0,
+        })
       })
       .catch((error) => {
         const status = error.response?.status
@@ -19,28 +30,12 @@ function BasketPage() {
       .finally(() => setLoading(false))
   }, [])
 
-  const getProduct = (item) => {
-    if (item.product && typeof item.product === 'object') {
-      return item.product
-    }
-    return { id: item.product, name: `Product ${item.product}` }
-  }
-
   const formatPrice = (value) => {
-    if (typeof value !== 'number') {
+    if (typeof value !== 'number' && typeof value !== 'string') {
       return 'Unknown'
     }
-    return `$${value.toFixed(2)}`
+    return `$${Number(value).toFixed(2)}`
   }
-
-  const getItemTotal = (item) => {
-    return typeof item.price === 'number' ? item.quantity * item.price : null
-  }
-
-  const basketTotal = items.reduce((total, item) => {
-    const itemTotal = getItemTotal(item)
-    return total + (itemTotal || 0)
-  }, 0)
 
   const handleRemove = async (item) => {
     const productId = item.product?.id || item.product
@@ -56,15 +51,13 @@ function BasketPage() {
         size: item.size,
       })
       setMessage(result.message)
-      setItems((prev) =>
-        prev
-          .map((current) =>
-            current.id === item.id
-              ? { ...current, quantity: Math.max(current.quantity - 1, 0) }
-              : current,
-          )
-          .filter((current) => current.quantity > 0),
-      )
+      const refreshedBasket = await fetchBasket()
+      setItems(Array.isArray(refreshedBasket?.items) ? refreshedBasket.items : [])
+      setBasketSummary({
+        basket_total: refreshedBasket?.basket_total || 0,
+        total_products: refreshedBasket?.total_products || 0,
+        total_items: refreshedBasket?.total_items || 0,
+      })
     } catch (error) {
       setMessage(error.response?.data?.message || 'Unable to remove item from basket.')
     }
@@ -94,26 +87,40 @@ function BasketPage() {
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Basket total</p>
-                <p className="text-3xl font-semibold">{formatPrice(basketTotal)}</p>
+                <p className="text-3xl font-semibold">{formatPrice(basketSummary.basket_total)}</p>
               </div>
-              <p className="text-sm text-slate-600">Total for {items.length} item{items.length === 1 ? '' : 's'}</p>
+              <p className="text-sm text-slate-600">
+                {basketSummary.total_products} product{basketSummary.total_products === 1 ? '' : 's'} · {basketSummary.total_items} item{basketSummary.total_items === 1 ? '' : 's'}
+              </p>
             </div>
           </div>
           <div className="space-y-4">
             {items.map((item) => {
-              const product = getProduct(item)
-              const itemTotal = getItemTotal(item)
+              const productId = item.product?.id || item.product
+              const productName = item.product?.name || `Product ${productId}`
+              const hasDiscount = item.discount_percentage > 0 && item.original_price > item.price
               return (
-                <div key={item.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <div className="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-center">
+                <div key={item.id} className="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-slate-400 hover:shadow-md">
+                  <Link
+                    to={`/product/${productId}`}
+                    aria-label={`View ${productName}`}
+                    className="absolute inset-0 z-0 rounded-3xl"
+                  />
+                  <div className="relative z-10 grid gap-4 sm:grid-cols-[1fr_auto] sm:items-center pointer-events-none">
                     <div>
                       <p className="text-sm uppercase tracking-[0.2em] text-slate-500">Product</p>
-                      <p className="text-lg font-semibold text-slate-900">{product.name || `Product ${product.id}`}</p>
+                      <p className="text-lg font-semibold text-slate-900">{productName}</p>
                       <p className="mt-2 text-sm text-slate-600">Variant: {item.color || 'No color'} / {item.size || 'No size'}</p>
-                      <p className="text-sm text-slate-600">Unit price: {formatPrice(item.price)}</p>
-                      <p className="text-sm text-slate-600">Line total: {itemTotal !== null ? formatPrice(itemTotal) : 'Unknown'}</p>
+                      <div className="mt-1 flex items-center gap-2 text-sm">
+                        {hasDiscount ? <span className="text-slate-400 line-through">{formatPrice(item.original_price)}</span> : null}
+                        <span className={hasDiscount ? 'font-semibold text-emerald-700' : 'text-slate-600'}>
+                          Unit price: {formatPrice(item.price)}
+                        </span>
+                        {hasDiscount ? <span className="rounded-full bg-rose-100 px-2 py-1 text-xs font-bold text-rose-700">-{item.discount_percentage}%</span> : null}
+                      </div>
+                      <p className="text-sm text-slate-600">Line total: {formatPrice(item.total_price)}</p>
                     </div>
-                    <div className="flex flex-col items-start gap-3 text-sm text-slate-600 sm:items-end">
+                    <div className="relative z-20 flex flex-col items-start gap-3 text-sm text-slate-600 sm:items-end pointer-events-auto">
                       <span>Quantity: {item.quantity}</span>
                       <button
                         onClick={() => handleRemove(item)}

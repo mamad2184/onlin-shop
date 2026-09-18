@@ -181,7 +181,6 @@ class DeleteFromBasketView(APIView):
         )
 
 
-
 class MyBasketListView(APIView):
     permission_classes = [IsAuthenticated]
 
@@ -190,5 +189,17 @@ class MyBasketListView(APIView):
             Q(cloth_variant__isnull=False) | Q(shoe_variant__isnull=False)
         )
         serializer = BasketListSerializer(basket_list, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-        
+
+        basket_total = sum(item["total_price"] for item in serializer.data)
+        total_products = len(serializer.data)
+        total_items = sum(item["quantity"] for item in serializer.data)
+
+        return Response(
+            {
+                "items": serializer.data,
+                "basket_total": basket_total,
+                "total_products": total_products,
+                "total_items": total_items,
+            },
+            status=status.HTTP_200_OK
+        )

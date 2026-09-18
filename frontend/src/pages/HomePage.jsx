@@ -17,6 +17,8 @@ function HomePage() {
   const [page, setPage] = useState(1)
   const [pagination, setPagination] = useState({ count: 0, next: null, previous: null })
 
+  const formatPrice = (value) => (typeof value === 'number' ? `$${value.toFixed(2)}` : 'No price')
+
   const loadProducts = (search = '', selectedCategory = 'all', selectedPage = 1) => {
     setLoading(true)
     fetchProducts(search, selectedCategory, selectedPage)
@@ -130,13 +132,36 @@ function HomePage() {
                 </div>
                 <div className="space-y-3">
                   <div>
-                    <h2 className="text-xl font-semibold text-slate-900">{product.name}</h2>
+                    <div className="flex items-start justify-between gap-3">
+                      <h2 className="text-xl font-semibold text-slate-900">{product.name}</h2>
+                      {!product.is_available ? (
+                        <span className="shrink-0 rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-700">
+                          Unavailable
+                        </span>
+                      ) : null}
+                    </div>
                     <p className="text-sm text-slate-500">{product.product_type}</p>
                   </div>
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-lg font-semibold text-slate-900">
-                      {product.price !== null && product.price !== undefined ? `$${product.price}` : 'No price'}
-                    </span>
+                    {product.price && typeof product.price === 'object' ? (
+                      <div className="flex items-baseline gap-2">
+                        {product.price.discount_percentage > 0 ? (
+                          <span className="text-sm text-slate-400 line-through">
+                            {formatPrice(product.price.original_price)}
+                          </span>
+                        ) : null}
+                        <span className="text-lg font-semibold text-emerald-700">
+                          {formatPrice(product.price.final_price)}
+                        </span>
+                        {product.price.discount_percentage > 0 ? (
+                          <span className="rounded-full bg-rose-100 px-2 py-1 text-xs font-bold text-rose-700">
+                            -{product.price.discount_percentage}%
+                          </span>
+                        ) : null}
+                      </div>
+                    ) : (
+                      <span className="text-lg font-semibold text-slate-900">{formatPrice(product.price)}</span>
+                    )}
                     <Link
                       to={`/product/${product.id}`}
                       className="text-sm font-medium text-slate-700 hover:text-slate-900"
@@ -144,12 +169,18 @@ function HomePage() {
                       Details
                     </Link>
                   </div>
-                  <Link
-                    to={`/product/${product.id}`}
-                    className="block w-full rounded-2xl bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-slate-700"
-                  >
-                    Choose options
-                  </Link>
+                    {product.is_available ? (
+                      <Link
+                        to={`/product/${product.id}`}
+                        className="block w-full rounded-2xl bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white hover:bg-slate-700"
+                      >
+                        Choose options
+                      </Link>
+                    ) : (
+                      <span className="block w-full rounded-2xl bg-slate-100 px-4 py-2 text-center text-sm font-semibold text-slate-400">
+                        Unavailable
+                      </span>
+                    )}
                 </div>
               </div>
             )
