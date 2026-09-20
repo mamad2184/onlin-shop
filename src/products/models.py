@@ -83,7 +83,7 @@ class Product(models.Model):
     
     average_rating = models.FloatField(default=0)
     ratings_count = models.PositiveIntegerField(default=0)
-    rating_breakdown = models.JSONField(default=dict)
+    rating_breakdown = models.JSONField(default=dict, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
