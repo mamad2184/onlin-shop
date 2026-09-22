@@ -36,7 +36,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = ["172.25.87.239", "localhost", "127.0.0.1","onlin-shop-production.up.railway.app",
-                  "onlin-shop-production-0b1f.up.railway.app", "https://onlin-shop-6bgu.onrender.com"]
+                  "onlin-shop-production-0b1f.up.railway.app", "onlin-shop-6bgu.onrender.com"]
 
 
 
