@@ -1,15 +1,15 @@
 import axios from 'axios'
 
-//// for using Railway
-// const API_BASE = import.meta.env.VITE_API_BASE || (
-//   import.meta.env.DEV ? '/' : 'https://onlin-shop-production.up.railway.app/'
-// )
-
-
-// for using Render
+// for using Railway
 const API_BASE = import.meta.env.VITE_API_BASE || (
-  import.meta.env.DEV ? '/' : 'https://onlin-shop-6bgu.onrender.com/'
+  import.meta.env.DEV ? '/' : 'https://onlin-shop-production.up.railway.app/'
 )
+
+
+// // for using Render
+// const API_BASE = import.meta.env.VITE_API_BASE || (
+//   import.meta.env.DEV ? '/' : 'https://onlin-shop-6bgu.onrender.com/'
+// )
 
 
 const token = localStorage.getItem('access_token')
