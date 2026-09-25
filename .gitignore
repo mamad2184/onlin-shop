@@ -5,6 +5,19 @@ lx_env
 nots.txt
 *.json
 local_backup*
+
+
+
+# Cache
+.cache/
+.vite/
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+build/
  
 # Byte-compiled / optimized / DLL files
 __pycache__/
