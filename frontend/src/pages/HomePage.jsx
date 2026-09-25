@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchProducts } from '../lib/api'
 import RatingStars from '../components/RatingStars'
+import Toast from '../components/Toast'
 
 const categoryLabels = {
   all: 'All',
@@ -13,12 +14,18 @@ function HomePage() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
+  const [toastTrigger, setToastTrigger] = useState(0)
   const [searchQuery, setSearchQuery] = useState('')
   const [category, setCategory] = useState('all')
   const [page, setPage] = useState(1)
   const [pagination, setPagination] = useState({ count: 0, next: null, previous: null })
 
   const formatPrice = (value) => (typeof value === 'number' ? `$${value.toFixed(2)}` : 'No price')
+
+  const notify = (nextMessage) => {
+    setMessage(nextMessage)
+    setToastTrigger((current) => current + 1)
+  }
 
   const loadProducts = (search = '', selectedCategory = 'all', selectedPage = 1) => {
     setLoading(true)
@@ -38,7 +45,7 @@ function HomePage() {
         setMessage('')
       })
       .catch((error) => {
-        setMessage(error.response?.data?.detail || error.message || 'Unable to load products.')
+        notify(error.response?.data?.detail || error.message || 'Unable to load products.')
         setProducts([])
       })
       .finally(() => setLoading(false))
@@ -103,9 +110,7 @@ function HomePage() {
         </button>
       </form>
 
-      {message ? (
-        <div className="mt-6 rounded-xl bg-emerald-100 px-4 py-3 text-sm text-emerald-900">{message}</div>
-      ) : null}
+      <Toast message={message} trigger={toastTrigger} onClose={() => setMessage('')} />
       <div className="mt-2 text-sm text-slate-500">Showing: {categoryLabels[category]} products</div>
 
       {loading ? (

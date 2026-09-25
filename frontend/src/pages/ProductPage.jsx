@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { addComment, addCommentReply, addToBasket, fetchCommentReplies, fetchProduct, fetchProductComments, rateProduct } from '../lib/api'
 import RatingStars from '../components/RatingStars'
+import Toast from '../components/Toast'
 
 function ProductPage() {
   const { id } = useParams()
@@ -12,6 +13,8 @@ function ProductPage() {
   const [loading, setLoading] = useState(true)
   const [commentsLoading, setCommentsLoading] = useState(true)
   const [message, setMessage] = useState('')
+  const [toastTrigger, setToastTrigger] = useState(0)
+  const [authPrompt, setAuthPrompt] = useState(false)
   const [loadError, setLoadError] = useState('')
   const [commentsError, setCommentsError] = useState('')
   const [newComment, setNewComment] = useState('')
@@ -42,6 +45,17 @@ function ProductPage() {
   )
 
   const formatPrice = (value) => (typeof value === 'number' ? `$${value.toFixed(2)}` : 'Price unavailable')
+
+  const notify = (nextMessage, requiresAuth = false) => {
+    setMessage(nextMessage)
+    setAuthPrompt(requiresAuth)
+    setToastTrigger((current) => current + 1)
+  }
+
+  const requireAuth = (action) => {
+    notify(`Please log in or register to ${action}.`, true)
+    return false
+  }
 
   useEffect(() => {
     if (!product?.is_discount_active || !product.discount_end) {
@@ -125,7 +139,7 @@ function ProductPage() {
     if (!replyText.trim()) return
 
     if (!localStorage.getItem('access_token')) {
-      setMessage('Log in first to reply to comments.')
+      requireAuth('reply to comments')
       return
     }
 
@@ -136,31 +150,32 @@ function ProductPage() {
       setReplies((current) => ({ ...current, [commentId]: updatedReplies }))
       setReplyText('')
       setReplyTarget(null)
-      setMessage('Reply added')
+      notify('Reply added')
     } catch (error) {
-      setMessage(error.response?.data?.detail || error.response?.data?.message || 'Unable to add reply.')
+      notify(error.response?.data?.detail || error.response?.data?.message || 'Unable to add reply.')
     } finally {
       setReplyPosting(false)
-      setTimeout(() => setMessage(''), 3000)
     }
   }
 
   const handleAdd = async () => {
+    if (!localStorage.getItem('access_token')) {
+      requireAuth('add items to your basket')
+      return
+    }
+
     if (!selectedColor || !selectedSize) {
-      setMessage('Please choose both a color and a size before adding to basket.')
-      setTimeout(() => setMessage(''), 3000)
+      notify('Please choose both a color and a size before adding to basket.')
       return
     }
 
     if (!selectedVariant || selectedVariant.quantity <= 0) {
-      setMessage('This variant is out of stock.')
-      setTimeout(() => setMessage(''), 3000)
+      notify('This variant is out of stock.')
       return
     }
 
     if (quantity > selectedVariant.quantity) {
-      setMessage(`Only ${selectedVariant.quantity} item${selectedVariant.quantity === 1 ? '' : 's'} available.`)
-      setTimeout(() => setMessage(''), 3000)
+      notify(`Only ${selectedVariant.quantity} item${selectedVariant.quantity === 1 ? '' : 's'} available.`)
       return
     }
 
@@ -170,14 +185,18 @@ function ProductPage() {
         size: selectedSize,
         quantity,
       })
-      setMessage(result.message)
+      notify(result.message)
     } catch (error) {
-      setMessage(error.response?.data?.message || error.response?.data?.detail || 'Unable to add this item to your basket.')
+      notify(error.response?.data?.message || error.response?.data?.detail || 'Unable to add this item to your basket.')
     }
-    setTimeout(() => setMessage(''), 3000)
   }
 
   const handleRatingChange = async (rating) => {
+    if (!localStorage.getItem('access_token')) {
+      requireAuth('rate products')
+      return
+    }
+
     setRatingPosting(true)
     try {
       const result = await rateProduct(id, rating)
@@ -188,12 +207,15 @@ function ProductPage() {
         rating_breakdown: result.rating_breakdown,
         user_rating: rating,
       }))
-      setMessage('Rating saved')
+      notify('Rating saved')
     } catch (error) {
-      setMessage(error.response?.data?.detail || 'Please log in to rate this product.')
+      if (error.response?.status === 401) {
+        requireAuth('rate products')
+      } else {
+        notify(error.response?.data?.detail || 'Unable to save your rating.')
+      }
     } finally {
       setRatingPosting(false)
-      setTimeout(() => setMessage(''), 3000)
     }
   }
 
@@ -202,21 +224,21 @@ function ProductPage() {
     if (!newComment.trim()) return
 
     if (!localStorage.getItem('access_token')) {
-      setMessage('Log in first to add a comment.')
+      requireAuth('add comments')
       return
     }
 
     setPosting(true)
     try {
       const res = await addComment(id, newComment.trim())
-      setMessage(res.message || 'Comment added')
+      notify(res.message || 'Comment added')
       setNewComment('')
       loadComments(1)
+      setAuthPrompt(false)
     } catch (err) {
-      setMessage(err.response?.data?.detail || err.response?.data?.message || 'Unable to add comment.')
+      notify(err.response?.data?.detail || err.response?.data?.message || 'Unable to add comment.')
     } finally {
       setPosting(false)
-      setTimeout(() => setMessage(''), 3000)
     }
   }
 
@@ -403,9 +425,19 @@ function ProductPage() {
           </div>
         </div>
       </div>
-      {message ? (
-        <div className="rounded-xl bg-emerald-100 px-4 py-3 text-sm text-emerald-900">{message}</div>
-      ) : null}
+      <Toast
+        message={message}
+        trigger={toastTrigger}
+        onClose={() => {
+          setMessage('')
+          setAuthPrompt(false)
+        }}
+        action={authPrompt ? (
+          <Link to="/auth" className="shrink-0 font-semibold underline hover:text-amber-200">
+            Login or register
+          </Link>
+        ) : null}
+      />
       <div className="space-y-6">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h3 className="text-lg font-semibold text-slate-900">Add a comment</h3>

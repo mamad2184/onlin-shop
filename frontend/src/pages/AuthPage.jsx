@@ -1,14 +1,21 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { loginUser, registerUser, setTokens, logout } from '../lib/api'
+import Toast from '../components/Toast'
 
 function AuthPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
+  const [toastTrigger, setToastTrigger] = useState(0)
   const [mode, setMode] = useState('login')
   const token = localStorage.getItem('access_token')
   const navigate = useNavigate()
+
+  const notify = (nextMessage) => {
+    setMessage(nextMessage)
+    setToastTrigger((current) => current + 1)
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -17,26 +24,26 @@ function AuthPage() {
         const data = await loginUser(username, password)
         if (data.access) {
           setTokens(data.access)
-          setMessage('Logged in successfully.')
+          notify('Logged in successfully.')
           setTimeout(() => navigate('/'), 500)
           return
         }
-        setMessage('Login failed. Check credentials.')
+        notify('Login failed. Check credentials.')
       } else {
         const data = await registerUser(username, password)
-        setMessage(data.message || data.massage || data.detail || 'Registration completed.')
+        notify(data.message || data.massage || data.detail || 'Registration completed.')
         if (data.message || data.massage) {
           setTimeout(() => navigate('/auth'), 500)
         }
       }
     } catch (error) {
-      setMessage(error.response?.data?.message || error.response?.data?.detail || 'Request failed.')
+      notify(error.response?.data?.message || error.response?.data?.detail || 'Request failed.')
     }
   }
 
   const handleLogout = () => {
     logout()
-    setMessage('Logged out successfully.')
+    notify('Logged out successfully.')
   }
 
   return (
@@ -50,7 +57,7 @@ function AuthPage() {
           {mode === 'login' ? 'Create an account' : 'Use existing account'}
         </button>
       </div>
-      {message ? <div className="mb-4 rounded-2xl bg-slate-50 p-4 text-sm text-slate-700">{message}</div> : null}
+      <Toast message={message} trigger={toastTrigger} onClose={() => setMessage('')} />
       {token ? (
         <div className="space-y-4">
           <p className="text-slate-700">You are currently logged in.</p>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchBasket, deleteFromBasket } from '../lib/api'
+import Toast from '../components/Toast'
 
 function BasketPage() {
   const [items, setItems] = useState([])
@@ -11,8 +12,22 @@ function BasketPage() {
   })
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
+  const [toastTrigger, setToastTrigger] = useState(0)
+  const [authRequired, setAuthRequired] = useState(false)
+
+  const notify = (nextMessage, requiresAuth = false) => {
+    setMessage(nextMessage)
+    setAuthRequired(requiresAuth)
+    setToastTrigger((current) => current + 1)
+  }
 
   useEffect(() => {
+    if (!localStorage.getItem('access_token')) {
+      notify('Please log in or register to view your basket.', true)
+      setLoading(false)
+      return
+    }
+
     fetchBasket()
       .then((basketData) => {
         setItems(Array.isArray(basketData?.items) ? basketData.items : [])
@@ -25,7 +40,7 @@ function BasketPage() {
       .catch((error) => {
         const status = error.response?.status
         const message = error.response?.data?.message || error.response?.data?.detail
-        setMessage(status === 401 ? 'Your login session has expired. Please log in again.' : message || 'Unable to load your basket.')
+        notify(status === 401 ? 'Your login session has expired. Please log in again.' : message || 'Unable to load your basket.', status === 401)
       })
       .finally(() => setLoading(false))
   }, [])
@@ -40,8 +55,7 @@ function BasketPage() {
   const handleRemove = async (item) => {
     const productId = item.product?.id || item.product
     if (!productId) {
-      setMessage('Unable to remove this item because product data is not available.')
-      setTimeout(() => setMessage(''), 3000)
+      notify('Unable to remove this item because product data is not available.')
       return
     }
 
@@ -50,7 +64,7 @@ function BasketPage() {
         color: item.color,
         size: item.size,
       })
-      setMessage(result.message)
+      notify(result.message)
       const refreshedBasket = await fetchBasket()
       setItems(Array.isArray(refreshedBasket?.items) ? refreshedBasket.items : [])
       setBasketSummary({
@@ -59,9 +73,8 @@ function BasketPage() {
         total_items: refreshedBasket?.total_items || 0,
       })
     } catch (error) {
-      setMessage(error.response?.data?.message || 'Unable to remove item from basket.')
+      notify(error.response?.data?.message || 'Unable to remove item from basket.')
     }
-    setTimeout(() => setMessage(''), 3000)
   }
 
   return (
@@ -72,9 +85,19 @@ function BasketPage() {
           <p className="text-slate-600">See what you added to your basket.</p>
         </div>
       </div>
-      {message ? (
-        <div className="mb-6 rounded-xl bg-amber-100 px-4 py-3 text-sm text-amber-900">{message}</div>
-      ) : null}
+      <Toast
+        message={message}
+        trigger={toastTrigger}
+        onClose={() => {
+          setMessage('')
+          setAuthRequired(false)
+        }}
+        action={authRequired ? (
+          <Link to="/auth" className="shrink-0 font-semibold underline hover:text-amber-200">
+            Login or register
+          </Link>
+        ) : null}
+      />
       {loading ? (
         <div className="text-slate-500">Loading basket...</div>
       ) : items.length === 0 ? (
