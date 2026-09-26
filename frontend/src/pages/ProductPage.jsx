@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+
 import { Link, useParams } from 'react-router-dom'
 import { addComment, addCommentReply, addToBasket, fetchCommentReplies, fetchProduct, fetchProductComments, rateProduct } from '../lib/api'
 import RatingStars from '../components/RatingStars'
@@ -6,16 +8,32 @@ import Toast from '../components/Toast'
 
 function ProductPage() {
   const { id } = useParams()
-  const [product, setProduct] = useState(null)
+  const queryClient = useQueryClient()
+
+  const {
+    data: product,
+    isLoading: loading,
+    error: productError,
+  } = useQuery({
+    queryKey: ['product', id],
+    queryFn: async () => {
+      const data = await fetchProduct(id)
+
+      if (!data || typeof data !== 'object') {
+        throw new Error('Invalid product response.')
+      }
+
+      return data
+    },
+  })
+
   const [comments, setComments] = useState([])
   const [commentsPage, setCommentsPage] = useState(1)
   const [commentsPagination, setCommentsPagination] = useState({ count: 0, next: null, previous: null })
-  const [loading, setLoading] = useState(true)
   const [commentsLoading, setCommentsLoading] = useState(true)
   const [message, setMessage] = useState('')
   const [toastTrigger, setToastTrigger] = useState(0)
   const [authPrompt, setAuthPrompt] = useState(false)
-  const [loadError, setLoadError] = useState('')
   const [commentsError, setCommentsError] = useState('')
   const [newComment, setNewComment] = useState('')
   const [posting, setPosting] = useState(false)
@@ -90,18 +108,6 @@ function ProductPage() {
   }, [product?.is_discount_active, product?.discount_end])
 
   useEffect(() => {
-    fetchProduct(id)
-      .then((data) => {
-        if (!data || typeof data !== 'object') {
-          throw new Error('Invalid product response.')
-        }
-        setProduct(data)
-      })
-      .catch((error) => {
-        setLoadError(error.response?.data?.detail || error.message || 'Unable to load this product.')
-      })
-      .finally(() => setLoading(false))
-
     loadComments(1)
   }, [id])
 
@@ -200,13 +206,15 @@ function ProductPage() {
     setRatingPosting(true)
     try {
       const result = await rateProduct(id, rating)
-      setProduct((current) => ({
+
+      queryClient.setQueryData(['product', id], (current) => ({
         ...current,
         average_rating: result.average_rating,
         ratings_count: result.ratings_count,
         rating_breakdown: result.rating_breakdown,
         user_rating: rating,
       }))
+
       notify('Rating saved')
     } catch (error) {
       if (error.response?.status === 401) {
@@ -246,8 +254,8 @@ function ProductPage() {
     return <div className="text-slate-500">Loading product...</div>
   }
 
-  if (!product) {
-    return <div className="rounded-2xl bg-rose-50 p-4 text-rose-800">{loadError || 'Product not found.'}</div>
+  if (productError || !product) {
+    return <div className="rounded-2xl bg-rose-50 p-4 text-rose-800">{productError?.response?.data?.detail || productError?.message || 'Product not found.'}</div>
   }
 
   return (

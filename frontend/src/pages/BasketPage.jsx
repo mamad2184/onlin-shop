@@ -1,19 +1,48 @@
 import { useEffect, useState } from 'react'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import { fetchBasket, deleteFromBasket } from '../lib/api'
 import Toast from '../components/Toast'
 
 function BasketPage() {
-  const [items, setItems] = useState([])
-  const [basketSummary, setBasketSummary] = useState({
-    basket_total: 0,
-    total_products: 0,
-    total_items: 0,
-  })
-  const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
   const [toastTrigger, setToastTrigger] = useState(0)
   const [authRequired, setAuthRequired] = useState(false)
+  const queryClient = useQueryClient()
+
+  const isAuthenticated = Boolean(localStorage.getItem('access_token'))
+
+  const {
+    data: basketData,
+    isLoading: loading,
+    error: basketError,
+  } = useQuery({
+    queryKey: ['basket'],
+    queryFn: fetchBasket,
+    enabled: isAuthenticated,
+  })
+
+  const removeMutation = useMutation({
+    mutationFn: ({ productId, color, size }) =>
+      deleteFromBasket(productId, {
+        color,
+        size,
+      }),
+    onSuccess: async (result) => {
+      notify(result.message)
+      await queryClient.invalidateQueries({ queryKey: ['basket'] })
+    },
+    onError: (error) => {
+      notify(error.response?.data?.message || 'Unable to remove item from basket.')
+    },
+  })
+
+  const items = Array.isArray(basketData?.items) ? basketData.items : []
+  const basketSummary = {
+    basket_total: basketData?.basket_total || 0,
+    total_products: basketData?.total_products || 0,
+    total_items: basketData?.total_items || 0,
+  }
 
   const notify = (nextMessage, requiresAuth = false) => {
     setMessage(nextMessage)
@@ -22,28 +51,23 @@ function BasketPage() {
   }
 
   useEffect(() => {
-    if (!localStorage.getItem('access_token')) {
+    if (!isAuthenticated) {
       notify('Please log in or register to view your basket.', true)
-      setLoading(false)
       return
     }
 
-    fetchBasket()
-      .then((basketData) => {
-        setItems(Array.isArray(basketData?.items) ? basketData.items : [])
-        setBasketSummary({
-          basket_total: basketData?.basket_total || 0,
-          total_products: basketData?.total_products || 0,
-          total_items: basketData?.total_items || 0,
-        })
-      })
-      .catch((error) => {
-        const status = error.response?.status
-        const message = error.response?.data?.message || error.response?.data?.detail
-        notify(status === 401 ? 'Your login session has expired. Please log in again.' : message || 'Unable to load your basket.', status === 401)
-      })
-      .finally(() => setLoading(false))
-  }, [])
+    if (basketError) {
+      const status = basketError.response?.status
+      const errorMessage = basketError.response?.data?.message || basketError.response?.data?.detail
+
+      notify(
+        status === 401
+          ? 'Your login session has expired. Please log in again.'
+          : errorMessage || 'Unable to load your basket.',
+        status === 401,
+      )
+    }
+  }, [isAuthenticated, basketError])
 
   const formatPrice = (value) => {
     if (typeof value !== 'number' && typeof value !== 'string') {
@@ -59,22 +83,11 @@ function BasketPage() {
       return
     }
 
-    try {
-      const result = await deleteFromBasket(productId, {
-        color: item.color,
-        size: item.size,
-      })
-      notify(result.message)
-      const refreshedBasket = await fetchBasket()
-      setItems(Array.isArray(refreshedBasket?.items) ? refreshedBasket.items : [])
-      setBasketSummary({
-        basket_total: refreshedBasket?.basket_total || 0,
-        total_products: refreshedBasket?.total_products || 0,
-        total_items: refreshedBasket?.total_items || 0,
-      })
-    } catch (error) {
-      notify(error.response?.data?.message || 'Unable to remove item from basket.')
-    }
+    removeMutation.mutate({
+      productId,
+      color: item.color,
+      size: item.size,
+    })
   }
 
   return (
@@ -147,7 +160,8 @@ function BasketPage() {
                       <span>Quantity: {item.quantity}</span>
                       <button
                         onClick={() => handleRemove(item)}
-                        className="rounded-2xl bg-rose-500 px-4 py-2 text-white hover:bg-rose-600"
+                        disabled={removeMutation.isPending}
+                        className="rounded-2xl bg-rose-500 px-4 py-2 text-white hover:bg-rose-600 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         Remove one
                       </button>
