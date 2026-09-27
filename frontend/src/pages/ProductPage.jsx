@@ -63,11 +63,19 @@ function ProductPage() {
   const variants = Array.isArray(product?.variants) ? product.variants : []
   const availableSizes = Array.isArray(product?.sizes) ? product.sizes : []
 
+  const productUnavailable =
+    variants.length === 0 ||
+    variants.every(
+      (variant) =>
+        !variant.is_available || variant.quantity <= 0,
+    )
+
   const availableColors = variants
     .filter(
       (variant) =>
         variant.size === selectedSize &&
-        variant.is_available,
+        variant.is_available &&
+        variant.quantity > 0,
     )
     .map((variant) => variant.color)
     .filter(
@@ -79,7 +87,8 @@ function ProductPage() {
     (variant) =>
       variant.color === selectedColor &&
       variant.size === selectedSize &&
-      variant.is_available,
+      variant.is_available &&
+      variant.quantity > 0,
   )
 
   const images = (
@@ -441,6 +450,12 @@ function ProductPage() {
                 )}
               </div>
 
+              {productUnavailable ? (
+                <span className="absolute right-4 top-4 rounded-full bg-rose-600 px-4 py-2 text-xs font-bold text-white shadow-lg">
+                  Unavailable
+                </span>
+              ) : null}
+
               {images.length > 1 ? (
                 <>
                   <button
@@ -530,6 +545,12 @@ function ProductPage() {
               product.discount_percentage > 0 ? (
                 <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-bold text-rose-700">
                   -{product.discount_percentage}%
+                </span>
+              ) : null}
+
+              {productUnavailable ? (
+                <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-bold text-rose-700">
+                  Unavailable
                 </span>
               ) : null}
             </div>
@@ -775,7 +796,7 @@ function ProductPage() {
                 type="button"
                 onClick={handleAdd}
                 disabled={adding}
-                className="flex-1 rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-slate-900/10 transition duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0"
+                className="flex flex-1 items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-slate-900/10 transition duration-200 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-xl active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-slate-950"
               >
                 {adding ? 'Adding...' : 'Add to Basket'}
               </button>
