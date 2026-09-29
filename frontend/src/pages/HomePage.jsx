@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { fetchProducts } from '../lib/api'
 import RatingStars from '../components/RatingStars'
 import Toast from '../components/Toast'
@@ -12,12 +12,20 @@ const categoryLabels = {
 }
 
 function HomePage() {
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const pageFromUrl = Number(searchParams.get('page')) || 1
+
   const [message, setMessage] = useState('')
   const [toastTrigger, setToastTrigger] = useState(0)
   const [searchQuery, setSearchQuery] = useState('')
   const [activeSearchQuery, setActiveSearchQuery] = useState('')
   const [category, setCategory] = useState('all')
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(pageFromUrl)
+
+  const productListRef = useRef(null)
+  const paginationRef = useRef(null)
+  const previousPageRef = useRef(page)
 
   const {
     data,
@@ -57,6 +65,12 @@ function HomePage() {
   }
 
   useEffect(() => {
+    if (page !== pageFromUrl) {
+      setPage(pageFromUrl)
+    }
+  }, [pageFromUrl, page])
+
+  useEffect(() => {
     if (error && !data) {
       notify(
         error.response?.data?.detail ||
@@ -66,26 +80,62 @@ function HomePage() {
     }
   }, [error, data])
 
+  useEffect(() => {
+    if (page === previousPageRef.current) return
+
+    const goingForward = page > previousPageRef.current
+
+    if (goingForward) {
+      productListRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    } else {
+      paginationRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      })
+    }
+
+    previousPageRef.current = page
+  }, [page])
+
+  const changePage = (nextPage) => {
+    if (nextPage < 1 || nextPage === page) return
+
+    setPage(nextPage)
+
+    const nextParams = new URLSearchParams(searchParams)
+
+    if (nextPage === 1) {
+      nextParams.delete('page')
+    } else {
+      nextParams.set('page', String(nextPage))
+    }
+
+    setSearchParams(nextParams)
+  }
+
   const handleCategoryChange = (key) => {
     setCategory(key)
-    setPage(1)
+    changePage(1)
   }
 
   const handleSearch = (event) => {
     event.preventDefault()
     setActiveSearchQuery(searchQuery)
-    setPage(1)
+    changePage(1)
   }
 
   const handlePreviousPage = () => {
     if (pagination.previous && !loading) {
-      setPage((current) => current - 1)
+      changePage(page - 1)
     }
   }
 
   const handleNextPage = () => {
     if (pagination.next && !loading) {
-      setPage((current) => current + 1)
+      changePage(page + 1)
     }
   }
 
@@ -184,7 +234,10 @@ function HomePage() {
         onClose={() => setMessage('')}
       />
 
-      <div className="flex items-center justify-between gap-4">
+      <div
+        ref={productListRef}
+        className="flex items-center justify-between gap-4"
+      >
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
             Collection
@@ -355,7 +408,10 @@ function HomePage() {
           )}
 
           {(pagination.previous || pagination.next) ? (
-            <div className="flex items-center justify-between gap-4 rounded-3xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+            <div
+              ref={paginationRef}
+              className="flex items-center justify-between gap-4 rounded-3xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4"
+            >
               <button
                 type="button"
                 disabled={!pagination.previous || loading}
