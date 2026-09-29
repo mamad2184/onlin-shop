@@ -1,1 +1,3558 @@
-[{"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2026-08-04T19:27:51.716Z", "user": 1, "content_type": 7, "object_id": "5", "object_repr": "fantastic--> cloth of nike", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2026-08-04T19:29:01.901Z", "user": 1, "content_type": 7, "object_id": "5", "object_repr": "fantastic--> cloth of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2026-08-04T19:29:02.080Z", "user": 1, "content_type": 7, "object_id": "5", "object_repr": "fantastic--> cloth of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2026-08-07T13:52:13.443Z", "user": 1, "content_type": 12, "object_id": "1", "object_repr": "reza - fantastic--> cloth of nike", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2026-08-07T14:16:45.294Z", "user": 1, "content_type": 12, "object_id": "1", "object_repr": "reza - fantastic--> cloth of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Rating\"]}}]"}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2026-08-07T14:29:16.535Z", "user": 1, "content_type": 12, "object_id": "2", "object_repr": "reza - fantastic--> cloth of nike", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2026-08-13T20:22:16.265Z", "user": 1, "content_type": 8, "object_id": "11", "object_repr": "ProductImage object (11)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2026-08-19T16:47:49.994Z", "user": 1, "content_type": 7, "object_id": "6", "object_repr": "Amgraor--> cloth of nike", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 12, "fields": {"action_time": "2026-08-19T19:39:31.396Z", "user": 1, "content_type": 7, "object_id": "5", "object_repr": "fantastic--> cloth of nike", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"fantastic image\"}}]"}}, {"model": "admin.logentry", "pk": 13, "fields": {"action_time": "2026-08-19T19:41:01.781Z", "user": 1, "content_type": 7, "object_id": "5", "object_repr": "fantastic--> cloth of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"fantastic image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 14, "fields": {"action_time": "2026-09-01T14:44:50.621Z", "user": 1, "content_type": 7, "object_id": "7", "object_repr": "Nike Runner--> shoe of nike", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"Nike Runner image\"}}, {\"added\": {\"name\": \"product shoe variant\", \"object\": \"Nike Runner - 43 - Blue\"}}]"}}, {"model": "admin.logentry", "pk": 15, "fields": {"action_time": "2026-09-01T14:45:24.967Z", "user": 1, "content_type": 7, "object_id": "7", "object_repr": "Nike Runner--> shoe of nike", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product shoe variant\", \"object\": \"Nike Runner - 42 - Blue\"}}]"}}, {"model": "admin.logentry", "pk": 16, "fields": {"action_time": "2026-09-01T14:48:35.799Z", "user": 1, "content_type": 7, "object_id": "8", "object_repr": "Perfect Cotton Shirt--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"Perfect Cotton Shirt image\"}}, {\"added\": {\"name\": \"product cloth variant\", \"object\": \"Perfect Cotton Shirt - L - Black\"}}]"}}, {"model": "admin.logentry", "pk": 17, "fields": {"action_time": "2026-09-01T14:50:19.533Z", "user": 1, "content_type": 7, "object_id": "6", "object_repr": "Amgraor--> cloth of nike", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"Amgraor image\"}}, {\"added\": {\"name\": \"product cloth variant\", \"object\": \"Amgraor - M - Blue\"}}]"}}, {"model": "admin.logentry", "pk": 18, "fields": {"action_time": "2026-09-01T15:00:00.176Z", "user": 1, "content_type": 14, "object_id": "6", "object_repr": "good shoe - 42 - Blue", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 19, "fields": {"action_time": "2026-09-01T15:01:12.712Z", "user": 1, "content_type": 13, "object_id": "6", "object_repr": "lovely clothe - M - Black", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 20, "fields": {"action_time": "2026-09-01T15:02:12.004Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 21, "fields": {"action_time": "2026-09-01T15:08:08.992Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 22, "fields": {"action_time": "2026-09-01T15:08:10.866Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 23, "fields": {"action_time": "2026-09-01T15:08:12.767Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 24, "fields": {"action_time": "2026-09-01T15:08:15.721Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 25, "fields": {"action_time": "2026-09-01T15:08:18.023Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}, {\"added\": {\"name\": \"product shoe variant\", \"object\": \"good shoe - 41 - Red\"}}]"}}, {"model": "admin.logentry", "pk": 26, "fields": {"action_time": "2026-09-01T15:08:22.335Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"lovely clothe image\"}}, {\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 27, "fields": {"action_time": "2026-09-01T15:08:23.933Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"lovely clothe image\"}}, {\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 28, "fields": {"action_time": "2026-09-01T15:08:23.941Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 29, "fields": {"action_time": "2026-09-01T15:08:25.820Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"lovely clothe image\"}}, {\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 30, "fields": {"action_time": "2026-09-01T15:08:25.896Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 31, "fields": {"action_time": "2026-09-01T15:08:25.904Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 32, "fields": {"action_time": "2026-09-01T15:08:29.117Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 33, "fields": {"action_time": "2026-09-01T15:08:29.138Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 34, "fields": {"action_time": "2026-09-01T15:08:29.146Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 35, "fields": {"action_time": "2026-09-01T15:08:29.160Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 36, "fields": {"action_time": "2026-09-01T15:08:29.168Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 37, "fields": {"action_time": "2026-09-01T15:08:30.473Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 38, "fields": {"action_time": "2026-09-01T15:08:32.701Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"lovely clothe image\"}}, {\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 39, "fields": {"action_time": "2026-09-01T15:08:33.937Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 40, "fields": {"action_time": "2026-09-01T15:08:33.947Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 41, "fields": {"action_time": "2026-09-01T15:08:35.279Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"lovely clothe image\"}}, {\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 42, "fields": {"action_time": "2026-09-01T15:08:41.065Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 43, "fields": {"action_time": "2026-09-01T15:08:42.797Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 44, "fields": {"action_time": "2026-09-01T15:08:48.165Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 45, "fields": {"action_time": "2026-09-01T15:08:52.268Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 46, "fields": {"action_time": "2026-09-01T15:08:52.797Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 47, "fields": {"action_time": "2026-09-01T15:08:52.804Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 48, "fields": {"action_time": "2026-09-01T15:08:56.043Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 49, "fields": {"action_time": "2026-09-01T15:08:58.932Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 50, "fields": {"action_time": "2026-09-01T15:08:58.940Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 51, "fields": {"action_time": "2026-09-01T15:09:00.312Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 52, "fields": {"action_time": "2026-09-01T15:09:01.055Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"lovely clothe image\"}}, {\"changed\": {\"name\": \"product image\", \"object\": \"lovely clothe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 53, "fields": {"action_time": "2026-09-01T15:09:01.064Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 54, "fields": {"action_time": "2026-09-01T15:09:11.540Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 55, "fields": {"action_time": "2026-09-01T15:09:14.017Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 56, "fields": {"action_time": "2026-09-01T15:09:14.036Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 57, "fields": {"action_time": "2026-09-01T15:09:19.269Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 58, "fields": {"action_time": "2026-09-01T15:09:20.312Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 59, "fields": {"action_time": "2026-09-01T15:09:20.320Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 60, "fields": {"action_time": "2026-09-01T15:09:22.365Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 61, "fields": {"action_time": "2026-09-01T15:09:24.160Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 62, "fields": {"action_time": "2026-09-01T15:09:24.171Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 63, "fields": {"action_time": "2026-09-01T15:09:29.282Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 64, "fields": {"action_time": "2026-09-01T15:09:30.443Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"good shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 65, "fields": {"action_time": "2026-09-01T15:09:32.797Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 66, "fields": {"action_time": "2026-09-01T15:09:32.817Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 67, "fields": {"action_time": "2026-09-01T15:21:36.774Z", "user": 1, "content_type": 7, "object_id": "2", "object_repr": "lovely shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product image\", \"object\": \"lovely shoe image\", \"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 68, "fields": {"action_time": "2026-09-01T15:24:08.471Z", "user": 1, "content_type": 7, "object_id": "2", "object_repr": "lovely shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"lovely shoe image\"}}]"}}, {"model": "admin.logentry", "pk": 69, "fields": {"action_time": "2026-09-01T18:23:11.438Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product cloth variant\", \"object\": \"lovely clothe - M - Red\", \"fields\": [\"Color\"]}}]"}}, {"model": "admin.logentry", "pk": 70, "fields": {"action_time": "2026-09-01T18:23:51.846Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "lovely clothe--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product cloth variant\", \"object\": \"lovely clothe - M - Black\", \"fields\": [\"Color\"]}}]"}}, {"model": "admin.logentry", "pk": 71, "fields": {"action_time": "2026-09-01T18:26:03.197Z", "user": 1, "content_type": 7, "object_id": "8", "object_repr": "Perfect Cotton Shirt--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product cloth variant\", \"object\": \"Perfect Cotton Shirt - S - Red\"}}]"}}, {"model": "admin.logentry", "pk": 72, "fields": {"action_time": "2026-09-07T13:11:12.804Z", "user": 1, "content_type": 6, "object_id": "2", "object_repr": "sporty", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 73, "fields": {"action_time": "2026-09-11T17:06:07.613Z", "user": 1, "content_type": 7, "object_id": "9", "object_repr": "helloshoes--> shoe of nike", "action_flag": 1, "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product shoe variant\", \"object\": \"helloshoes - 40 - Green\"}}]"}}, {"model": "admin.logentry", "pk": 74, "fields": {"action_time": "2026-09-11T17:09:52.195Z", "user": 1, "content_type": 7, "object_id": "10", "object_repr": "lllcloth--> cloth of perfect", "action_flag": 1, "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product image\", \"object\": \"lllcloth image\"}}, {\"added\": {\"name\": \"product cloth variant\", \"object\": \"lllcloth - L - White\"}}]"}}, {"model": "admin.logentry", "pk": 75, "fields": {"action_time": "2026-09-11T18:40:42.362Z", "user": 1, "content_type": 7, "object_id": "11", "object_repr": "kkcloth--> cloth of perfect", "action_flag": 1, "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product image\", \"object\": \"kkcloth image\"}}, {\"added\": {\"name\": \"product cloth variant\", \"object\": \"kkcloth - M - Yellow\"}}]"}}, {"model": "admin.logentry", "pk": 76, "fields": {"action_time": "2026-09-13T19:08:03.740Z", "user": 1, "content_type": 7, "object_id": "11", "object_repr": "kkcloth--> cloth of perfect", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 77, "fields": {"action_time": "2026-09-13T19:10:36.971Z", "user": 1, "content_type": 7, "object_id": "11", "object_repr": "kkcloth--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount percentage\"]}}]"}}, {"model": "admin.logentry", "pk": 78, "fields": {"action_time": "2026-09-13T20:13:01.599Z", "user": 1, "content_type": 7, "object_id": "11", "object_repr": "kkcloth--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product cloth variant\", \"object\": \"kkcloth - M - Yellow\", \"fields\": [\"Quantity\"]}}]"}}, {"model": "admin.logentry", "pk": 79, "fields": {"action_time": "2026-09-14T18:59:49.834Z", "user": 1, "content_type": 7, "object_id": "9", "object_repr": "helloshoes--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount end\"]}}]"}}, {"model": "admin.logentry", "pk": 80, "fields": {"action_time": "2026-09-14T19:01:15.637Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount end\"]}}]"}}, {"model": "admin.logentry", "pk": 81, "fields": {"action_time": "2026-09-14T19:02:29.103Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount start\", \"Discount end\"]}}]"}}, {"model": "admin.logentry", "pk": 82, "fields": {"action_time": "2026-09-14T19:03:18.198Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount end\"]}}]"}}, {"model": "admin.logentry", "pk": 83, "fields": {"action_time": "2026-09-14T19:03:50.292Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount percentage\"]}}]"}}, {"model": "admin.logentry", "pk": 84, "fields": {"action_time": "2026-09-14T19:05:51.623Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount end\"]}}]"}}, {"model": "admin.logentry", "pk": 85, "fields": {"action_time": "2026-09-14T20:42:04.741Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount end\"]}}]"}}, {"model": "admin.logentry", "pk": 86, "fields": {"action_time": "2026-09-14T20:42:47.988Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount end\"]}}]"}}, {"model": "admin.logentry", "pk": 87, "fields": {"action_time": "2026-09-15T18:37:39.838Z", "user": 1, "content_type": 13, "object_id": "9", "object_repr": "kkcloth - M - Yellow", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 88, "fields": {"action_time": "2026-09-15T18:39:46.291Z", "user": 1, "content_type": 13, "object_id": "10", "object_repr": "kkcloth - S - Black", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 89, "fields": {"action_time": "2026-09-15T18:40:21.615Z", "user": 1, "content_type": 13, "object_id": "10", "object_repr": "kkcloth - S - Black", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Quantity\"]}}]"}}, {"model": "admin.logentry", "pk": 90, "fields": {"action_time": "2026-09-15T18:40:51.701Z", "user": 1, "content_type": 13, "object_id": "11", "object_repr": "kkcloth - XS - Red", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 91, "fields": {"action_time": "2026-09-15T18:41:33.993Z", "user": 1, "content_type": 13, "object_id": "12", "object_repr": "kkcloth - XL - White", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 92, "fields": {"action_time": "2026-09-15T18:42:56.879Z", "user": 1, "content_type": 13, "object_id": "13", "object_repr": "kkcloth - M - Pink", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 93, "fields": {"action_time": "2026-09-15T18:46:18.636Z", "user": 1, "content_type": 13, "object_id": "14", "object_repr": "kkcloth - S - Yellow", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 94, "fields": {"action_time": "2026-09-15T18:48:04.268Z", "user": 1, "content_type": 13, "object_id": "13", "object_repr": "kkcloth - M - Pink", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"}}, {"model": "admin.logentry", "pk": 95, "fields": {"action_time": "2026-09-15T18:48:14.744Z", "user": 1, "content_type": 13, "object_id": "11", "object_repr": "kkcloth - XS - Red", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"}}, {"model": "admin.logentry", "pk": 96, "fields": {"action_time": "2026-09-15T18:49:12.163Z", "user": 1, "content_type": 13, "object_id": "10", "object_repr": "kkcloth - S - Black", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"}}, {"model": "admin.logentry", "pk": 97, "fields": {"action_time": "2026-09-15T18:49:29.820Z", "user": 1, "content_type": 13, "object_id": "12", "object_repr": "kkcloth - XL - White", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Price\"]}}]"}}, {"model": "admin.logentry", "pk": 98, "fields": {"action_time": "2026-09-16T20:39:00.740Z", "user": 1, "content_type": 7, "object_id": "10", "object_repr": "Gcloth--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"}}, {"model": "admin.logentry", "pk": 99, "fields": {"action_time": "2026-09-16T20:41:38.551Z", "user": 1, "content_type": 7, "object_id": "11", "object_repr": "Xcloth--> cloth of perfect", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\", \"Description\"]}}]"}}, {"model": "admin.logentry", "pk": 100, "fields": {"action_time": "2026-09-16T20:45:59.712Z", "user": 1, "content_type": 7, "object_id": "9", "object_repr": "Adorable--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}, {\"changed\": {\"name\": \"product shoe variant\", \"object\": \"Adorable - 40 - Green\", \"fields\": [\"Price\", \"Quantity\"]}}]"}}, {"model": "admin.logentry", "pk": 101, "fields": {"action_time": "2026-09-16T20:48:04.644Z", "user": 1, "content_type": 7, "object_id": "5", "object_repr": "fantastic--> cloth of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Discount percentage\", \"Description\"]}}, {\"added\": {\"name\": \"product cloth variant\", \"object\": \"fantastic - S - Gray\"}}]"}}, {"model": "admin.logentry", "pk": 102, "fields": {"action_time": "2026-09-19T17:18:16.633Z", "user": 1, "content_type": 7, "object_id": "9", "object_repr": "Adorable--> shoe of nike", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"Adorable image\"}}]"}}, {"model": "admin.logentry", "pk": 103, "fields": {"action_time": "2026-09-20T13:59:50.211Z", "user": 1, "content_type": 7, "object_id": "5", "object_repr": "fantastic--> cloth of nike", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"fantastic image\"}}]"}}, {"model": "admin.logentry", "pk": 104, "fields": {"action_time": "2026-09-20T14:02:05.860Z", "user": 1, "content_type": 7, "object_id": "5", "object_repr": "fantastic--> cloth of nike", "action_flag": 2, "change_message": "[{\"deleted\": {\"name\": \"product image\", \"object\": \"fantastic image\"}}, {\"deleted\": {\"name\": \"product image\", \"object\": \"fantastic image\"}}, {\"deleted\": {\"name\": \"product image\", \"object\": \"fantastic image\"}}]"}}, {"model": "admin.logentry", "pk": 105, "fields": {"action_time": "2026-09-20T14:04:20.679Z", "user": 1, "content_type": 7, "object_id": "3", "object_repr": "amazing shoe--> cloth of nike", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"amazing shoe image\"}}, {\"deleted\": {\"name\": \"product image\", \"object\": \"amazing shoe image\"}}, {\"deleted\": {\"name\": \"product image\", \"object\": \"amazing shoe image\"}}]"}}, {"model": "admin.logentry", "pk": 106, "fields": {"action_time": "2026-09-20T14:05:51.195Z", "user": 1, "content_type": 7, "object_id": "3", "object_repr": "amazing shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Product type\"]}}]"}}, {"model": "admin.logentry", "pk": 107, "fields": {"action_time": "2026-09-20T14:17:15.911Z", "user": 1, "content_type": 7, "object_id": "10", "object_repr": "Gcloth--> cloth of perfect", "action_flag": 2, "change_message": "[{\"added\": {\"name\": \"product image\", \"object\": \"Gcloth image\"}}, {\"deleted\": {\"name\": \"product image\", \"object\": \"Gcloth image\"}}]"}}, {"model": "admin.logentry", "pk": 108, "fields": {"action_time": "2026-09-20T14:18:49.782Z", "user": 1, "content_type": 7, "object_id": "4", "object_repr": "good shoe--> shoe of nike", "action_flag": 2, "change_message": "[{\"changed\": {\"name\": \"product shoe variant\", \"object\": \"good shoe - 42 - Blue\", \"fields\": [\"Price\"]}}, {\"changed\": {\"name\": \"product shoe variant\", \"object\": \"good shoe - 41 - Red\", \"fields\": [\"Price\"]}}]"}}, {"model": "sessions.session", "pk": "2h7yq2rhsr3sxugmfqt1q1ru6zxrpshr", "fields": {"session_data": ".eJxVjDsOwjAQRO_iGllZx19Kes5grb0LDiBbipMKcXcSKQWUM-_NvEXEdSlx7TzHicRZgDj9dgnzk-sO6IH13mRudZmnJHdFHrTLayN-XQ7376BgL9taj0oZQ_lGPjkNqKyFzIM21jlOIaNxoEBbdDqY0fgB2AMmyriFQCw-X8S4N0I:1wwOt8:Gm9DLsWVI78XNJbPBKhaSviHFcWwsMvnUdR_Pp2AZ0Q", "expire_date": "2026-09-01T18:50:18.837Z"}}, {"model": "sessions.session", "pk": "d9lsdqpcoyfj4nhyr6s5o6i0puglkbzg", "fields": {"session_data": ".eJxVjDsOwjAQRO_iGllZx19Kes5grb0LDiBbipMKcXcSKQWUM-_NvEXEdSlx7TzHicRZgDj9dgnzk-sO6IH13mRudZmnJHdFHrTLayN-XQ7376BgL9taj0oZQ_lGPjkNqKyFzIM21jlOIaNxoEBbdDqY0fgB2AMmyriFQCw-X8S4N0I:1wqD1p:-ri_lPGBQYtBR9c6hdPEc6ctsIFrtjh7ppihFiLfDFY", "expire_date": "2026-08-15T16:57:41.650Z"}}, {"model": "sessions.session", "pk": "g3a5uif1ryi60ozyxm2zmnki69othslh", "fields": {"session_data": ".eJxVjMsOwiAQAP-FsyFLeRQ8eu83kF3YStWUpLQn478bkh70OjOZt4h47CUejbe4ZHEVSlx-GWF68tpFfuB6rzLVdd8Wkj2Rp21yqplft7P9GxRspW-zA2JHToFlMEGPHjOaOWvn1WAp2UQaDCseBrBgwOMIZGb2QakQWHy-0JA3LQ:1wjLsI:Q0tyENGiG7wcIAXApwGdNcDuN09ZN-NeR_2FIZBPu-Y", "expire_date": "2026-07-27T18:59:30.508Z"}}, {"model": "sessions.session", "pk": "gd5oe31q372dj8kfimeh0v1e5et501z6", "fields": {"session_data": ".eJxVjMsOwiAQAP-FsyFLeRQ8eu83kF3YStWUpLQn478bkh70OjOZt4h47CUejbe4ZHEVSlx-GWF68tpFfuB6rzLVdd8Wkj2Rp21yqplft7P9GxRspW-zA2JHToFlMEGPHjOaOWvn1WAp2UQaDCseBrBgwOMIZGb2QakQWHy-0JA3LQ:1wknMq:rJ5RwgYnr1B_NeSRkz_qhH0tAyMpxsNrrVyWM5Bwwyg", "expire_date": "2026-07-31T18:33:00.950Z"}}, {"model": "sessions.session", "pk": "i5aw62anpkorvmd3ipnf40vg87ezctj5", "fields": {"session_data": ".eJxVjDsOwjAQRO_iGllZx19Kes5grb0LDiBbipMKcXcSKQWUM-_NvEXEdSlx7TzHicRZgDj9dgnzk-sO6IH13mRudZmnJHdFHrTLayN-XQ7376BgL9taj0oZQ_lGPjkNqKyFzIM21jlOIaNxoEBbdDqY0fgB2AMmyriFQCw-X8S4N0I:1x1NV5:XmE3UdUF8F35YlE1wr7p9HQVzOQTeV126WFmi7lDvEg", "expire_date": "2026-09-15T12:22:03.942Z"}}, {"model": "sessions.session", "pk": "k61kwpedgh0099af2gmsba7p6ylu4hjk", "fields": {"session_data": ".eJxVjMsOwiAQAP-FsyFLeRQ8eu83kF3YStWUpLQn478bkh70OjOZt4h47CUejbe4ZHEVSlx-GWF68tpFfuB6rzLVdd8Wkj2Rp21yqplft7P9GxRspW-zA2JHToFlMEGPHjOaOWvn1WAp2UQaDCseBrBgwOMIZGb2QakQWHy-0JA3LQ:1wjLsM:bij3YeLD3aq2fNEhC92bc19m9QF45Z0ASz0mMimas8Q", "expire_date": "2026-07-27T18:59:34.076Z"}}, {"model": "sessions.session", "pk": "p5q86yucydl9xpvbua7kfw2kxn4cehtp", "fields": {"session_data": ".eJxVjDsOwjAQRO_iGllZx19Kes5grb0LDiBbipMKcXcSKQWUM-_NvEXEdSlx7TzHicRZgDj9dgnzk-sO6IH13mRudZmnJHdFHrTLayN-XQ7376BgL9taj0oZQ_lGPjkNqKyFzIM21jlOIaNxoEBbdDqY0fgB2AMmyriFQCw-X8S4N0I:1x6SBh:BWo0htXVosA8gCkb23d1zV5aAliykKL13nmxtixK8Oc", "expire_date": "2026-09-29T12:23:01.546Z"}}, {"model": "sessions.session", "pk": "soh2dkx9ji8i8n5nwwm2v7cql003x8it", "fields": {"session_data": ".eJxVjDsOwjAQRO_iGllZx19Kes5grb0LDiBbipMKcXcSKQWUM-_NvEXEdSlx7TzHicRZgDj9dgnzk-sO6IH13mRudZmnJHdFHrTLayN-XQ7376BgL9taj0oZQ_lGPjkNqKyFzIM21jlOIaNxoEBbdDqY0fgB2AMmyriFQCw-X8S4N0I:1wrKf2:tJYfPdlSmJepywPp0rGpHpqDENdXCZ8lWeOOdLfODao", "expire_date": "2026-08-18T19:18:48.687Z"}}, {"model": "sessions.session", "pk": "w7qvoj5xsrr372emtgtdqinktfgk33uv", "fields": {"session_data": ".eJxVjMsOwiAQAP-FsyFLeRQ8eu83kF3YStWUpLQn478bkh70OjOZt4h47CUejbe4ZHEVSlx-GWF68tpFfuB6rzLVdd8Wkj2Rp21yqplft7P9GxRspW-zA2JHToFlMEGPHjOaOWvn1WAp2UQaDCseBrBgwOMIZGb2QakQWHy-0JA3LQ:1wjLsJ:f_tSvRvC1azMKMJNGFFEAbmwW7MXEmdUoauWYnGC6Hw", "expire_date": "2026-07-27T18:59:31.695Z"}}, {"model": "accounts.customuser", "pk": 1, "fields": {"password": "pbkdf2_sha256$1000000$ewwDWXgseKvRyMwgpU4XXA$LoDMJX6kulF9vrb6NaFnxC3LLQ44D+wFqYEwTOIBps4=", "last_login": "2026-09-15T12:23:01.537Z", "is_superuser": true, "username": "mamad", "first_name": "", "last_name": "", "email": "", "is_staff": true, "is_active": true, "date_joined": "2026-07-13T18:58:29.807Z", "phone": null, "profile": "", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 2, "fields": {"password": "pbkdf2_sha256$1000000$lum9WOC7MdVOm6sOdmcyF5$AWPzWSJniY0CZLgIgGZ+HvbXAM/x3FCG/e9nly+hDSM=", "last_login": null, "is_superuser": false, "username": "reza", "first_name": "", "last_name": "", "email": "", "is_staff": false, "is_active": true, "date_joined": "2026-07-16T19:48:01.638Z", "phone": null, "profile": "", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 3, "fields": {"password": "pbkdf2_sha256$1000000$RQiNJSmAJrorqn2EuBZS0o$tZTXOUqdORrOMOXHbWCpoy0VWenL5I3MKoWi+TOQojg=", "last_login": null, "is_superuser": false, "username": "ali", "first_name": "", "last_name": "", "email": "", "is_staff": false, "is_active": true, "date_joined": "2026-08-04T19:25:19.168Z", "phone": null, "profile": "", "groups": [], "user_permissions": []}}, {"model": "accounts.customuser", "pk": 4, "fields": {"password": "", "last_login": null, "is_superuser": false, "username": "demoadmin", "first_name": "", "last_name": "", "email": "demoadmin@example.com", "is_staff": false, "is_active": true, "date_joined": "2026-08-31T19:31:15.784Z", "phone": null, "profile": "", "groups": [], "user_permissions": []}}, {"model": "baskets.basket", "pk": 4, "fields": {"user": 1, "cloth_variant": null, "shoe_variant": null, "quantity": 3, "created_at": "2026-07-18T15:30:05.992Z", "updated_at": "2026-07-18T15:30:17.015Z"}}, {"model": "baskets.basket", "pk": 6, "fields": {"user": 1, "cloth_variant": null, "shoe_variant": null, "quantity": 4, "created_at": "2026-08-02T13:22:14.569Z", "updated_at": "2026-08-07T17:24:40.539Z"}}, {"model": "baskets.basket", "pk": 7, "fields": {"user": 1, "cloth_variant": null, "shoe_variant": null, "quantity": 1, "created_at": "2026-08-02T13:22:31.525Z", "updated_at": "2026-08-02T13:22:31.525Z"}}, {"model": "baskets.basket", "pk": 8, "fields": {"user": 1, "cloth_variant": null, "shoe_variant": null, "quantity": 2, "created_at": "2026-09-01T19:38:34.212Z", "updated_at": "2026-09-01T19:39:17.743Z"}}, {"model": "baskets.basket", "pk": 9, "fields": {"user": 1, "cloth_variant": null, "shoe_variant": null, "quantity": 1, "created_at": "2026-09-01T19:39:43.656Z", "updated_at": "2026-09-01T19:39:43.658Z"}}, {"model": "baskets.basket", "pk": 11, "fields": {"user": 1, "cloth_variant": null, "shoe_variant": 5, "quantity": 2, "created_at": "2026-09-03T16:31:37.126Z", "updated_at": "2026-09-03T16:31:38.356Z"}}, {"model": "baskets.basket", "pk": 12, "fields": {"user": 1, "cloth_variant": 5, "shoe_variant": null, "quantity": 1, "created_at": "2026-09-03T16:34:55.881Z", "updated_at": "2026-09-11T19:21:10.614Z"}}, {"model": "baskets.basket", "pk": 14, "fields": {"user": 1, "cloth_variant": 4, "shoe_variant": null, "quantity": 1, "created_at": "2026-09-11T19:21:33.990Z", "updated_at": "2026-09-11T19:21:34.003Z"}}, {"model": "baskets.basket", "pk": 15, "fields": {"user": 2, "cloth_variant": null, "shoe_variant": 4, "quantity": 2, "created_at": "2026-09-13T13:10:10.459Z", "updated_at": "2026-09-14T18:54:30.760Z"}}, {"model": "baskets.basket", "pk": 19, "fields": {"user": 2, "cloth_variant": 9, "shoe_variant": null, "quantity": 5, "created_at": "2026-09-14T15:14:51.225Z", "updated_at": "2026-09-14T18:49:56.760Z"}}, {"model": "baskets.basket", "pk": 20, "fields": {"user": 2, "cloth_variant": null, "shoe_variant": 5, "quantity": 2, "created_at": "2026-09-14T18:52:08.797Z", "updated_at": "2026-09-14T18:54:08.233Z"}}, {"model": "baskets.basket", "pk": 21, "fields": {"user": 2, "cloth_variant": null, "shoe_variant": 7, "quantity": 2, "created_at": "2026-09-14T19:06:44.625Z", "updated_at": "2026-09-14T19:06:46.390Z"}}, {"model": "products.category", "pk": 1, "fields": {"name": "Sports", "slug": "sports", "description": "Sports items"}}, {"model": "products.category", "pk": 2, "fields": {"name": "sporty", "slug": "nxnhz", "description": ""}}, {"model": "products.product", "pk": 1, "fields": {"author": 1, "name": "lovely clothe", "slug": "trhsrhgz", "product_type": "cloth", "discount_percentage": 0, "discount_start": "2026-09-13T19:07:37.166Z", "discount_end": "2026-09-20T19:07:37.109Z", "brand": "perfect", "description": "this is the best", "average_rating": 5.0, "ratings_count": 1, "rating_breakdown": {"1": 0, "2": 0, "3": 0, "4": 0, "5": 1}, "created_at": "2026-07-13T19:02:11.480Z", "updated_at": "2026-09-01T18:23:51.840Z", "category": []}}, {"model": "products.product", "pk": 2, "fields": {"author": 1, "name": "lovely shoe", "slug": "gsrgh", "product_type": "shoe", "discount_percentage": 0, "discount_start": "2026-09-13T19:07:37.166Z", "discount_end": "2026-09-20T19:07:37.109Z", "brand": "nike", "description": "you`ll defently like it", "average_rating": 2.0, "ratings_count": 1, "rating_breakdown": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 0}, "created_at": "2026-07-13T19:03:55.971Z", "updated_at": "2026-09-01T15:24:07.231Z", "category": []}}, {"model": "products.product", "pk": 3, "fields": {"author": 1, "name": "amazing shoe", "slug": "kfdjs", "product_type": "shoe", "discount_percentage": 0, "discount_start": "2026-09-13T19:07:37Z", "discount_end": "2026-09-20T19:07:37Z", "brand": "nike", "description": "dgaegr", "average_rating": 3.0, "ratings_count": 1, "rating_breakdown": {"1": 0, "2": 0, "3": 1, "4": 0, "5": 0}, "created_at": "2026-07-13T19:05:30.317Z", "updated_at": "2026-09-20T14:05:51.191Z", "category": []}}, {"model": "products.product", "pk": 4, "fields": {"author": 1, "name": "good shoe", "slug": "srhmn", "product_type": "shoe", "discount_percentage": 20, "discount_start": "2026-09-13T22:07:37Z", "discount_end": "2026-09-14T20:45:00Z", "brand": "nike", "description": "nzhzzttfzf", "average_rating": 1.0, "ratings_count": 1, "rating_breakdown": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0}, "created_at": "2026-07-13T19:06:30.123Z", "updated_at": "2026-09-20T14:18:49.776Z", "category": []}}, {"model": "products.product", "pk": 5, "fields": {"author": 2, "name": "fantastic", "slug": "ghnx", "product_type": "cloth", "discount_percentage": 20, "discount_start": "2026-09-13T19:07:37Z", "discount_end": "2026-09-20T19:07:37Z", "brand": "nike", "description": "one of the best cloth...", "average_rating": 4.0, "ratings_count": 1, "rating_breakdown": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0}, "created_at": "2026-08-04T19:27:51.707Z", "updated_at": "2026-09-20T14:02:05.854Z", "category": []}}, {"model": "products.product", "pk": 6, "fields": {"author": 3, "name": "Amgraor", "slug": "hukf", "product_type": "cloth", "discount_percentage": 0, "discount_start": "2026-09-13T19:07:37.166Z", "discount_end": "2026-09-20T19:07:37.109Z", "brand": "nike", "description": "fhsrz", "average_rating": 3.0, "ratings_count": 1, "rating_breakdown": {"1": 0, "2": 0, "3": 1, "4": 0, "5": 0}, "created_at": "2026-08-19T16:47:49.981Z", "updated_at": "2026-09-01T14:50:18.052Z", "category": []}}, {"model": "products.product", "pk": 7, "fields": {"author": 4, "name": "Nike Runner", "slug": "nike-runner", "product_type": "shoe", "discount_percentage": 0, "discount_start": "2026-09-13T19:07:37.166Z", "discount_end": "2026-09-20T19:07:37.109Z", "brand": "nike", "description": "Running sneaker", "average_rating": 3.0, "ratings_count": 1, "rating_breakdown": {"1": 0, "2": 0, "3": 1, "4": 0, "5": 0}, "created_at": "2026-08-31T19:31:15.824Z", "updated_at": "2026-09-01T14:45:24.962Z", "category": [1]}}, {"model": "products.product", "pk": 8, "fields": {"author": 4, "name": "Perfect Cotton Shirt", "slug": "perfect-cotton-shirt", "product_type": "cloth", "discount_percentage": 0, "discount_start": "2026-09-13T19:07:37.166Z", "discount_end": "2026-09-20T19:07:37.109Z", "brand": "perfect", "description": "Basic cotton shirt", "average_rating": 1.0, "ratings_count": 1, "rating_breakdown": {"1": 1, "2": 0, "3": 0, "4": 0, "5": 0}, "created_at": "2026-08-31T19:31:15.856Z", "updated_at": "2026-09-01T18:26:03.188Z", "category": [1]}}, {"model": "products.product", "pk": 9, "fields": {"author": 4, "name": "Adorable", "slug": "xkhxokhxok", "product_type": "shoe", "discount_percentage": 0, "discount_start": "2026-09-13T19:07:37Z", "discount_end": "2026-09-13T19:07:39Z", "brand": "nike", "description": "best...", "average_rating": 4.0, "ratings_count": 1, "rating_breakdown": {"1": 0, "2": 0, "3": 0, "4": 1, "5": 0}, "created_at": "2026-09-11T17:06:07.579Z", "updated_at": "2026-09-19T17:18:16.615Z", "category": []}}, {"model": "products.product", "pk": 10, "fields": {"author": 1, "name": "Gcloth", "slug": "cgyjdt", "product_type": "cloth", "discount_percentage": 0, "discount_start": "2026-09-13T19:07:37Z", "discount_end": "2026-09-20T19:07:37Z", "brand": "perfect", "description": "this is great", "average_rating": 2.0, "ratings_count": 1, "rating_breakdown": {"1": 0, "2": 1, "3": 0, "4": 0, "5": 0}, "created_at": "2026-09-11T17:09:50.344Z", "updated_at": "2026-09-20T14:17:15.904Z", "category": []}}, {"model": "products.product", "pk": 11, "fields": {"author": 3, "name": "Xcloth", "slug": "xtzegz", "product_type": "cloth", "discount_percentage": 30, "discount_start": "2026-09-13T19:07:37Z", "discount_end": "2026-09-20T19:07:37Z", "brand": "perfect", "description": "you would definitely live it", "average_rating": 3.0, "ratings_count": 2, "rating_breakdown": {"1": 0, "2": 1, "3": 0, "4": 1, "5": 0}, "created_at": "2026-09-11T18:40:40.104Z", "updated_at": "2026-09-16T20:41:38.549Z", "category": []}}, {"model": "products.productcomment", "pk": 1, "fields": {"product": 5, "user": 2, "comment": "such a wonderfull cloth", "is_approved": true, "created_at": "2026-08-07T13:52:13.439Z", "updated_at": "2026-08-07T14:16:45.286Z"}}, {"model": "products.productcomment", "pk": 2, "fields": {"product": 5, "user": 2, "comment": "perfect", "is_approved": true, "created_at": "2026-08-07T14:29:16.531Z", "updated_at": "2026-08-07T14:29:16.531Z"}}, {"model": "products.productcomment", "pk": 3, "fields": {"product": 1, "user": 1, "comment": "hello im mamad", "is_approved": true, "created_at": "2026-08-08T14:39:07.770Z", "updated_at": "2026-08-08T14:39:07.770Z"}}, {"model": "products.productcomment", "pk": 4, "fields": {"product": 1, "user": 1, "comment": "hello im mamad", "is_approved": true, "created_at": "2026-08-08T14:43:51.778Z", "updated_at": "2026-08-08T14:43:51.778Z"}}, {"model": "products.productcomment", "pk": 7, "fields": {"product": 1, "user": 1, "comment": "hello im mamad", "is_approved": true, "created_at": "2026-08-08T15:28:43.855Z", "updated_at": "2026-08-08T15:28:43.855Z"}}, {"model": "products.productcomment", "pk": 8, "fields": {"product": 5, "user": 1, "comment": "hello", "is_approved": true, "created_at": "2026-08-10T16:52:03.488Z", "updated_at": "2026-08-10T16:52:03.488Z"}}, {"model": "products.productcomment", "pk": 9, "fields": {"product": 5, "user": 1, "comment": "www", "is_approved": true, "created_at": "2026-08-10T16:52:47.398Z", "updated_at": "2026-08-10T16:52:47.398Z"}}, {"model": "products.productcomment", "pk": 10, "fields": {"product": 5, "user": 1, "comment": "gggg", "is_approved": true, "created_at": "2026-08-10T16:53:02.940Z", "updated_at": "2026-08-10T16:53:02.940Z"}}, {"model": "products.productcomment", "pk": 11, "fields": {"product": 5, "user": 1, "comment": "gffff", "is_approved": true, "created_at": "2026-08-10T16:53:11.942Z", "updated_at": "2026-08-10T16:53:11.942Z"}}, {"model": "products.productcomment", "pk": 12, "fields": {"product": 5, "user": 1, "comment": "chyx", "is_approved": true, "created_at": "2026-08-10T16:53:25.351Z", "updated_at": "2026-08-10T16:53:25.351Z"}}, {"model": "products.productcomment", "pk": 13, "fields": {"product": 5, "user": 1, "comment": "ctjxt", "is_approved": true, "created_at": "2026-08-10T16:53:32.054Z", "updated_at": "2026-08-10T16:53:32.054Z"}}, {"model": "products.productcomment", "pk": 14, "fields": {"product": 1, "user": 1, "comment": "heello", "is_approved": true, "created_at": "2026-09-07T13:06:04.142Z", "updated_at": "2026-09-07T13:06:04.142Z"}}, {"model": "products.productcomment", "pk": 15, "fields": {"product": 8, "user": 1, "comment": "hello", "is_approved": true, "created_at": "2026-09-11T19:39:57.114Z", "updated_at": "2026-09-11T19:39:57.114Z"}}, {"model": "products.productcomment", "pk": 16, "fields": {"product": 8, "user": 1, "comment": "what the hell", "is_approved": true, "created_at": "2026-09-11T19:40:43.820Z", "updated_at": "2026-09-11T19:40:43.820Z"}}, {"model": "products.productcomment", "pk": 17, "fields": {"product": 2, "user": 1, "comment": "hello", "is_approved": true, "created_at": "2026-09-13T13:00:26.490Z", "updated_at": "2026-09-13T13:00:26.490Z"}}, {"model": "products.productcomment", "pk": 18, "fields": {"product": 5, "user": 2, "comment": "hi", "is_approved": true, "created_at": "2026-09-13T13:06:04.543Z", "updated_at": "2026-09-13T13:06:04.543Z"}}, {"model": "products.productcomment", "pk": 19, "fields": {"product": 5, "user": 2, "comment": "how are you today?", "is_approved": true, "created_at": "2026-09-13T13:06:31.852Z", "updated_at": "2026-09-13T13:06:31.852Z"}}, {"model": "products.productcomment", "pk": 20, "fields": {"product": 5, "user": 2, "comment": "welcom", "is_approved": true, "created_at": "2026-09-13T13:07:27.871Z", "updated_at": "2026-09-13T13:07:27.871Z"}}, {"model": "products.productcomment", "pk": 21, "fields": {"product": 11, "user": 2, "comment": "what is it?", "is_approved": true, "created_at": "2026-09-13T14:11:28.650Z", "updated_at": "2026-09-13T14:11:28.650Z"}}, {"model": "products.productcomment", "pk": 22, "fields": {"product": 11, "user": 2, "comment": "hello", "is_approved": true, "created_at": "2026-09-16T16:39:01.073Z", "updated_at": "2026-09-16T16:39:01.073Z"}}, {"model": "products.productcomment", "pk": 23, "fields": {"product": 10, "user": 1, "comment": "hi", "is_approved": true, "created_at": "2026-09-17T21:57:04.473Z", "updated_at": "2026-09-17T21:57:04.473Z"}}, {"model": "products.productcomment", "pk": 24, "fields": {"product": 4, "user": 3, "comment": "how owns this?", "is_approved": true, "created_at": "2026-09-20T14:12:20.462Z", "updated_at": "2026-09-20T14:12:20.462Z"}}, {"model": "products.commentreply", "pk": 1, "fields": {"comment": 16, "parent": null, "user": 1, "text": "hello mamad", "created_at": "2026-09-16T20:28:47.818Z"}}, {"model": "products.commentreply", "pk": 2, "fields": {"comment": 21, "parent": null, "user": 3, "text": "nothing", "created_at": "2026-09-19T13:34:35.693Z"}}, {"model": "products.productimage", "pk": 13, "fields": {"image": "product/cloth/images_2.jpg", "product": 1, "created_at": "2026-08-19T16:36:20.923Z", "updated_at": "2026-09-01T15:09:00.275Z"}}, {"model": "products.productimage", "pk": 14, "fields": {"image": "product/shoe/product-jpeg-500x500.webp", "product": 2, "created_at": "2026-08-19T16:36:20.946Z", "updated_at": "2026-09-01T15:21:36.738Z"}}, {"model": "products.productimage", "pk": 17, "fields": {"image": "product/shoe/2.jpg", "product": 4, "created_at": "2026-08-19T16:36:20.960Z", "updated_at": "2026-09-01T15:09:30.440Z"}}, {"model": "products.productimage", "pk": 20, "fields": {"image": "product/shoe/hoka-runners-climb.webp", "product": 7, "created_at": "2026-09-01T14:44:50.608Z", "updated_at": "2026-09-01T14:44:50.608Z"}}, {"model": "products.productimage", "pk": 23, "fields": {"image": "product/cloth/Logo-Men-Joggers-Sets-Tracksuit-Sportswear-for-Mens-Training-Wear-Custom-Gym-Trac.avif", "product": 8, "created_at": "2026-09-01T14:48:35.788Z", "updated_at": "2026-09-01T14:48:35.788Z"}}, {"model": "products.productimage", "pk": 24, "fields": {"image": "product/cloth/images.jpg", "product": 6, "created_at": "2026-09-01T14:50:19.527Z", "updated_at": "2026-09-01T14:50:19.527Z"}}, {"model": "products.productimage", "pk": 25, "fields": {"image": "product/cloth/594623004-medium.jpg", "product": 1, "created_at": "2026-09-01T15:08:22.334Z", "updated_at": "2026-09-01T15:08:22.334Z"}}, {"model": "products.productimage", "pk": 26, "fields": {"image": "product/cloth/594623004-medium.jpg", "product": 1, "created_at": "2026-09-01T15:08:23.931Z", "updated_at": "2026-09-01T15:08:23.931Z"}}, {"model": "products.productimage", "pk": 27, "fields": {"image": "product/cloth/594623004-medium.jpg", "product": 1, "created_at": "2026-09-01T15:08:25.819Z", "updated_at": "2026-09-01T15:08:25.819Z"}}, {"model": "products.productimage", "pk": 28, "fields": {"image": "product/cloth/594623004-medium.jpg", "product": 1, "created_at": "2026-09-01T15:08:32.700Z", "updated_at": "2026-09-01T15:08:32.700Z"}}, {"model": "products.productimage", "pk": 29, "fields": {"image": "product/cloth/594623004-medium.jpg", "product": 1, "created_at": "2026-09-01T15:08:35.278Z", "updated_at": "2026-09-01T15:08:35.278Z"}}, {"model": "products.productimage", "pk": 30, "fields": {"image": "product/cloth/594623004-medium.jpg", "product": 1, "created_at": "2026-09-01T15:09:01.054Z", "updated_at": "2026-09-01T15:09:01.054Z"}}, {"model": "products.productimage", "pk": 31, "fields": {"image": "product/shoe/product-jpeg-500x500.webp", "product": 2, "created_at": "2026-09-01T15:24:08.446Z", "updated_at": "2026-09-01T15:24:08.446Z"}}, {"model": "products.productimage", "pk": 33, "fields": {"image": "product/cloth/images_1.jpg", "product": 11, "created_at": "2026-09-11T18:40:42.348Z", "updated_at": "2026-09-11T18:40:42.348Z"}}, {"model": "products.productimage", "pk": 34, "fields": {"image": "product/shoe/pickleball-shoes-on-court.jpg", "product": 9, "created_at": "2026-09-19T17:18:16.620Z", "updated_at": "2026-09-19T17:18:16.620Z"}}, {"model": "products.productimage", "pk": 35, "fields": {"image": "product/cloth/1_3bf206ff-69c3-40f7-8bde-3eaa0d2e53c5.webp", "product": 5, "created_at": "2026-09-20T13:59:50.189Z", "updated_at": "2026-09-20T13:59:50.189Z"}}, {"model": "products.productimage", "pk": 36, "fields": {"image": "product/cloth/594623004-medium_9iudiYv.jpg", "product": 3, "created_at": "2026-09-20T14:04:20.677Z", "updated_at": "2026-09-20T14:04:20.677Z"}}, {"model": "products.productimage", "pk": 37, "fields": {"image": "product/cloth/images_5.jpg", "product": 10, "created_at": "2026-09-20T14:17:15.910Z", "updated_at": "2026-09-20T14:17:15.910Z"}}, {"model": "products.color", "pk": 1, "fields": {"name": "Red", "slug": "red", "created_at": "2026-08-31T19:54:33.070Z", "updated_at": "2026-08-31T19:54:33.070Z"}}, {"model": "products.color", "pk": 2, "fields": {"name": "Blue", "slug": "blue", "created_at": "2026-08-31T19:54:33.074Z", "updated_at": "2026-08-31T19:54:33.074Z"}}, {"model": "products.color", "pk": 3, "fields": {"name": "White", "slug": "white", "created_at": "2026-08-31T19:54:33.076Z", "updated_at": "2026-08-31T19:54:33.076Z"}}, {"model": "products.color", "pk": 4, "fields": {"name": "Black", "slug": "black", "created_at": "2026-08-31T19:54:33.078Z", "updated_at": "2026-08-31T19:54:33.078Z"}}, {"model": "products.color", "pk": 5, "fields": {"name": "Green", "slug": "green", "created_at": "2026-08-31T19:54:33.079Z", "updated_at": "2026-08-31T19:54:33.079Z"}}, {"model": "products.color", "pk": 6, "fields": {"name": "Yellow", "slug": "yellow", "created_at": "2026-08-31T19:54:33.081Z", "updated_at": "2026-08-31T19:54:33.081Z"}}, {"model": "products.color", "pk": 7, "fields": {"name": "Pink", "slug": "pink", "created_at": "2026-08-31T19:54:33.083Z", "updated_at": "2026-08-31T19:54:33.083Z"}}, {"model": "products.color", "pk": 8, "fields": {"name": "Gray", "slug": "gray", "created_at": "2026-08-31T19:54:33.085Z", "updated_at": "2026-08-31T19:54:33.085Z"}}, {"model": "products.productclothvariant", "pk": 4, "fields": {"product": 8, "price": 3116, "size": "L", "color": 4, "quantity": 15, "is_available": true, "sku": "PERFECT-COTTON-SHIRT-BLACK-L", "created_at": "2026-09-01T14:48:35.794Z", "updated_at": "2026-09-02T16:31:26.106Z"}}, {"model": "products.productclothvariant", "pk": 5, "fields": {"product": 6, "price": 869, "size": "M", "color": 2, "quantity": 7, "is_available": true, "sku": "AMGRAOR-BLUE-M", "created_at": "2026-09-01T14:50:19.532Z", "updated_at": "2026-09-02T16:31:26.123Z"}}, {"model": "products.productclothvariant", "pk": 6, "fields": {"product": 1, "price": 831, "size": "M", "color": 4, "quantity": 9, "is_available": true, "sku": "LOVELY-CLOTHE-BLACK-M", "created_at": "2026-09-01T15:01:12.711Z", "updated_at": "2026-09-02T16:31:26.130Z"}}, {"model": "products.productclothvariant", "pk": 7, "fields": {"product": 8, "price": 3923, "size": "S", "color": 1, "quantity": 4, "is_available": true, "sku": "PERFECT-COTTON-SHIRT-RED-S", "created_at": "2026-09-01T18:26:03.195Z", "updated_at": "2026-09-02T16:31:26.136Z"}}, {"model": "products.productclothvariant", "pk": 8, "fields": {"product": 10, "price": 900, "size": "L", "color": 3, "quantity": 1, "is_available": true, "sku": "LLLCLOTH-WHITE-L", "created_at": "2026-09-11T17:09:52.192Z", "updated_at": "2026-09-11T17:09:52.192Z"}}, {"model": "products.productclothvariant", "pk": 9, "fields": {"product": 11, "price": 1200, "size": "M", "color": 6, "quantity": 8, "is_available": true, "sku": "KKCLOTH-YELLOW-M", "created_at": "2026-09-11T18:40:42.361Z", "updated_at": "2026-09-15T18:37:39.831Z"}}, {"model": "products.productclothvariant", "pk": 10, "fields": {"product": 11, "price": 1100, "size": "S", "color": 4, "quantity": 10, "is_available": true, "sku": "KKCLOTH-BLACK-S", "created_at": "2026-09-15T18:39:46.285Z", "updated_at": "2026-09-15T18:49:12.161Z"}}, {"model": "products.productclothvariant", "pk": 11, "fields": {"product": 11, "price": 1100, "size": "XS", "color": 1, "quantity": 5, "is_available": true, "sku": "KKCLOTH-RED-XS", "created_at": "2026-09-15T18:40:51.700Z", "updated_at": "2026-09-15T18:48:14.741Z"}}, {"model": "products.productclothvariant", "pk": 12, "fields": {"product": 11, "price": 1200, "size": "XL", "color": 3, "quantity": 6, "is_available": true, "sku": "KKCLOTH-WHITE-XL", "created_at": "2026-09-15T18:41:33.991Z", "updated_at": "2026-09-15T18:49:29.819Z"}}, {"model": "products.productclothvariant", "pk": 13, "fields": {"product": 11, "price": 1000, "size": "M", "color": 7, "quantity": 4, "is_available": true, "sku": "KKCLOTH-PINK-M", "created_at": "2026-09-15T18:42:56.878Z", "updated_at": "2026-09-15T18:48:04.266Z"}}, {"model": "products.productclothvariant", "pk": 14, "fields": {"product": 11, "price": 1100, "size": "S", "color": 6, "quantity": 5, "is_available": true, "sku": "KKCLOTH-YELLOW-S", "created_at": "2026-09-15T18:46:18.635Z", "updated_at": "2026-09-15T18:46:18.635Z"}}, {"model": "products.productclothvariant", "pk": 15, "fields": {"product": 5, "price": 500, "size": "S", "color": 8, "quantity": 1, "is_available": true, "sku": "FANTASTIC-GRAY-S", "created_at": "2026-09-16T20:48:04.642Z", "updated_at": "2026-09-16T20:48:04.642Z"}}, {"model": "products.productshoevariant", "pk": 4, "fields": {"product": 7, "price": 3466, "size": "43", "color": 2, "quantity": 10, "is_available": true, "sku": "NIKE-RUNNER-BLUE-43", "created_at": "2026-09-01T14:44:50.618Z", "updated_at": "2026-09-02T16:31:26.147Z"}}, {"model": "products.productshoevariant", "pk": 5, "fields": {"product": 7, "price": 3640, "size": "42", "color": 2, "quantity": 10, "is_available": true, "sku": "NIKE-RUNNER-BLUE-42", "created_at": "2026-09-01T14:45:24.966Z", "updated_at": "2026-09-02T16:31:26.158Z"}}, {"model": "products.productshoevariant", "pk": 6, "fields": {"product": 4, "price": 630, "size": "42", "color": 2, "quantity": 10, "is_available": true, "sku": "GOOD-SHOE-BLUE-42", "created_at": "2026-09-01T15:00:00.175Z", "updated_at": "2026-09-20T14:18:49.780Z"}}, {"model": "products.productshoevariant", "pk": 7, "fields": {"product": 4, "price": 830, "size": "41", "color": 1, "quantity": 4, "is_available": true, "sku": "GOOD-SHOE-RED-41", "created_at": "2026-09-01T15:08:18.022Z", "updated_at": "2026-09-20T14:18:49.781Z"}}, {"model": "products.productshoevariant", "pk": 8, "fields": {"product": 9, "price": 300, "size": "40", "color": 5, "quantity": 6, "is_available": true, "sku": "HELLOSHOES-GREEN-40", "created_at": "2026-09-11T17:06:07.609Z", "updated_at": "2026-09-16T20:45:59.711Z"}}, {"model": "products.productrating", "pk": 2, "fields": {"user": 1, "product": 1, "rating": 5, "created_at": "2026-09-18T19:22:33.528Z"}}, {"model": "products.productrating", "pk": 3, "fields": {"user": 1, "product": 11, "rating": 4, "created_at": "2026-09-18T19:40:36.224Z"}}, {"model": "products.productrating", "pk": 4, "fields": {"user": 1, "product": 7, "rating": 3, "created_at": "2026-09-18T19:42:07.077Z"}}, {"model": "products.productrating", "pk": 5, "fields": {"user": 3, "product": 11, "rating": 2, "created_at": "2026-09-18T19:42:42.815Z"}}, {"model": "products.productrating", "pk": 6, "fields": {"user": 3, "product": 5, "rating": 4, "created_at": "2026-09-20T14:00:15.691Z"}}, {"model": "products.productrating", "pk": 7, "fields": {"user": 3, "product": 4, "rating": 1, "created_at": "2026-09-20T14:12:35.730Z"}}, {"model": "products.productrating", "pk": 8, "fields": {"user": 3, "product": 10, "rating": 2, "created_at": "2026-09-20T14:12:45.317Z"}}, {"model": "products.productrating", "pk": 9, "fields": {"user": 3, "product": 9, "rating": 4, "created_at": "2026-09-20T14:13:05.987Z"}}, {"model": "products.productrating", "pk": 10, "fields": {"user": 3, "product": 8, "rating": 1, "created_at": "2026-09-20T14:13:17.537Z"}}, {"model": "products.productrating", "pk": 11, "fields": {"user": 3, "product": 6, "rating": 3, "created_at": "2026-09-20T14:13:27.942Z"}}, {"model": "products.productrating", "pk": 12, "fields": {"user": 3, "product": 3, "rating": 3, "created_at": "2026-09-20T14:13:45.396Z"}}, {"model": "products.productrating", "pk": 13, "fields": {"user": 3, "product": 2, "rating": 2, "created_at": "2026-09-20T14:13:59.299Z"}}]
+[
+{
+  "model": "accounts.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$ewwDWXgseKvRyMwgpU4XXA$LoDMJX6kulF9vrb6NaFnxC3LLQ44D+wFqYEwTOIBps4=",
+    "last_login": "2026-09-27T15:12:36.644Z",
+    "is_superuser": true,
+    "username": "mamad",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-07-13T18:58:29.807Z",
+    "phone": null,
+    "profile": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$lum9WOC7MdVOm6sOdmcyF5$AWPzWSJniY0CZLgIgGZ+HvbXAM/x3FCG/e9nly+hDSM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "reza",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-16T19:48:01.638Z",
+    "phone": null,
+    "profile": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$RQiNJSmAJrorqn2EuBZS0o$tZTXOUqdORrOMOXHbWCpoy0VWenL5I3MKoWi+TOQojg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ali",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T19:25:19.168Z",
+    "phone": null,
+    "profile": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 4,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "demoadmin",
+    "first_name": "",
+    "last_name": "",
+    "email": "demoadmin@example.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-31T19:31:15.784Z",
+    "phone": null,
+    "profile": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "cloth_variant": null,
+    "shoe_variant": null,
+    "quantity": 3,
+    "created_at": "2026-07-18T15:30:05.992Z",
+    "updated_at": "2026-07-18T15:30:17.015Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "cloth_variant": null,
+    "shoe_variant": null,
+    "quantity": 4,
+    "created_at": "2026-08-02T13:22:14.569Z",
+    "updated_at": "2026-08-07T17:24:40.539Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 7,
+  "fields": {
+    "user": 1,
+    "cloth_variant": null,
+    "shoe_variant": null,
+    "quantity": 1,
+    "created_at": "2026-08-02T13:22:31.525Z",
+    "updated_at": "2026-08-02T13:22:31.525Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 8,
+  "fields": {
+    "user": 1,
+    "cloth_variant": null,
+    "shoe_variant": null,
+    "quantity": 2,
+    "created_at": "2026-09-01T19:38:34.212Z",
+    "updated_at": "2026-09-01T19:39:17.743Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 9,
+  "fields": {
+    "user": 1,
+    "cloth_variant": null,
+    "shoe_variant": null,
+    "quantity": 1,
+    "created_at": "2026-09-01T19:39:43.656Z",
+    "updated_at": "2026-09-01T19:39:43.658Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 11,
+  "fields": {
+    "user": 1,
+    "cloth_variant": null,
+    "shoe_variant": 5,
+    "quantity": 1,
+    "created_at": "2026-09-03T16:31:37.126Z",
+    "updated_at": "2026-09-25T19:35:34.627Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 12,
+  "fields": {
+    "user": 1,
+    "cloth_variant": 5,
+    "shoe_variant": null,
+    "quantity": 1,
+    "created_at": "2026-09-03T16:34:55.881Z",
+    "updated_at": "2026-09-11T19:21:10.614Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 14,
+  "fields": {
+    "user": 1,
+    "cloth_variant": 4,
+    "shoe_variant": null,
+    "quantity": 1,
+    "created_at": "2026-09-11T19:21:33.990Z",
+    "updated_at": "2026-09-11T19:21:34.003Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 15,
+  "fields": {
+    "user": 2,
+    "cloth_variant": null,
+    "shoe_variant": 4,
+    "quantity": 2,
+    "created_at": "2026-09-13T13:10:10.459Z",
+    "updated_at": "2026-09-14T18:54:30.760Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 19,
+  "fields": {
+    "user": 2,
+    "cloth_variant": 9,
+    "shoe_variant": null,
+    "quantity": 5,
+    "created_at": "2026-09-14T15:14:51.225Z",
+    "updated_at": "2026-09-14T18:49:56.760Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 20,
+  "fields": {
+    "user": 2,
+    "cloth_variant": null,
+    "shoe_variant": 5,
+    "quantity": 2,
+    "created_at": "2026-09-14T18:52:08.797Z",
+    "updated_at": "2026-09-14T18:54:08.233Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 21,
+  "fields": {
+    "user": 2,
+    "cloth_variant": null,
+    "shoe_variant": 7,
+    "quantity": 2,
+    "created_at": "2026-09-14T19:06:44.625Z",
+    "updated_at": "2026-09-14T19:06:46.390Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 22,
+  "fields": {
+    "user": 1,
+    "cloth_variant": 9,
+    "shoe_variant": null,
+    "quantity": 1,
+    "created_at": "2026-09-25T19:35:57.329Z",
+    "updated_at": "2026-09-27T17:03:50.167Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 23,
+  "fields": {
+    "user": 1,
+    "cloth_variant": 14,
+    "shoe_variant": null,
+    "quantity": 1,
+    "created_at": "2026-09-25T19:36:06.597Z",
+    "updated_at": "2026-09-25T19:36:06.601Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 24,
+  "fields": {
+    "user": 1,
+    "cloth_variant": 11,
+    "shoe_variant": null,
+    "quantity": 1,
+    "created_at": "2026-09-25T19:36:13.444Z",
+    "updated_at": "2026-09-27T17:03:47.174Z"
+  }
+},
+{
+  "model": "baskets.basket",
+  "pk": 25,
+  "fields": {
+    "user": 1,
+    "cloth_variant": null,
+    "shoe_variant": 8,
+    "quantity": 1,
+    "created_at": "2026-09-25T19:36:39.219Z",
+    "updated_at": "2026-09-27T17:03:56.717Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "Sports",
+    "slug": "sports",
+    "description": "Sports items"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "sporty",
+    "slug": "nxnhz",
+    "description": ""
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "Demo Test Products",
+    "slug": "demo-test-products",
+    "description": "Category for seeded demo catalog items."
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "name": "lovely clothe",
+    "slug": "trhsrhgz",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-13T19:07:37.166Z",
+    "discount_end": "2026-09-20T19:07:37.109Z",
+    "brand": "perfect",
+    "description": "this is the best",
+    "average_rating": 5.0,
+    "ratings_count": 1,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 1
+    },
+    "created_at": "2026-07-13T19:02:11.480Z",
+    "updated_at": "2026-09-01T18:23:51.840Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "name": "lovely shoe",
+    "slug": "gsrgh",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-13T19:07:37.166Z",
+    "discount_end": "2026-09-20T19:07:37.109Z",
+    "brand": "nike",
+    "description": "you`ll defently like it",
+    "average_rating": 2.5,
+    "ratings_count": 2,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 1,
+      "3": 1,
+      "4": 0,
+      "5": 0
+    },
+    "created_at": "2026-07-13T19:03:55.971Z",
+    "updated_at": "2026-09-01T15:24:07.231Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "name": "amazing shoe",
+    "slug": "kfdjs",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-13T19:07:37Z",
+    "discount_end": "2026-09-20T19:07:37Z",
+    "brand": "nike",
+    "description": "dgaegr",
+    "average_rating": 3.0,
+    "ratings_count": 2,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 0,
+      "3": 2,
+      "4": 0,
+      "5": 0
+    },
+    "created_at": "2026-07-13T19:05:30.317Z",
+    "updated_at": "2026-09-20T14:05:51.191Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "author": 1,
+    "name": "good shoe",
+    "slug": "srhmn",
+    "product_type": "shoe",
+    "discount_percentage": 20,
+    "discount_start": "2026-09-13T22:07:37Z",
+    "discount_end": "2026-09-14T20:45:00Z",
+    "brand": "nike",
+    "description": "nzhzzttfzf",
+    "average_rating": 1.5,
+    "ratings_count": 2,
+    "rating_breakdown": {
+      "1": 1,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    "created_at": "2026-07-13T19:06:30.123Z",
+    "updated_at": "2026-09-20T14:18:49.776Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "author": 2,
+    "name": "fantastic",
+    "slug": "ghnx",
+    "product_type": "cloth",
+    "discount_percentage": 20,
+    "discount_start": "2026-09-13T19:07:37Z",
+    "discount_end": "2026-09-20T19:07:37Z",
+    "brand": "nike",
+    "description": "one of the best cloth...",
+    "average_rating": 4.0,
+    "ratings_count": 1,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 0
+    },
+    "created_at": "2026-08-04T19:27:51.707Z",
+    "updated_at": "2026-09-20T14:02:05.854Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "author": 3,
+    "name": "Amgraor",
+    "slug": "hukf",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-13T19:07:37.166Z",
+    "discount_end": "2026-09-20T19:07:37.109Z",
+    "brand": "nike",
+    "description": "fhsrz",
+    "average_rating": 3.0,
+    "ratings_count": 1,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 0,
+      "5": 0
+    },
+    "created_at": "2026-08-19T16:47:49.981Z",
+    "updated_at": "2026-09-01T14:50:18.052Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "author": 4,
+    "name": "Nike Runner",
+    "slug": "nike-runner",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-13T19:07:37.166Z",
+    "discount_end": "2026-09-20T19:07:37.109Z",
+    "brand": "nike",
+    "description": "Running sneaker",
+    "average_rating": 3.0,
+    "ratings_count": 1,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 0,
+      "5": 0
+    },
+    "created_at": "2026-08-31T19:31:15.824Z",
+    "updated_at": "2026-09-01T14:45:24.962Z",
+    "category": [
+      1
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "author": 4,
+    "name": "Perfect Cotton Shirt",
+    "slug": "perfect-cotton-shirt",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-13T19:07:37.166Z",
+    "discount_end": "2026-09-20T19:07:37.109Z",
+    "brand": "perfect",
+    "description": "Basic cotton shirt",
+    "average_rating": 1.5,
+    "ratings_count": 2,
+    "rating_breakdown": {
+      "1": 1,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    "created_at": "2026-08-31T19:31:15.856Z",
+    "updated_at": "2026-09-01T18:26:03.188Z",
+    "category": [
+      1
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "author": 4,
+    "name": "Adorable",
+    "slug": "xkhxokhxok",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-13T19:07:37Z",
+    "discount_end": "2026-09-13T19:07:39Z",
+    "brand": "nike",
+    "description": "best...",
+    "average_rating": 3.5,
+    "ratings_count": 2,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 0,
+      "3": 1,
+      "4": 1,
+      "5": 0
+    },
+    "created_at": "2026-09-11T17:06:07.579Z",
+    "updated_at": "2026-09-19T17:18:16.615Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "author": 1,
+    "name": "Gcloth",
+    "slug": "cgyjdt",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-13T19:07:37Z",
+    "discount_end": "2026-09-20T19:07:37Z",
+    "brand": "perfect",
+    "description": "this is great",
+    "average_rating": 2.5,
+    "ratings_count": 2,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 1,
+      "3": 1,
+      "4": 0,
+      "5": 0
+    },
+    "created_at": "2026-09-11T17:09:50.344Z",
+    "updated_at": "2026-09-20T14:17:15.904Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "author": 3,
+    "name": "Xcloth",
+    "slug": "xtzegz",
+    "product_type": "cloth",
+    "discount_percentage": 30,
+    "discount_start": "2026-09-25T19:07:37Z",
+    "discount_end": "2026-10-07T19:07:37Z",
+    "brand": "perfect",
+    "description": "you would definitely live it",
+    "average_rating": 3.5,
+    "ratings_count": 2,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 1
+    },
+    "created_at": "2026-09-11T18:40:40.104Z",
+    "updated_at": "2026-09-27T15:43:41.215Z",
+    "category": []
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "author": null,
+    "name": "Demo: Cotton Everyday T-Shirt",
+    "slug": "demo-product-01",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.484Z",
+    "updated_at": "2026-09-29T11:36:14.933Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "author": null,
+    "name": "Demo: Relaxed Fit Hoodie",
+    "slug": "demo-product-02",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.537Z",
+    "updated_at": "2026-09-29T11:34:35.373Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "author": null,
+    "name": "Demo: Classic Denim Jacket",
+    "slug": "demo-product-03",
+    "product_type": "cloth",
+    "discount_percentage": 10,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.552Z",
+    "updated_at": "2026-09-28T19:20:35.707Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "author": null,
+    "name": "Demo: Lightweight Windbreaker",
+    "slug": "demo-product-04",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.570Z",
+    "updated_at": "2026-09-27T19:48:40.855Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "author": null,
+    "name": "Demo: Ribbed Knit Sweater",
+    "slug": "demo-product-05",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.587Z",
+    "updated_at": "2026-09-27T19:45:56.620Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 17,
+  "fields": {
+    "author": null,
+    "name": "Demo: Straight Leg Chinos",
+    "slug": "demo-product-06",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.604Z",
+    "updated_at": "2026-09-27T19:45:21.382Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 18,
+  "fields": {
+    "author": null,
+    "name": "Demo: Performance Training Tee",
+    "slug": "demo-product-07",
+    "product_type": "cloth",
+    "discount_percentage": 10,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.622Z",
+    "updated_at": "2026-09-28T18:39:45.987Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 19,
+  "fields": {
+    "author": 4,
+    "name": "Demo: Canvas Weekend Jacket",
+    "slug": "demo-product-08",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.639Z",
+    "updated_at": "2026-09-28T19:19:25.994Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 20,
+  "fields": {
+    "author": null,
+    "name": "Demo: Soft Lounge Sweatpants",
+    "slug": "demo-product-09",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.658Z",
+    "updated_at": "2026-09-27T19:43:22.261Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 21,
+  "fields": {
+    "author": null,
+    "name": "Demo: Everyday Cotton Polo",
+    "slug": "demo-product-10",
+    "product_type": "cloth",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample cloth product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.675Z",
+    "updated_at": "2026-09-27T19:40:43.503Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 22,
+  "fields": {
+    "author": null,
+    "name": "Demo: Court Classic Sneakers",
+    "slug": "demo-product-11",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 4.0,
+    "ratings_count": 1,
+    "rating_breakdown": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 1,
+      "5": 0
+    },
+    "created_at": "2026-09-27T19:14:41.693Z",
+    "updated_at": "2026-09-29T11:52:48.571Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 23,
+  "fields": {
+    "author": null,
+    "name": "Demo: Trail Runner Shoes",
+    "slug": "demo-product-12",
+    "product_type": "shoe",
+    "discount_percentage": 10,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.716Z",
+    "updated_at": "2026-09-29T11:51:48.972Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 24,
+  "fields": {
+    "author": null,
+    "name": "Demo: Minimal Leather Trainers",
+    "slug": "demo-product-13",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.733Z",
+    "updated_at": "2026-09-29T11:48:16.456Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 25,
+  "fields": {
+    "author": null,
+    "name": "Demo: Retro High Top Sneakers",
+    "slug": "demo-product-14",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.752Z",
+    "updated_at": "2026-09-29T11:50:22.976Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 26,
+  "fields": {
+    "author": null,
+    "name": "Demo: Lightweight Running Shoes",
+    "slug": "demo-product-15",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.771Z",
+    "updated_at": "2026-09-29T11:47:26.516Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 27,
+  "fields": {
+    "author": null,
+    "name": "Demo: Everyday Canvas Shoes",
+    "slug": "demo-product-16",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.789Z",
+    "updated_at": "2026-09-29T11:46:50.657Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 28,
+  "fields": {
+    "author": null,
+    "name": "Demo: City Walk Leather Shoes",
+    "slug": "demo-product-17",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.807Z",
+    "updated_at": "2026-09-29T11:45:25.991Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 29,
+  "fields": {
+    "author": null,
+    "name": "Demo: Outdoor Hiker Shoes",
+    "slug": "demo-product-18",
+    "product_type": "shoe",
+    "discount_percentage": 10,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.824Z",
+    "updated_at": "2026-09-29T11:45:02.848Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 30,
+  "fields": {
+    "author": null,
+    "name": "Demo: Slip-On Comfort Shoes",
+    "slug": "demo-product-19",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "nike",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.842Z",
+    "updated_at": "2026-09-29T11:44:46.890Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.product",
+  "pk": 31,
+  "fields": {
+    "author": null,
+    "name": "Demo: Court Sport Shoes",
+    "slug": "demo-product-20",
+    "product_type": "shoe",
+    "discount_percentage": 0,
+    "discount_start": "2026-09-27T19:14:41Z",
+    "discount_end": "2026-10-04T19:14:41Z",
+    "brand": "perfect",
+    "description": "Sample shoe product for storefront and variant testing.",
+    "average_rating": 0.0,
+    "ratings_count": 0,
+    "rating_breakdown": {},
+    "created_at": "2026-09-27T19:14:41.859Z",
+    "updated_at": "2026-09-29T11:44:02.188Z",
+    "category": [
+      3
+    ]
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 1,
+  "fields": {
+    "product": 5,
+    "user": 2,
+    "comment": "such a wonderfull cloth",
+    "is_approved": true,
+    "created_at": "2026-08-07T13:52:13.439Z",
+    "updated_at": "2026-08-07T14:16:45.286Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 2,
+  "fields": {
+    "product": 5,
+    "user": 2,
+    "comment": "perfect",
+    "is_approved": true,
+    "created_at": "2026-08-07T14:29:16.531Z",
+    "updated_at": "2026-08-07T14:29:16.531Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "user": 1,
+    "comment": "hello im mamad",
+    "is_approved": true,
+    "created_at": "2026-08-08T14:39:07.770Z",
+    "updated_at": "2026-08-08T14:39:07.770Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 4,
+  "fields": {
+    "product": 1,
+    "user": 1,
+    "comment": "hello im mamad",
+    "is_approved": true,
+    "created_at": "2026-08-08T14:43:51.778Z",
+    "updated_at": "2026-08-08T14:43:51.778Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 7,
+  "fields": {
+    "product": 1,
+    "user": 1,
+    "comment": "hello im mamad",
+    "is_approved": true,
+    "created_at": "2026-08-08T15:28:43.855Z",
+    "updated_at": "2026-08-08T15:28:43.855Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 8,
+  "fields": {
+    "product": 5,
+    "user": 1,
+    "comment": "hello",
+    "is_approved": true,
+    "created_at": "2026-08-10T16:52:03.488Z",
+    "updated_at": "2026-08-10T16:52:03.488Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 9,
+  "fields": {
+    "product": 5,
+    "user": 1,
+    "comment": "www",
+    "is_approved": true,
+    "created_at": "2026-08-10T16:52:47.398Z",
+    "updated_at": "2026-08-10T16:52:47.398Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 10,
+  "fields": {
+    "product": 5,
+    "user": 1,
+    "comment": "gggg",
+    "is_approved": true,
+    "created_at": "2026-08-10T16:53:02.940Z",
+    "updated_at": "2026-08-10T16:53:02.940Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 11,
+  "fields": {
+    "product": 5,
+    "user": 1,
+    "comment": "gffff",
+    "is_approved": true,
+    "created_at": "2026-08-10T16:53:11.942Z",
+    "updated_at": "2026-08-10T16:53:11.942Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 12,
+  "fields": {
+    "product": 5,
+    "user": 1,
+    "comment": "chyx",
+    "is_approved": true,
+    "created_at": "2026-08-10T16:53:25.351Z",
+    "updated_at": "2026-08-10T16:53:25.351Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 13,
+  "fields": {
+    "product": 5,
+    "user": 1,
+    "comment": "ctjxt",
+    "is_approved": true,
+    "created_at": "2026-08-10T16:53:32.054Z",
+    "updated_at": "2026-08-10T16:53:32.054Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 14,
+  "fields": {
+    "product": 1,
+    "user": 1,
+    "comment": "heello",
+    "is_approved": true,
+    "created_at": "2026-09-07T13:06:04.142Z",
+    "updated_at": "2026-09-07T13:06:04.142Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 15,
+  "fields": {
+    "product": 8,
+    "user": 1,
+    "comment": "hello",
+    "is_approved": true,
+    "created_at": "2026-09-11T19:39:57.114Z",
+    "updated_at": "2026-09-11T19:39:57.114Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 16,
+  "fields": {
+    "product": 8,
+    "user": 1,
+    "comment": "what the hell",
+    "is_approved": true,
+    "created_at": "2026-09-11T19:40:43.820Z",
+    "updated_at": "2026-09-11T19:40:43.820Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 17,
+  "fields": {
+    "product": 2,
+    "user": 1,
+    "comment": "hello",
+    "is_approved": true,
+    "created_at": "2026-09-13T13:00:26.490Z",
+    "updated_at": "2026-09-13T13:00:26.490Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 18,
+  "fields": {
+    "product": 5,
+    "user": 2,
+    "comment": "hi",
+    "is_approved": true,
+    "created_at": "2026-09-13T13:06:04.543Z",
+    "updated_at": "2026-09-13T13:06:04.543Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 19,
+  "fields": {
+    "product": 5,
+    "user": 2,
+    "comment": "how are you today?",
+    "is_approved": true,
+    "created_at": "2026-09-13T13:06:31.852Z",
+    "updated_at": "2026-09-13T13:06:31.852Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 20,
+  "fields": {
+    "product": 5,
+    "user": 2,
+    "comment": "welcom",
+    "is_approved": true,
+    "created_at": "2026-09-13T13:07:27.871Z",
+    "updated_at": "2026-09-13T13:07:27.871Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 21,
+  "fields": {
+    "product": 11,
+    "user": 2,
+    "comment": "what is it?",
+    "is_approved": true,
+    "created_at": "2026-09-13T14:11:28.650Z",
+    "updated_at": "2026-09-13T14:11:28.650Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 22,
+  "fields": {
+    "product": 11,
+    "user": 2,
+    "comment": "hello",
+    "is_approved": true,
+    "created_at": "2026-09-16T16:39:01.073Z",
+    "updated_at": "2026-09-16T16:39:01.073Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 23,
+  "fields": {
+    "product": 10,
+    "user": 1,
+    "comment": "hi",
+    "is_approved": true,
+    "created_at": "2026-09-17T21:57:04.473Z",
+    "updated_at": "2026-09-17T21:57:04.473Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 24,
+  "fields": {
+    "product": 4,
+    "user": 3,
+    "comment": "how owns this?",
+    "is_approved": true,
+    "created_at": "2026-09-20T14:12:20.462Z",
+    "updated_at": "2026-09-20T14:12:20.462Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 25,
+  "fields": {
+    "product": 9,
+    "user": 1,
+    "comment": "hello",
+    "is_approved": true,
+    "created_at": "2026-09-25T19:37:06.210Z",
+    "updated_at": "2026-09-25T19:37:06.210Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 26,
+  "fields": {
+    "product": 2,
+    "user": 1,
+    "comment": "hello",
+    "is_approved": true,
+    "created_at": "2026-09-26T19:19:20.259Z",
+    "updated_at": "2026-09-26T19:19:20.259Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 27,
+  "fields": {
+    "product": 2,
+    "user": 1,
+    "comment": "what is going on??",
+    "is_approved": true,
+    "created_at": "2026-09-27T18:41:11.459Z",
+    "updated_at": "2026-09-27T18:41:11.459Z"
+  }
+},
+{
+  "model": "products.productcomment",
+  "pk": 28,
+  "fields": {
+    "product": 10,
+    "user": 1,
+    "comment": "whats up??",
+    "is_approved": true,
+    "created_at": "2026-09-27T18:42:00.315Z",
+    "updated_at": "2026-09-27T18:42:00.315Z"
+  }
+},
+{
+  "model": "products.commentreply",
+  "pk": 1,
+  "fields": {
+    "comment": 16,
+    "parent": null,
+    "user": 1,
+    "text": "hello mamad",
+    "created_at": "2026-09-16T20:28:47.818Z"
+  }
+},
+{
+  "model": "products.commentreply",
+  "pk": 2,
+  "fields": {
+    "comment": 21,
+    "parent": null,
+    "user": 3,
+    "text": "nothing",
+    "created_at": "2026-09-19T13:34:35.693Z"
+  }
+},
+{
+  "model": "products.commentreply",
+  "pk": 3,
+  "fields": {
+    "comment": 9,
+    "parent": null,
+    "user": 1,
+    "text": "www what?",
+    "created_at": "2026-09-27T18:42:38.906Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 13,
+  "fields": {
+    "image": "product/cloth/images_2.jpg",
+    "product": 1,
+    "created_at": "2026-08-19T16:36:20.923Z",
+    "updated_at": "2026-09-01T15:09:00.275Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 14,
+  "fields": {
+    "image": "product/shoe/product-jpeg-500x500.webp",
+    "product": 2,
+    "created_at": "2026-08-19T16:36:20.946Z",
+    "updated_at": "2026-09-01T15:21:36.738Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 17,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 4,
+    "created_at": "2026-08-19T16:36:20.960Z",
+    "updated_at": "2026-09-01T15:09:30.440Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 20,
+  "fields": {
+    "image": "product/shoe/hoka-runners-climb.webp",
+    "product": 7,
+    "created_at": "2026-09-01T14:44:50.608Z",
+    "updated_at": "2026-09-01T14:44:50.608Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 23,
+  "fields": {
+    "image": "product/cloth/Logo-Men-Joggers-Sets-Tracksuit-Sportswear-for-Mens-Training-Wear-Custom-Gym-Trac.avif",
+    "product": 8,
+    "created_at": "2026-09-01T14:48:35.788Z",
+    "updated_at": "2026-09-01T14:48:35.788Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 24,
+  "fields": {
+    "image": "product/cloth/images.jpg",
+    "product": 6,
+    "created_at": "2026-09-01T14:50:19.527Z",
+    "updated_at": "2026-09-01T14:50:19.527Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 25,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 1,
+    "created_at": "2026-09-01T15:08:22.334Z",
+    "updated_at": "2026-09-01T15:08:22.334Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 26,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 1,
+    "created_at": "2026-09-01T15:08:23.931Z",
+    "updated_at": "2026-09-01T15:08:23.931Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 27,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 1,
+    "created_at": "2026-09-01T15:08:25.819Z",
+    "updated_at": "2026-09-01T15:08:25.819Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 28,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 1,
+    "created_at": "2026-09-01T15:08:32.700Z",
+    "updated_at": "2026-09-01T15:08:32.700Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 29,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 1,
+    "created_at": "2026-09-01T15:08:35.278Z",
+    "updated_at": "2026-09-01T15:08:35.278Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 30,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 1,
+    "created_at": "2026-09-01T15:09:01.054Z",
+    "updated_at": "2026-09-01T15:09:01.054Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 31,
+  "fields": {
+    "image": "product/shoe/product-jpeg-500x500.webp",
+    "product": 2,
+    "created_at": "2026-09-01T15:24:08.446Z",
+    "updated_at": "2026-09-01T15:24:08.446Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 33,
+  "fields": {
+    "image": "product/cloth/images_1.jpg",
+    "product": 11,
+    "created_at": "2026-09-11T18:40:42.348Z",
+    "updated_at": "2026-09-11T18:40:42.348Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 34,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 9,
+    "created_at": "2026-09-19T17:18:16.620Z",
+    "updated_at": "2026-09-19T17:18:16.620Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 35,
+  "fields": {
+    "image": "product/cloth/1_3bf206ff-69c3-40f7-8bde-3eaa0d2e53c5.webp",
+    "product": 5,
+    "created_at": "2026-09-20T13:59:50.189Z",
+    "updated_at": "2026-09-20T13:59:50.189Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 36,
+  "fields": {
+    "image": "product/cloth/594623004-medium_9iudiYv.jpg",
+    "product": 3,
+    "created_at": "2026-09-20T14:04:20.677Z",
+    "updated_at": "2026-09-20T14:04:20.677Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 37,
+  "fields": {
+    "image": "product/cloth/images_5.jpg",
+    "product": 10,
+    "created_at": "2026-09-20T14:17:15.910Z",
+    "updated_at": "2026-09-20T14:17:15.910Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 41,
+  "fields": {
+    "image": "product/cloth/WIN_20260510_09_58_12_Pro.jpg",
+    "product": 11,
+    "created_at": "2026-09-27T15:42:56.788Z",
+    "updated_at": "2026-09-27T15:42:56.788Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 42,
+  "fields": {
+    "image": "product/shoe/sports-shoe.webp",
+    "product": 31,
+    "created_at": "2026-09-27T19:22:24.988Z",
+    "updated_at": "2026-09-29T11:44:04.745Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 43,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 31,
+    "created_at": "2026-09-27T19:22:24.999Z",
+    "updated_at": "2026-09-27T19:22:24.999Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 44,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 31,
+    "created_at": "2026-09-27T19:22:25.001Z",
+    "updated_at": "2026-09-27T19:22:25.001Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 45,
+  "fields": {
+    "image": "product/shoe/360_F_65481195_VbssfvvCCR5LuuSRrpHw9JWMjZrFf2m1.webp",
+    "product": 30,
+    "created_at": "2026-09-27T19:22:25.002Z",
+    "updated_at": "2026-09-29T11:44:47.960Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 46,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 30,
+    "created_at": "2026-09-27T19:22:25.004Z",
+    "updated_at": "2026-09-27T19:22:25.004Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 47,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 30,
+    "created_at": "2026-09-27T19:22:25.006Z",
+    "updated_at": "2026-09-27T19:22:25.006Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 48,
+  "fields": {
+    "image": "product/shoe/360_F_209822644_btQV3P6tS7XcyySRKbEYYRzbJMYMfWi6.webp",
+    "product": 29,
+    "created_at": "2026-09-27T19:22:25.008Z",
+    "updated_at": "2026-09-29T11:45:04.545Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 49,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 29,
+    "created_at": "2026-09-27T19:22:25.010Z",
+    "updated_at": "2026-09-27T19:22:25.010Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 50,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 29,
+    "created_at": "2026-09-27T19:22:25.011Z",
+    "updated_at": "2026-09-27T19:22:25.011Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 51,
+  "fields": {
+    "image": "product/shoe/360_F_197422899_N0mELNNZaFzosecqaD2bQA50egRcjMMw.webp",
+    "product": 28,
+    "created_at": "2026-09-27T19:22:25.013Z",
+    "updated_at": "2026-09-29T11:45:27.278Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 52,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 28,
+    "created_at": "2026-09-27T19:22:25.014Z",
+    "updated_at": "2026-09-27T19:22:25.014Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 53,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 28,
+    "created_at": "2026-09-27T19:22:25.016Z",
+    "updated_at": "2026-09-27T19:22:25.016Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 54,
+  "fields": {
+    "image": "product/shoe/premium_photo-1682435561654-20d84cef00eb.webp",
+    "product": 27,
+    "created_at": "2026-09-27T19:22:25.017Z",
+    "updated_at": "2026-09-29T11:46:53.498Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 55,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 27,
+    "created_at": "2026-09-27T19:22:25.019Z",
+    "updated_at": "2026-09-27T19:22:25.019Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 56,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 27,
+    "created_at": "2026-09-27T19:22:25.020Z",
+    "updated_at": "2026-09-27T19:22:25.020Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 57,
+  "fields": {
+    "image": "product/shoe/nike-5644799_640.webp",
+    "product": 26,
+    "created_at": "2026-09-27T19:22:25.021Z",
+    "updated_at": "2026-09-29T11:47:27.597Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 58,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 26,
+    "created_at": "2026-09-27T19:22:25.023Z",
+    "updated_at": "2026-09-27T19:22:25.023Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 59,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 26,
+    "created_at": "2026-09-27T19:22:25.024Z",
+    "updated_at": "2026-09-27T19:22:25.024Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 60,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 25,
+    "created_at": "2026-09-27T19:22:25.026Z",
+    "updated_at": "2026-09-29T11:50:26.874Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 61,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 25,
+    "created_at": "2026-09-27T19:22:25.027Z",
+    "updated_at": "2026-09-27T19:22:25.027Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 62,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 25,
+    "created_at": "2026-09-27T19:22:25.029Z",
+    "updated_at": "2026-09-27T19:22:25.029Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 66,
+  "fields": {
+    "image": "product/shoe/360_F_65481195_VbssfvvCCR5LuuSRrpHw9JWMjZrFf2m1.webp",
+    "product": 23,
+    "created_at": "2026-09-27T19:22:25.035Z",
+    "updated_at": "2026-09-29T11:51:51.279Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 67,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 23,
+    "created_at": "2026-09-27T19:22:25.036Z",
+    "updated_at": "2026-09-27T19:22:25.036Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 68,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 23,
+    "created_at": "2026-09-27T19:22:25.037Z",
+    "updated_at": "2026-09-27T19:22:25.037Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 69,
+  "fields": {
+    "image": "product/shoe/a-pair-of-modern-running-sneakers-isolated-on-white-background.webp",
+    "product": 22,
+    "created_at": "2026-09-27T19:22:25.038Z",
+    "updated_at": "2026-09-29T11:52:49.649Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 70,
+  "fields": {
+    "image": "product/shoe/pickleball-shoes-on-court.jpg",
+    "product": 22,
+    "created_at": "2026-09-27T19:22:25.040Z",
+    "updated_at": "2026-09-27T19:22:25.040Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 71,
+  "fields": {
+    "image": "product/shoe/2.jpg",
+    "product": 22,
+    "created_at": "2026-09-27T19:22:25.041Z",
+    "updated_at": "2026-09-27T19:22:25.041Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 72,
+  "fields": {
+    "image": "product/cloth/LinenSuits_Hawes--Curtis-double-breased-linen-suit.webp",
+    "product": 21,
+    "created_at": "2026-09-27T19:22:25.043Z",
+    "updated_at": "2026-09-27T19:40:46.414Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 73,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 21,
+    "created_at": "2026-09-27T19:22:25.044Z",
+    "updated_at": "2026-09-27T19:22:25.044Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 74,
+  "fields": {
+    "image": "product/cloth/images.jpg",
+    "product": 21,
+    "created_at": "2026-09-27T19:22:25.045Z",
+    "updated_at": "2026-09-27T19:22:25.045Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 75,
+  "fields": {
+    "image": "product/cloth/mens-clothing-with-personal-accesorries.webp",
+    "product": 20,
+    "created_at": "2026-09-27T19:22:25.047Z",
+    "updated_at": "2026-09-27T19:43:24.517Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 76,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 20,
+    "created_at": "2026-09-27T19:22:25.048Z",
+    "updated_at": "2026-09-27T19:22:25.048Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 77,
+  "fields": {
+    "image": "product/cloth/images.jpg",
+    "product": 20,
+    "created_at": "2026-09-27T19:22:25.050Z",
+    "updated_at": "2026-09-27T19:22:25.050Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 81,
+  "fields": {
+    "image": "product/cloth/men-stylish-casual-clothing-accessories-wooden-background_151851-437.webp",
+    "product": 18,
+    "created_at": "2026-09-27T19:22:25.056Z",
+    "updated_at": "2026-09-27T19:45:01.383Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 82,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 18,
+    "created_at": "2026-09-27T19:22:25.057Z",
+    "updated_at": "2026-09-27T19:22:25.057Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 84,
+  "fields": {
+    "image": "product/cloth/WAXLONDON0-2.webp",
+    "product": 17,
+    "created_at": "2026-09-27T19:22:25.060Z",
+    "updated_at": "2026-09-27T19:45:22.274Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 85,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 17,
+    "created_at": "2026-09-27T19:22:25.062Z",
+    "updated_at": "2026-09-27T19:22:25.062Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 86,
+  "fields": {
+    "image": "product/cloth/images.jpg",
+    "product": 17,
+    "created_at": "2026-09-27T19:22:25.063Z",
+    "updated_at": "2026-09-27T19:22:25.063Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 87,
+  "fields": {
+    "image": "product/cloth/xcgrzfJryBLCRSgM-_aTLqTCVSb2h17_jhaMoDkI96Y.webp",
+    "product": 16,
+    "created_at": "2026-09-27T19:22:25.064Z",
+    "updated_at": "2026-09-27T19:45:57.499Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 88,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 16,
+    "created_at": "2026-09-27T19:22:25.066Z",
+    "updated_at": "2026-09-27T19:22:25.066Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 89,
+  "fields": {
+    "image": "product/cloth/images.jpg",
+    "product": 16,
+    "created_at": "2026-09-27T19:22:25.068Z",
+    "updated_at": "2026-09-27T19:22:25.068Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 90,
+  "fields": {
+    "image": "product/cloth/clothing-men-wooden-background_1339-19267.webp",
+    "product": 15,
+    "created_at": "2026-09-27T19:22:25.069Z",
+    "updated_at": "2026-09-27T19:48:44.826Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 91,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 15,
+    "created_at": "2026-09-27T19:22:25.070Z",
+    "updated_at": "2026-09-27T19:22:25.070Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 92,
+  "fields": {
+    "image": "product/cloth/images.jpg",
+    "product": 15,
+    "created_at": "2026-09-27T19:22:25.072Z",
+    "updated_at": "2026-09-27T19:22:25.072Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 96,
+  "fields": {
+    "image": "product/cloth/images_3.jpg",
+    "product": 13,
+    "created_at": "2026-09-27T19:22:25.077Z",
+    "updated_at": "2026-09-29T11:34:38.490Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 97,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 13,
+    "created_at": "2026-09-27T19:22:25.079Z",
+    "updated_at": "2026-09-27T19:22:25.079Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 98,
+  "fields": {
+    "image": "product/cloth/images.jpg",
+    "product": 13,
+    "created_at": "2026-09-27T19:22:25.080Z",
+    "updated_at": "2026-09-27T19:22:25.080Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 99,
+  "fields": {
+    "image": "product/cloth/yhxxy.webp",
+    "product": 12,
+    "created_at": "2026-09-27T19:22:25.082Z",
+    "updated_at": "2026-09-29T11:36:17.183Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 100,
+  "fields": {
+    "image": "product/cloth/594623004-medium.jpg",
+    "product": 12,
+    "created_at": "2026-09-27T19:22:25.083Z",
+    "updated_at": "2026-09-27T19:22:25.083Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 101,
+  "fields": {
+    "image": "product/cloth/images.jpg",
+    "product": 12,
+    "created_at": "2026-09-27T19:22:25.084Z",
+    "updated_at": "2026-09-27T19:22:25.084Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 103,
+  "fields": {
+    "image": "product/cloth/1_3bf206ff-69c3-40f7-8bde-3eaa0d2e53c5.webp",
+    "product": 19,
+    "created_at": "2026-09-28T19:19:27.889Z",
+    "updated_at": "2026-09-28T19:19:27.889Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 104,
+  "fields": {
+    "image": "product/cloth/1_3bf206ff-69c3-40f7-8bde-3eaa0d2e53c5.webp",
+    "product": 14,
+    "created_at": "2026-09-28T19:20:38.215Z",
+    "updated_at": "2026-09-28T19:20:38.215Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 105,
+  "fields": {
+    "image": "product/shoe/360_F_198113627_E5hQnRt4BsqtRL6N4wiELAS9Y59oYLnc.webp",
+    "product": 24,
+    "created_at": "2026-09-29T11:48:17.465Z",
+    "updated_at": "2026-09-29T11:48:17.465Z"
+  }
+},
+{
+  "model": "products.color",
+  "pk": 1,
+  "fields": {
+    "name": "Red",
+    "slug": "red",
+    "created_at": "2026-08-31T19:54:33.070Z",
+    "updated_at": "2026-08-31T19:54:33.070Z"
+  }
+},
+{
+  "model": "products.color",
+  "pk": 2,
+  "fields": {
+    "name": "Blue",
+    "slug": "blue",
+    "created_at": "2026-08-31T19:54:33.074Z",
+    "updated_at": "2026-08-31T19:54:33.074Z"
+  }
+},
+{
+  "model": "products.color",
+  "pk": 3,
+  "fields": {
+    "name": "White",
+    "slug": "white",
+    "created_at": "2026-08-31T19:54:33.076Z",
+    "updated_at": "2026-08-31T19:54:33.076Z"
+  }
+},
+{
+  "model": "products.color",
+  "pk": 4,
+  "fields": {
+    "name": "Black",
+    "slug": "black",
+    "created_at": "2026-08-31T19:54:33.078Z",
+    "updated_at": "2026-08-31T19:54:33.078Z"
+  }
+},
+{
+  "model": "products.color",
+  "pk": 5,
+  "fields": {
+    "name": "Green",
+    "slug": "green",
+    "created_at": "2026-08-31T19:54:33.079Z",
+    "updated_at": "2026-08-31T19:54:33.079Z"
+  }
+},
+{
+  "model": "products.color",
+  "pk": 6,
+  "fields": {
+    "name": "Yellow",
+    "slug": "yellow",
+    "created_at": "2026-08-31T19:54:33.081Z",
+    "updated_at": "2026-08-31T19:54:33.081Z"
+  }
+},
+{
+  "model": "products.color",
+  "pk": 7,
+  "fields": {
+    "name": "Pink",
+    "slug": "pink",
+    "created_at": "2026-08-31T19:54:33.083Z",
+    "updated_at": "2026-08-31T19:54:33.083Z"
+  }
+},
+{
+  "model": "products.color",
+  "pk": 8,
+  "fields": {
+    "name": "Gray",
+    "slug": "gray",
+    "created_at": "2026-08-31T19:54:33.085Z",
+    "updated_at": "2026-08-31T19:54:33.085Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 4,
+  "fields": {
+    "product": 8,
+    "price": 3116,
+    "size": "L",
+    "color": 4,
+    "quantity": 15,
+    "is_available": true,
+    "sku": "PERFECT-COTTON-SHIRT-BLACK-L",
+    "created_at": "2026-09-01T14:48:35.794Z",
+    "updated_at": "2026-09-02T16:31:26.106Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 5,
+  "fields": {
+    "product": 6,
+    "price": 869,
+    "size": "M",
+    "color": 2,
+    "quantity": 7,
+    "is_available": true,
+    "sku": "AMGRAOR-BLUE-M",
+    "created_at": "2026-09-01T14:50:19.532Z",
+    "updated_at": "2026-09-02T16:31:26.123Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 6,
+  "fields": {
+    "product": 1,
+    "price": 831,
+    "size": "M",
+    "color": 4,
+    "quantity": 9,
+    "is_available": true,
+    "sku": "LOVELY-CLOTHE-BLACK-M",
+    "created_at": "2026-09-01T15:01:12.711Z",
+    "updated_at": "2026-09-02T16:31:26.130Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 7,
+  "fields": {
+    "product": 8,
+    "price": 3923,
+    "size": "S",
+    "color": 1,
+    "quantity": 4,
+    "is_available": true,
+    "sku": "PERFECT-COTTON-SHIRT-RED-S",
+    "created_at": "2026-09-01T18:26:03.195Z",
+    "updated_at": "2026-09-02T16:31:26.136Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 8,
+  "fields": {
+    "product": 10,
+    "price": 900,
+    "size": "L",
+    "color": 3,
+    "quantity": 1,
+    "is_available": true,
+    "sku": "LLLCLOTH-WHITE-L",
+    "created_at": "2026-09-11T17:09:52.192Z",
+    "updated_at": "2026-09-11T17:09:52.192Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 9,
+  "fields": {
+    "product": 11,
+    "price": 1200,
+    "size": "M",
+    "color": 6,
+    "quantity": 8,
+    "is_available": true,
+    "sku": "KKCLOTH-YELLOW-M",
+    "created_at": "2026-09-11T18:40:42.361Z",
+    "updated_at": "2026-09-15T18:37:39.831Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 10,
+  "fields": {
+    "product": 11,
+    "price": 1100,
+    "size": "S",
+    "color": 4,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "KKCLOTH-BLACK-S",
+    "created_at": "2026-09-15T18:39:46.285Z",
+    "updated_at": "2026-09-15T18:49:12.161Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 11,
+  "fields": {
+    "product": 11,
+    "price": 1100,
+    "size": "XS",
+    "color": 1,
+    "quantity": 5,
+    "is_available": true,
+    "sku": "KKCLOTH-RED-XS",
+    "created_at": "2026-09-15T18:40:51.700Z",
+    "updated_at": "2026-09-15T18:48:14.741Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 12,
+  "fields": {
+    "product": 11,
+    "price": 1200,
+    "size": "XL",
+    "color": 3,
+    "quantity": 6,
+    "is_available": true,
+    "sku": "KKCLOTH-WHITE-XL",
+    "created_at": "2026-09-15T18:41:33.991Z",
+    "updated_at": "2026-09-15T18:49:29.819Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 13,
+  "fields": {
+    "product": 11,
+    "price": 1000,
+    "size": "M",
+    "color": 7,
+    "quantity": 4,
+    "is_available": true,
+    "sku": "KKCLOTH-PINK-M",
+    "created_at": "2026-09-15T18:42:56.878Z",
+    "updated_at": "2026-09-15T18:48:04.266Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 14,
+  "fields": {
+    "product": 11,
+    "price": 1100,
+    "size": "S",
+    "color": 6,
+    "quantity": 5,
+    "is_available": true,
+    "sku": "KKCLOTH-YELLOW-S",
+    "created_at": "2026-09-15T18:46:18.635Z",
+    "updated_at": "2026-09-15T18:46:18.635Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 15,
+  "fields": {
+    "product": 5,
+    "price": 500,
+    "size": "S",
+    "color": 8,
+    "quantity": 1,
+    "is_available": true,
+    "sku": "FANTASTIC-GRAY-S",
+    "created_at": "2026-09-16T20:48:04.642Z",
+    "updated_at": "2026-09-16T20:48:04.642Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 16,
+  "fields": {
+    "product": 12,
+    "price": 24,
+    "size": "S",
+    "color": 4,
+    "quantity": 9,
+    "is_available": true,
+    "sku": "DEMO-COTTON-EVERYDAY-T-SHIRT-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.522Z",
+    "updated_at": "2026-09-27T19:14:41.522Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 17,
+  "fields": {
+    "product": 12,
+    "price": 27,
+    "size": "M",
+    "color": 2,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "DEMO-COTTON-EVERYDAY-T-SHIRT-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.529Z",
+    "updated_at": "2026-09-27T19:14:41.529Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 18,
+  "fields": {
+    "product": 12,
+    "price": 30,
+    "size": "L",
+    "color": 3,
+    "quantity": 11,
+    "is_available": true,
+    "sku": "DEMO-COTTON-EVERYDAY-T-SHIRT-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.535Z",
+    "updated_at": "2026-09-27T19:14:41.535Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 19,
+  "fields": {
+    "product": 13,
+    "price": 58,
+    "size": "S",
+    "color": 4,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "DEMO-RELAXED-FIT-HOODIE-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.542Z",
+    "updated_at": "2026-09-27T19:14:41.542Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 20,
+  "fields": {
+    "product": 13,
+    "price": 61,
+    "size": "M",
+    "color": 2,
+    "quantity": 11,
+    "is_available": true,
+    "sku": "DEMO-RELAXED-FIT-HOODIE-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.546Z",
+    "updated_at": "2026-09-27T19:14:41.546Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 21,
+  "fields": {
+    "product": 13,
+    "price": 64,
+    "size": "L",
+    "color": 3,
+    "quantity": 12,
+    "is_available": true,
+    "sku": "DEMO-RELAXED-FIT-HOODIE-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.550Z",
+    "updated_at": "2026-09-27T19:14:41.550Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 22,
+  "fields": {
+    "product": 14,
+    "price": 89,
+    "size": "S",
+    "color": 4,
+    "quantity": 11,
+    "is_available": true,
+    "sku": "DEMO-CLASSIC-DENIM-JACKET-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.557Z",
+    "updated_at": "2026-09-27T19:14:41.557Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 23,
+  "fields": {
+    "product": 14,
+    "price": 92,
+    "size": "M",
+    "color": 2,
+    "quantity": 12,
+    "is_available": true,
+    "sku": "DEMO-CLASSIC-DENIM-JACKET-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.562Z",
+    "updated_at": "2026-09-27T19:14:41.562Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 24,
+  "fields": {
+    "product": 14,
+    "price": 95,
+    "size": "L",
+    "color": 3,
+    "quantity": 13,
+    "is_available": true,
+    "sku": "DEMO-CLASSIC-DENIM-JACKET-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.567Z",
+    "updated_at": "2026-09-27T19:14:41.567Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 25,
+  "fields": {
+    "product": 15,
+    "price": 76,
+    "size": "S",
+    "color": 4,
+    "quantity": 12,
+    "is_available": true,
+    "sku": "DEMO-LIGHTWEIGHT-WINDBREAKER-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.575Z",
+    "updated_at": "2026-09-27T19:14:41.575Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 26,
+  "fields": {
+    "product": 15,
+    "price": 79,
+    "size": "M",
+    "color": 2,
+    "quantity": 13,
+    "is_available": true,
+    "sku": "DEMO-LIGHTWEIGHT-WINDBREAKER-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.580Z",
+    "updated_at": "2026-09-27T19:14:41.580Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 27,
+  "fields": {
+    "product": 15,
+    "price": 82,
+    "size": "L",
+    "color": 3,
+    "quantity": 14,
+    "is_available": true,
+    "sku": "DEMO-LIGHTWEIGHT-WINDBREAKER-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.585Z",
+    "updated_at": "2026-09-27T19:14:41.585Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 28,
+  "fields": {
+    "product": 16,
+    "price": 64,
+    "size": "S",
+    "color": 4,
+    "quantity": 13,
+    "is_available": true,
+    "sku": "DEMO-RIBBED-KNIT-SWEATER-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.592Z",
+    "updated_at": "2026-09-27T19:14:41.592Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 29,
+  "fields": {
+    "product": 16,
+    "price": 67,
+    "size": "M",
+    "color": 2,
+    "quantity": 14,
+    "is_available": true,
+    "sku": "DEMO-RIBBED-KNIT-SWEATER-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.597Z",
+    "updated_at": "2026-09-27T19:14:41.597Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 30,
+  "fields": {
+    "product": 16,
+    "price": 70,
+    "size": "L",
+    "color": 3,
+    "quantity": 15,
+    "is_available": true,
+    "sku": "DEMO-RIBBED-KNIT-SWEATER-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.602Z",
+    "updated_at": "2026-09-27T19:14:41.602Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 31,
+  "fields": {
+    "product": 17,
+    "price": 52,
+    "size": "S",
+    "color": 4,
+    "quantity": 14,
+    "is_available": true,
+    "sku": "DEMO-STRAIGHT-LEG-CHINOS-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.610Z",
+    "updated_at": "2026-09-27T19:14:41.610Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 32,
+  "fields": {
+    "product": 17,
+    "price": 55,
+    "size": "M",
+    "color": 2,
+    "quantity": 15,
+    "is_available": true,
+    "sku": "DEMO-STRAIGHT-LEG-CHINOS-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.614Z",
+    "updated_at": "2026-09-27T19:14:41.614Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 33,
+  "fields": {
+    "product": 17,
+    "price": 58,
+    "size": "L",
+    "color": 3,
+    "quantity": 16,
+    "is_available": true,
+    "sku": "DEMO-STRAIGHT-LEG-CHINOS-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.620Z",
+    "updated_at": "2026-09-27T19:14:41.620Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 34,
+  "fields": {
+    "product": 18,
+    "price": 32,
+    "size": "S",
+    "color": 4,
+    "quantity": 15,
+    "is_available": true,
+    "sku": "DEMO-PERFORMANCE-TRAINING-TEE-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.628Z",
+    "updated_at": "2026-09-27T19:14:41.628Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 35,
+  "fields": {
+    "product": 18,
+    "price": 35,
+    "size": "M",
+    "color": 2,
+    "quantity": 16,
+    "is_available": true,
+    "sku": "DEMO-PERFORMANCE-TRAINING-TEE-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.633Z",
+    "updated_at": "2026-09-27T19:14:41.633Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 36,
+  "fields": {
+    "product": 18,
+    "price": 38,
+    "size": "L",
+    "color": 3,
+    "quantity": 17,
+    "is_available": true,
+    "sku": "DEMO-PERFORMANCE-TRAINING-TEE-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.637Z",
+    "updated_at": "2026-09-27T19:14:41.637Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 37,
+  "fields": {
+    "product": 19,
+    "price": 95,
+    "size": "S",
+    "color": 4,
+    "quantity": 16,
+    "is_available": true,
+    "sku": "DEMO-CANVAS-WEEKEND-JACKET-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.645Z",
+    "updated_at": "2026-09-27T19:14:41.645Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 38,
+  "fields": {
+    "product": 19,
+    "price": 98,
+    "size": "M",
+    "color": 2,
+    "quantity": 17,
+    "is_available": true,
+    "sku": "DEMO-CANVAS-WEEKEND-JACKET-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.650Z",
+    "updated_at": "2026-09-27T19:14:41.650Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 39,
+  "fields": {
+    "product": 19,
+    "price": 101,
+    "size": "L",
+    "color": 3,
+    "quantity": 18,
+    "is_available": true,
+    "sku": "DEMO-CANVAS-WEEKEND-JACKET-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.656Z",
+    "updated_at": "2026-09-27T19:14:41.656Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 40,
+  "fields": {
+    "product": 20,
+    "price": 46,
+    "size": "S",
+    "color": 4,
+    "quantity": 17,
+    "is_available": true,
+    "sku": "DEMO-SOFT-LOUNGE-SWEATPANTS-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.664Z",
+    "updated_at": "2026-09-27T19:14:41.664Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 41,
+  "fields": {
+    "product": 20,
+    "price": 49,
+    "size": "M",
+    "color": 2,
+    "quantity": 18,
+    "is_available": true,
+    "sku": "DEMO-SOFT-LOUNGE-SWEATPANTS-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.668Z",
+    "updated_at": "2026-09-27T19:14:41.668Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 42,
+  "fields": {
+    "product": 20,
+    "price": 52,
+    "size": "L",
+    "color": 3,
+    "quantity": 19,
+    "is_available": true,
+    "sku": "DEMO-SOFT-LOUNGE-SWEATPANTS-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.673Z",
+    "updated_at": "2026-09-27T19:14:41.673Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 43,
+  "fields": {
+    "product": 21,
+    "price": 38,
+    "size": "S",
+    "color": 4,
+    "quantity": 18,
+    "is_available": true,
+    "sku": "DEMO-EVERYDAY-COTTON-POLO-BLACK-S",
+    "created_at": "2026-09-27T19:14:41.681Z",
+    "updated_at": "2026-09-27T19:14:41.681Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 44,
+  "fields": {
+    "product": 21,
+    "price": 41,
+    "size": "M",
+    "color": 2,
+    "quantity": 19,
+    "is_available": true,
+    "sku": "DEMO-EVERYDAY-COTTON-POLO-BLUE-M",
+    "created_at": "2026-09-27T19:14:41.686Z",
+    "updated_at": "2026-09-27T19:14:41.686Z"
+  }
+},
+{
+  "model": "products.productclothvariant",
+  "pk": 45,
+  "fields": {
+    "product": 21,
+    "price": 44,
+    "size": "L",
+    "color": 3,
+    "quantity": 20,
+    "is_available": true,
+    "sku": "DEMO-EVERYDAY-COTTON-POLO-WHITE-L",
+    "created_at": "2026-09-27T19:14:41.691Z",
+    "updated_at": "2026-09-27T19:14:41.691Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 4,
+  "fields": {
+    "product": 7,
+    "price": 3466,
+    "size": "43",
+    "color": 2,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "NIKE-RUNNER-BLUE-43",
+    "created_at": "2026-09-01T14:44:50.618Z",
+    "updated_at": "2026-09-02T16:31:26.147Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 5,
+  "fields": {
+    "product": 7,
+    "price": 3640,
+    "size": "42",
+    "color": 2,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "NIKE-RUNNER-BLUE-42",
+    "created_at": "2026-09-01T14:45:24.966Z",
+    "updated_at": "2026-09-02T16:31:26.158Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 6,
+  "fields": {
+    "product": 4,
+    "price": 630,
+    "size": "42",
+    "color": 2,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "GOOD-SHOE-BLUE-42",
+    "created_at": "2026-09-01T15:00:00.175Z",
+    "updated_at": "2026-09-20T14:18:49.780Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 7,
+  "fields": {
+    "product": 4,
+    "price": 830,
+    "size": "41",
+    "color": 1,
+    "quantity": 4,
+    "is_available": true,
+    "sku": "GOOD-SHOE-RED-41",
+    "created_at": "2026-09-01T15:08:18.022Z",
+    "updated_at": "2026-09-20T14:18:49.781Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 8,
+  "fields": {
+    "product": 9,
+    "price": 300,
+    "size": "40",
+    "color": 5,
+    "quantity": 6,
+    "is_available": true,
+    "sku": "HELLOSHOES-GREEN-40",
+    "created_at": "2026-09-11T17:06:07.609Z",
+    "updated_at": "2026-09-16T20:45:59.711Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 9,
+  "fields": {
+    "product": 22,
+    "price": 92,
+    "size": "39",
+    "color": 4,
+    "quantity": 19,
+    "is_available": true,
+    "sku": "DEMO-COURT-CLASSIC-SNEAKERS-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.702Z",
+    "updated_at": "2026-09-27T19:14:41.702Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 10,
+  "fields": {
+    "product": 22,
+    "price": 95,
+    "size": "41",
+    "color": 2,
+    "quantity": 20,
+    "is_available": true,
+    "sku": "DEMO-COURT-CLASSIC-SNEAKERS-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.708Z",
+    "updated_at": "2026-09-27T19:14:41.708Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 11,
+  "fields": {
+    "product": 22,
+    "price": 98,
+    "size": "43",
+    "color": 3,
+    "quantity": 21,
+    "is_available": true,
+    "sku": "DEMO-COURT-CLASSIC-SNEAKERS-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.713Z",
+    "updated_at": "2026-09-27T19:14:41.713Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 12,
+  "fields": {
+    "product": 23,
+    "price": 118,
+    "size": "39",
+    "color": 4,
+    "quantity": 20,
+    "is_available": true,
+    "sku": "DEMO-TRAIL-RUNNER-SHOES-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.721Z",
+    "updated_at": "2026-09-27T19:14:41.721Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 13,
+  "fields": {
+    "product": 23,
+    "price": 121,
+    "size": "41",
+    "color": 2,
+    "quantity": 21,
+    "is_available": true,
+    "sku": "DEMO-TRAIL-RUNNER-SHOES-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.726Z",
+    "updated_at": "2026-09-27T19:14:41.726Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 14,
+  "fields": {
+    "product": 23,
+    "price": 124,
+    "size": "43",
+    "color": 3,
+    "quantity": 22,
+    "is_available": true,
+    "sku": "DEMO-TRAIL-RUNNER-SHOES-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.731Z",
+    "updated_at": "2026-09-27T19:14:41.731Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 15,
+  "fields": {
+    "product": 24,
+    "price": 134,
+    "size": "39",
+    "color": 4,
+    "quantity": 21,
+    "is_available": true,
+    "sku": "DEMO-MINIMAL-LEATHER-TRAINERS-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.739Z",
+    "updated_at": "2026-09-27T19:14:41.739Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 16,
+  "fields": {
+    "product": 24,
+    "price": 137,
+    "size": "41",
+    "color": 2,
+    "quantity": 22,
+    "is_available": true,
+    "sku": "DEMO-MINIMAL-LEATHER-TRAINERS-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.744Z",
+    "updated_at": "2026-09-27T19:14:41.744Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 17,
+  "fields": {
+    "product": 24,
+    "price": 140,
+    "size": "43",
+    "color": 3,
+    "quantity": 23,
+    "is_available": true,
+    "sku": "DEMO-MINIMAL-LEATHER-TRAINERS-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.749Z",
+    "updated_at": "2026-09-27T19:14:41.749Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 18,
+  "fields": {
+    "product": 25,
+    "price": 108,
+    "size": "39",
+    "color": 4,
+    "quantity": 22,
+    "is_available": true,
+    "sku": "DEMO-RETRO-HIGH-TOP-SNEAKERS-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.757Z",
+    "updated_at": "2026-09-27T19:14:41.757Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 19,
+  "fields": {
+    "product": 25,
+    "price": 111,
+    "size": "41",
+    "color": 2,
+    "quantity": 23,
+    "is_available": true,
+    "sku": "DEMO-RETRO-HIGH-TOP-SNEAKERS-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.761Z",
+    "updated_at": "2026-09-27T19:14:41.761Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 20,
+  "fields": {
+    "product": 25,
+    "price": 114,
+    "size": "43",
+    "color": 3,
+    "quantity": 24,
+    "is_available": true,
+    "sku": "DEMO-RETRO-HIGH-TOP-SNEAKERS-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.769Z",
+    "updated_at": "2026-09-27T19:14:41.769Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 21,
+  "fields": {
+    "product": 26,
+    "price": 126,
+    "size": "39",
+    "color": 4,
+    "quantity": 23,
+    "is_available": true,
+    "sku": "DEMO-LIGHTWEIGHT-RUNNING-SHOES-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.777Z",
+    "updated_at": "2026-09-27T19:14:41.777Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 22,
+  "fields": {
+    "product": 26,
+    "price": 129,
+    "size": "41",
+    "color": 2,
+    "quantity": 24,
+    "is_available": true,
+    "sku": "DEMO-LIGHTWEIGHT-RUNNING-SHOES-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.781Z",
+    "updated_at": "2026-09-27T19:14:41.781Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 23,
+  "fields": {
+    "product": 26,
+    "price": 132,
+    "size": "43",
+    "color": 3,
+    "quantity": 25,
+    "is_available": true,
+    "sku": "DEMO-LIGHTWEIGHT-RUNNING-SHOES-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.786Z",
+    "updated_at": "2026-09-27T19:14:41.786Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 24,
+  "fields": {
+    "product": 27,
+    "price": 68,
+    "size": "39",
+    "color": 4,
+    "quantity": 24,
+    "is_available": true,
+    "sku": "DEMO-EVERYDAY-CANVAS-SHOES-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.794Z",
+    "updated_at": "2026-09-27T19:14:41.794Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 25,
+  "fields": {
+    "product": 27,
+    "price": 71,
+    "size": "41",
+    "color": 2,
+    "quantity": 25,
+    "is_available": true,
+    "sku": "DEMO-EVERYDAY-CANVAS-SHOES-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.800Z",
+    "updated_at": "2026-09-27T19:14:41.800Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 26,
+  "fields": {
+    "product": 27,
+    "price": 74,
+    "size": "43",
+    "color": 3,
+    "quantity": 8,
+    "is_available": true,
+    "sku": "DEMO-EVERYDAY-CANVAS-SHOES-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.804Z",
+    "updated_at": "2026-09-27T19:14:41.804Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 27,
+  "fields": {
+    "product": 28,
+    "price": 142,
+    "size": "39",
+    "color": 4,
+    "quantity": 25,
+    "is_available": true,
+    "sku": "DEMO-CITY-WALK-LEATHER-SHOES-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.812Z",
+    "updated_at": "2026-09-27T19:14:41.813Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 28,
+  "fields": {
+    "product": 28,
+    "price": 145,
+    "size": "41",
+    "color": 2,
+    "quantity": 8,
+    "is_available": true,
+    "sku": "DEMO-CITY-WALK-LEATHER-SHOES-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.817Z",
+    "updated_at": "2026-09-27T19:14:41.817Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 29,
+  "fields": {
+    "product": 28,
+    "price": 148,
+    "size": "43",
+    "color": 3,
+    "quantity": 9,
+    "is_available": true,
+    "sku": "DEMO-CITY-WALK-LEATHER-SHOES-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.822Z",
+    "updated_at": "2026-09-27T19:14:41.822Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 30,
+  "fields": {
+    "product": 29,
+    "price": 156,
+    "size": "39",
+    "color": 4,
+    "quantity": 8,
+    "is_available": true,
+    "sku": "DEMO-OUTDOOR-HIKER-SHOES-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.830Z",
+    "updated_at": "2026-09-27T19:14:41.830Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 31,
+  "fields": {
+    "product": 29,
+    "price": 159,
+    "size": "41",
+    "color": 2,
+    "quantity": 9,
+    "is_available": true,
+    "sku": "DEMO-OUTDOOR-HIKER-SHOES-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.835Z",
+    "updated_at": "2026-09-27T19:14:41.835Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 32,
+  "fields": {
+    "product": 29,
+    "price": 162,
+    "size": "43",
+    "color": 3,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "DEMO-OUTDOOR-HIKER-SHOES-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.839Z",
+    "updated_at": "2026-09-27T19:14:41.839Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 33,
+  "fields": {
+    "product": 30,
+    "price": 74,
+    "size": "39",
+    "color": 4,
+    "quantity": 9,
+    "is_available": true,
+    "sku": "DEMO-SLIP-ON-COMFORT-SHOES-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.848Z",
+    "updated_at": "2026-09-27T19:14:41.848Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 34,
+  "fields": {
+    "product": 30,
+    "price": 77,
+    "size": "41",
+    "color": 2,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "DEMO-SLIP-ON-COMFORT-SHOES-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.852Z",
+    "updated_at": "2026-09-27T19:14:41.852Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 35,
+  "fields": {
+    "product": 30,
+    "price": 80,
+    "size": "43",
+    "color": 3,
+    "quantity": 11,
+    "is_available": true,
+    "sku": "DEMO-SLIP-ON-COMFORT-SHOES-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.857Z",
+    "updated_at": "2026-09-27T19:14:41.857Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 36,
+  "fields": {
+    "product": 31,
+    "price": 112,
+    "size": "39",
+    "color": 4,
+    "quantity": 10,
+    "is_available": true,
+    "sku": "DEMO-COURT-SPORT-SHOES-BLACK-39",
+    "created_at": "2026-09-27T19:14:41.865Z",
+    "updated_at": "2026-09-27T19:14:41.865Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 37,
+  "fields": {
+    "product": 31,
+    "price": 115,
+    "size": "41",
+    "color": 2,
+    "quantity": 11,
+    "is_available": true,
+    "sku": "DEMO-COURT-SPORT-SHOES-BLUE-41",
+    "created_at": "2026-09-27T19:14:41.869Z",
+    "updated_at": "2026-09-27T19:14:41.869Z"
+  }
+},
+{
+  "model": "products.productshoevariant",
+  "pk": 38,
+  "fields": {
+    "product": 31,
+    "price": 118,
+    "size": "43",
+    "color": 3,
+    "quantity": 12,
+    "is_available": true,
+    "sku": "DEMO-COURT-SPORT-SHOES-WHITE-43",
+    "created_at": "2026-09-27T19:14:41.874Z",
+    "updated_at": "2026-09-27T19:14:41.874Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 2,
+  "fields": {
+    "user": 1,
+    "product": 1,
+    "rating": 5,
+    "created_at": "2026-09-18T19:22:33.528Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 3,
+  "fields": {
+    "user": 1,
+    "product": 11,
+    "rating": 5,
+    "created_at": "2026-09-18T19:40:36.224Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "product": 7,
+    "rating": 3,
+    "created_at": "2026-09-18T19:42:07.077Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 5,
+  "fields": {
+    "user": 3,
+    "product": 11,
+    "rating": 2,
+    "created_at": "2026-09-18T19:42:42.815Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 6,
+  "fields": {
+    "user": 3,
+    "product": 5,
+    "rating": 4,
+    "created_at": "2026-09-20T14:00:15.691Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 7,
+  "fields": {
+    "user": 3,
+    "product": 4,
+    "rating": 1,
+    "created_at": "2026-09-20T14:12:35.730Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 8,
+  "fields": {
+    "user": 3,
+    "product": 10,
+    "rating": 2,
+    "created_at": "2026-09-20T14:12:45.317Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 9,
+  "fields": {
+    "user": 3,
+    "product": 9,
+    "rating": 4,
+    "created_at": "2026-09-20T14:13:05.987Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 10,
+  "fields": {
+    "user": 3,
+    "product": 8,
+    "rating": 1,
+    "created_at": "2026-09-20T14:13:17.537Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 11,
+  "fields": {
+    "user": 3,
+    "product": 6,
+    "rating": 3,
+    "created_at": "2026-09-20T14:13:27.942Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 12,
+  "fields": {
+    "user": 3,
+    "product": 3,
+    "rating": 3,
+    "created_at": "2026-09-20T14:13:45.396Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 13,
+  "fields": {
+    "user": 3,
+    "product": 2,
+    "rating": 2,
+    "created_at": "2026-09-20T14:13:59.299Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 14,
+  "fields": {
+    "user": 1,
+    "product": 2,
+    "rating": 3,
+    "created_at": "2026-09-26T15:13:54.857Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 15,
+  "fields": {
+    "user": 1,
+    "product": 9,
+    "rating": 3,
+    "created_at": "2026-09-26T19:21:47.381Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 16,
+  "fields": {
+    "user": 1,
+    "product": 3,
+    "rating": 3,
+    "created_at": "2026-09-26T19:28:34.172Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 17,
+  "fields": {
+    "user": 1,
+    "product": 10,
+    "rating": 3,
+    "created_at": "2026-09-27T15:53:20.392Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 18,
+  "fields": {
+    "user": 1,
+    "product": 8,
+    "rating": 2,
+    "created_at": "2026-09-27T16:44:51.403Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 19,
+  "fields": {
+    "user": 1,
+    "product": 4,
+    "rating": 2,
+    "created_at": "2026-09-27T16:50:50.519Z"
+  }
+},
+{
+  "model": "products.productrating",
+  "pk": 20,
+  "fields": {
+    "user": 1,
+    "product": 22,
+    "rating": 4,
+    "created_at": "2026-09-29T11:53:40.392Z"
+  }
+}
+]
